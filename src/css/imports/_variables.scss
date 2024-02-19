@@ -1,17 +1,27 @@
 :root {
-	/* Colors */
-	--primary: rgb(51, 134, 62);
-	--highlight: rgba(254, 213, 198, 1);
-	--white: rgba(255, 255, 255, 1);
-	--off-white: rgba(255, 253, 252, 1);
-	--grey-1: rgba(245, 243, 242, 1);
-	--grey-2: rgba(235, 231, 230, 1);
-	--grey-3: rgba(89, 87, 86, 1);
-	--grey-4: rgba(66, 64, 64, 1);
-	--black: rgba(43, 37, 35, 1);
+	
+/* Greens */
+--primary: rgb(39, 174, 96); /* A brighter, more vivid green for vitality and focus */
+--secondary: rgb(163, 230, 153); /* A lighter, fresher green for background accents */
+
+/* Highlight & Accents */
+--highlight: rgba(255, 233, 214, 1); /* A softer, lighter highlight for a gentle, sunny accent */
+--accent: rgb(255, 195, 113); /* New: A complementary, earthy orange accent for calls to action and highlights */
+
+/* Neutrals */
+--white: rgba(255, 255, 255, 1); /* Unchanged: For backgrounds and contrast */
+--off-white: rgba(250, 250, 245, 1); /* A slightly warmer off-white for backgrounds, reducing starkness */
+--grey-light: rgba(241, 241, 239, 1); /* New: A very light grey for subtle shadows and dividers */
+--grey: rgba(222, 222, 220, 1); /* New: A medium light grey for less prominent text or UI elements */
+
+/* Text & Dark Accents */
+--text-dark: rgba(75, 75, 73, 1); /* Darker than grey-3, for better readability on light backgrounds */
+--text-light: rgba(255, 255, 255, 1); /* For text on dark or vibrant backgrounds */
+--black: rgba(33, 33, 31, 1); /* A slightly softened black for strong contrast where needed */
+
 
 	/* Typography */
-	--font-family: Nunito Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+	--font-family: Unbounded, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 	--line-height: 1.5;
 
 	--font-size: 18px;

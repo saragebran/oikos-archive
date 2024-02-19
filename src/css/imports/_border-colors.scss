@@ -2,6 +2,10 @@
   border-color: var(--primary);
 }
 
+.b--secondary {
+  border-color: var(--secondary);
+}
+
 .b--highlight {
   border-color: --var(--highlight);
 }
@@ -12,22 +16,6 @@
 
 .b--off-white {
   border-color: var(--off-white);
-}
-
-.b--grey-1 {
-  border-color: var(--grey-1);
-}
-
-.b--grey-2 {
-  border-color: var(--grey-2);
-}
-
-.b--grey-3 {
-  border-color: var(--grey-3);
-}
-
-.b--grey-4 {
-  border-color: var(--grey-4);
 }
 
 .b--black {

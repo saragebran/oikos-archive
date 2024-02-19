@@ -13,7 +13,7 @@ th:not(:first-child), td:not(:first-child) {
 }
 
 th {
-  color: var(--grey-3);
+  color: var(--text-dark);
   font-weight: 700;
   white-space: nowrap;
    {
@@ -26,5 +26,5 @@ tr th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--grey-1);
+  background-color: var(--off-white);
 }

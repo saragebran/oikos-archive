@@ -54,9 +54,9 @@ const ProductsPreview = ({ entry, collection, field }) => {
       <div className="pb4">
         {(entry.data.testimonials ?? []).map((testimonial, index) => (
           <div className="center mb3 ph3" key={index}>
-            <blockquote className="bg-grey-1 primary pa3 mb3 br1 b mw6 center">
+            <blockquote className="bg-off-white primary pa3 mb3 br1 b mw6 center">
               <p className="f4 mb0">“{testimonial.quote}”</p>
-              <cite className="tr db grey-3">{testimonial.author}</cite>
+              <cite className="tr db text-dark">{testimonial.author}</cite>
             </blockquote>
           </div>
         ))}
@@ -73,7 +73,7 @@ const ProductsPreview = ({ entry, collection, field }) => {
             {(entry.data.pricing.plans ?? []).map((plan, index) => (
               <div className="w-33-ns ph2" key={index}>
                 <div className="ph2">
-                  <h3 className="b f5 grey-3 tc lh-title mb3">{plan.plan}</h3>
+                  <h3 className="b f5 text-dark tc lh-title mb3">{plan.plan}</h3>
                   <p className="primary f1 b tc lh-title center">
                     <span className="f4">$</span>
                     {plan.price}

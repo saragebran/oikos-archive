@@ -1,0 +1,36 @@
+<div class="mw9 center">
+    <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
+        {{ range where .Site.RegularPages "Section" "species" }}
+            <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
+                <div class="no-underline pa3 mb2 db w-100 flex flex-column justify-center items-center">
+                    {{ $commonNames := .Params.commonNames }}
+                    {{ if index $commonNames "english" }}
+                    <!-- If English common name exists, display it -->
+                    <h2 class="f5 b lh-title mb1 secondary tc" title="{{ .Title }}"> <a class="no-underline" href="{{ .RelPermalink }}">{{ index .Params.commonNames "english" "name" }}</a></h2>
+                    {{ else }}
+                    <!-- If English common name does not exist, list other languages -->
+                    <h2 class="f5 b lh-title mb1 secondary tc" title="{{ .Title }}"><a href="{{ .RelPermalink }}"></a></h2>
+                    <div class="noSpeciesName">
+                        <p class="f6 secondary">There is no English name for this species, but it has been given a name in 
+                            {{ $commonNames := .Params.commonNames }}
+                            {{ $languages := slice }}
+                            <!-- Construct a list of languages excluding English -->
+                            {{ range $lang, $val := $commonNames }}
+                              {{ if ne $lang "english" }}
+                                {{ $languages = $languages | append $lang }}
+                              {{ end }}
+                            {{ end }}
+                            {{ $lastIndex := sub (len $languages) 1 }}
+                            {{ range $index, $lang := $languages }}
+                              <a href="#" class="language-link" data-lang="{{ $lang }}">{{ $lang | humanize }}</a>
+                              {{- if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }}, and {{- else }}, {{- end }}
+                            {{ end }}
+                            
+                        </p>
+                    </div>
+                    {{ end }}
+                </div>
+            </li>
+        {{ end }}
+    </ul>
+  </div>

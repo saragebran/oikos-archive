@@ -11,7 +11,7 @@ const HomePreview = ({ entry, collection, field }) => {
     <div>
       <Jumbotron image={image} title={entry.data.title} subtitle={entry.data.subtitle} />
 
-      <div className="bg-grey-1 pv4">
+      <div className="bg-off-white pv4">
         <div className="flex-l mhn1-l ph3 center mw7">
           <h2 className="f2 b lh-title mb2 w-40-l">{entry.data.blurb.heading}</h2>
           <p className="w-60-l mb0">{entry.data.blurb.text}</p>
@@ -37,7 +37,7 @@ const HomePreview = ({ entry, collection, field }) => {
         </div>
       </div>
 
-      <div className="bg-grey-1 pv4">
+      <div className="bg-off-white pv4">
         <div className="ph3 mw7 center">
           <div className="flex-l mhn2-l">
             <div className="w-40-l ph2-l">

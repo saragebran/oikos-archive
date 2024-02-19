@@ -7,3 +7,15 @@ title = "Homepage"
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy"]
+
+[outputFormats]
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    isPlainText = true
+    notAlternative = true
+    baseName = "index"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+

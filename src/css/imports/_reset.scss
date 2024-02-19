@@ -66,3 +66,10 @@ button {
 a {
 	color: inherit;
 }
+
+select, select:focus {
+	outline: none;
+	appearance: none;
+	font-family: inherit;
+	// add custom arrow
+}
