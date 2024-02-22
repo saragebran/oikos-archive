@@ -1,19 +1,20 @@
+{{- $pages := first 2671 (where .Site.RegularPages "Section" "species") -}}
 [
-  {{- $pages := where .Site.RegularPages "Section" "species" -}}
-  {{- range $index, $page := $pages -}}
-    {{- if $index }},{{ end -}}
-    {
-      "scientificName": {{ $page.Params.title | jsonify }},
-      "commonNames": {
-        {{- $commonNames := $page.Params.commonNames -}}
-        {{- $lenCommonNames := len $commonNames -}}
-        {{- $counter := 0 -}}
-        {{- range $lang, $details := $commonNames -}}
-          {{- $counter = add $counter 1 -}}
-          {{ $lang | jsonify }}: {{ (index $details "name") | jsonify }}{{ if lt $counter $lenCommonNames }},{{ end }}
-        {{- end }}
-      }
+{{- range $index, $page := $pages -}}
+  {{- if $index }},{{ end -}}
+  {
+    "scientificName": {{ $page.Params.category | jsonify }},
+    "commonNames": {
+      {{- $languages := $page.Params.languages -}}
+      {{- $lenLanguages := len $languages -}}
+      {{- $counter := 0 -}}
+      {{- range $lang, $names := $languages -}}
+        {{- $counter = add $counter 1 -}}
+        {{ $lang | jsonify }}: [{{ range $i, $name := $names }}{{ if $i }}, {{ end }}{{ $name | jsonify }}{{ end }}]{{ if lt $counter $lenLanguages }},{{ end }}
+      {{- end }}
     }
-  {{- end }}
+  }
+{{- end }}
 ]
+
 

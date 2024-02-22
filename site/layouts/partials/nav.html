@@ -1,25 +1,14 @@
 <nav class="flex justify-between items-center center bg-secondary">
+    <!-- Logo -->
+    <a href="/" class="pa3 db mr4 h-100 w3 flex-none">
+        <img src="/img/logo.svg" alt="A logo" class="br0 db mb0 w-100"/>
+    </a>
 
-	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none">
-		<img src="/img/logo.svg" alt="A logo" class="br0 db mb0 w-100"/>
-	</a>
-
-	<!-- Language Selector -->
-	<div class="flex text-dark mr3">
-		<select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">
-			{{ $uniqueLanguages := slice }}
-			{{ range .Site.RegularPages }}
-			  {{ range $lang, $_ := .Params.commonNames }}
-				{{ if not (in $uniqueLanguages $lang) }}
-				  {{ $uniqueLanguages = $uniqueLanguages | append $lang }}
-				{{ end }}
-			  {{ end }}
-			{{ end }}
-			{{ range $lang := $uniqueLanguages }}
-			  <option value="{{ $lang }}">{{ $lang | humanize }}</option>
-			{{ end }}
-		  </select>
-		</div>
-
+    <!-- Language Selector -->
+    <div class="flex text-dark mr3">
+        <select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">{{ $uniqueLanguages := slice }}{{ range first 2671 (where .Site.RegularPages "Section" "species") }}{{ range $lang, $_ := .Params.languages }}{{ if not (in $uniqueLanguages $lang) }}{{ $uniqueLanguages = $uniqueLanguages | append $lang }}{{ end }}{{ end }}{{ end }}{{ range $lang := $uniqueLanguages }}
+            <option value="{{ $lang }}">{{ $lang | humanize }}</option>{{ end }}
+        </select>
+    </div>
 </nav>
+
