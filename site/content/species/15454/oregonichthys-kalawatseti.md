@@ -1,0 +1,8 @@
+---
+title: "15454"
+category: "Oregonichthys kalawatseti"
+draft: false
+date: 2024-02-22 13:03:50
+languages:
+  English: ["Umpqua Oregon Chub", "Umpqua Chub"]
+---

@@ -1,0 +1,8 @@
+---
+title: "36510"
+category: "Elaeocarpus gigantifolius"
+draft: false
+date: 2024-02-22 13:03:50
+languages:
+  Tagalog: ["Nahol"]
+---
