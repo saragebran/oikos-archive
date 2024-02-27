@@ -2,7 +2,7 @@
     <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
       {{ range $index, $page := first 2671 (where .Site.RegularPages "Section" "species") }} 
       {{ $randomIndex := mod $index (len $.Site.Params.natureColors) }}
-            <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" {{ with .Params.image }} style="background-image: url('{{.}}');background-size:cover;background-repeat:no-repeat;background-position: center center;" {{ end }}>
+            <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" {{ with .Params.image }} style="background-image: url( {{ . | relURL}} );background-size:cover;background-repeat:no-repeat;background-position: center center;" {{ end }}>
                 <div class="no-underline pa3 mb2 db w-100 flex flex-column justify-center items-center">
                     {{ $commonNames := .Params.languages }}
                     {{ if index $commonNames "English" }}
