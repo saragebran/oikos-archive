@@ -7,4 +7,5 @@ languages:
   English: ["Knobby Seahorse", "Short-headed Seahorse", "Short-snouted Seahorse"]
   Danish: ["Korthovedet søhest"]
   Chinese: ["短头海马", "短頭海馬"]
+image: seahorse.jpg
 ---

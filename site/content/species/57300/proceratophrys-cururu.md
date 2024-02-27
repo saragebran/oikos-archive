@@ -1,8 +1,0 @@
----
-title: "57300"
-category: "Proceratophrys cururu"
-draft: false
-date: 2024-02-22 13:03:51
-languages:
-  English: ["Toad-like Ground Frog"]
----

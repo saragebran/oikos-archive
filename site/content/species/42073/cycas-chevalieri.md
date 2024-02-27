@@ -1,8 +1,0 @@
----
-title: "42073"
-category: "Cycas chevalieri"
-draft: false
-date: 2024-02-22 13:03:51
-languages:
-  Vietnamese: ["Cáy Ngen"]
----

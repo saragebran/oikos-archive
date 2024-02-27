@@ -2,6 +2,7 @@
 
 {{ .Title }}
 {{ .Date }}
+{{ with .Params.image }} <img src="{{ . }}" alt=""> {{ end }}
 {{ .Content }}
 
 {{ end }}

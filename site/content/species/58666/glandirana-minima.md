@@ -1,9 +1,0 @@
----
-title: "58666"
-category: "Glandirana minima"
-draft: false
-date: 2024-02-22 13:03:51
-languages:
-  English: ["Fujian Frog", "Little Gland Frog"]
-  Chinese: ["小腺蛙"]
----

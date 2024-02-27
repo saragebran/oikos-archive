@@ -28,7 +28,7 @@ function handleLanguageLinkClick(event) {
             if (species && species.commonNames && species.commonNames[lang]) {
                 // Extract the common name for the selected language
                 const commonName = species.commonNames[lang]; // Directly access the common name
-                const commonNameCapitalized = capitalizeWords(commonName); // Capitalize the common name
+                const commonNameCapitalized = capitalizeWords(commonName[0]); // Capitalize the common name
                 h2Element.innerHTML = `<a class="no-underline" href="${h2Element.querySelector('a').getAttribute('href')}">${commonNameCapitalized}</a>`; // Update the h2 content while preserving the link
                 noSpeciesText.style.display = 'none'; // Hide the no species text element
             } else {
@@ -55,7 +55,8 @@ function updateAllCommonNames(selectedLanguage, data) {
       const matchingObject = data.find(item => item.scientificName === scientificName);
       if (matchingObject && matchingObject.commonNames[selectedLanguage]) {
           const commonName = matchingObject.commonNames[selectedLanguage];
-          const commonNameCapitalized = capitalizeWords(commonName);
+          console.log(commonName[0]);
+          const commonNameCapitalized = capitalizeWords(commonName[0]);
           element.querySelector('a').textContent = commonNameCapitalized;
           // Remove the noSpeciesName div when common name exists
           let noSpeciesNameDiv = element.nextElementSibling;
@@ -73,7 +74,7 @@ function showAvailableLanguages(element, commonNames, selectedLanguage, observer
   if (!observer) {
   // Remove existing noSpeciesName div if it exists to avoid duplicates
   let noSpeciesNameDiv = element.nextElementSibling;
-  console.log(noSpeciesNameDiv);
+  // console.log(noSpeciesNameDiv);
   if (!noSpeciesNameDiv || !noSpeciesNameDiv.classList.contains('noSpeciesName')) {
       noSpeciesNameDiv = document.createElement('div');
       noSpeciesNameDiv.className = 'noSpeciesName';
@@ -122,20 +123,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Do things when elements are in view
+        // Element is in view
+        const color = entry.target.getAttribute('color');
+        entry.target.style.backgroundColor = color;
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.addEventListener('click', handleLanguageLinkClick);
         });
-        entry.target.classList.add('inView'); // Add a class to the element to indicate it's in view
+        entry.target.classList.add('inView'); 
       } else {
-        // Do things when elements are not in view
+        // Element is out of view;
+        entry.target.style.backgroundColor = ''; // Reset background color
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.removeEventListener('click', handleLanguageLinkClick);             
         });
-        entry.target.classList.remove('inView'); // Remove the class to indicate it's not in view
+        entry.target.classList.remove('inView'); 
       }
     });
   };
+  
 
   const observer = new IntersectionObserver(observerCallback, options);
 

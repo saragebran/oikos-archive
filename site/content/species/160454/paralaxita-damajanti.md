@@ -1,8 +1,0 @@
----
-title: "160454"
-category: "Paralaxita damajanti"
-draft: false
-date: 2024-02-22 13:03:52
-languages:
-  English: ["Malay Red Harliquin"]
----

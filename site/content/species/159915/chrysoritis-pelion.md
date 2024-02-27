@@ -1,9 +1,0 @@
----
-title: "159915"
-category: "Chrysoritis pelion"
-draft: false
-date: 2024-02-22 13:03:52
-languages:
-  English: ["Basotho Opal", "Machacha Opal"]
-  Afrikaans: ["Basoetoe-opaal"]
----

@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://endearing-maamoul-70d6fa.netlify.app/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Homepage"
@@ -17,5 +17,55 @@ disableKinds = ["RSS", "taxonomy"]
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+
+[params]
+  natureColors = [
+        "#9B592C",  # Rich soil brown
+        "#F9D778",  # Sunflower yellow
+        "#659D32",  # Forest green
+        "#E87722",  # Autumnal orange
+        "#266CA8",  # Deep ocean blue
+        "#E34234",  # Poppy red
+        "#893F87",  # Plum purple
+        "#FFB59A",  # Coral pink
+        "#35A853",  # Vibrant leaf green
+        "#C3C682",  # Mossy green
+        "#FFDC6A",  # Warm sunlight yellow
+        "#8DB6D2",  # Sky blue
+        "#FF91AF",  # Flamingo pink
+        "#8D704A",  # Bark brown
+        "#233A6B",  # Midnight blue
+        "#4D3322",  # Rich, dark earth
+        "#FBE090",  # Pale golden yellow  
+        "#366625",  # Deep forest green
+        "#C55F1B",  # Burnt orange
+        "#1E4D70",  # Teal blue
+        "#CA262A",  # Brick red
+        "#5E2A59",  # Aubergine purple
+        "#E68870",  # Salmon pink
+        "#11552B",  # Dark, leafy green
+        "#93975F",  # Olive green 
+        "#E9C64A",  # Mustard yellow
+        "#6D9CBF",  # Pale turquoise
+        "#F07D95",  # Hot pink
+        "#6C553A",  # Chocolate brown
+        "#16264D",  # Deep navy blue 
+        "#3B281C",  # Very dark brown
+        "#FDD559",  # Vibrant yellow
+        "#21401A",  # Evergreen
+        "#A94712",  # Russet orange
+        "#0F3651",  # Stormy ocean blue 
+        "#B2181E",  # Red wine
+        "#481F4B",  # Blackberry purple
+        "#D76C5C",  # Terracotta
+        "#08361F",  # Pine green
+        "#7B7D48",  # Swampy green
+        "#D4AA2C",  # Golden yellow
+        "#598499",  # Slate blue
+        "#EF6277",  # Watermelon pink
+        "#513D29",  # Walnut brown
+        "#0F1B33"   # Almost black, deep night sky
+  ] 
 
 

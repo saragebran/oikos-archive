@@ -1,9 +1,0 @@
----
-title: "58648"
-category: "Odorrana lungshengensis"
-draft: false
-date: 2024-02-22 13:03:51
-languages:
-  English: ["Lungshen Odorous Frog", "Lung-shen-hsien Frog"]
-  Chinese: ["龙胜臭蛙"]
----

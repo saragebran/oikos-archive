@@ -1,15 +1,14 @@
 .inView {
-    background-color: var(--primary);
     transition: background-color 2s ease, border-color 2s ease;
     border-color: var(--black);
     div {
         p {
             transition: color 2s ease;
-            color: var(--black);
+            color: var(--white);
         }
         h2 {
             transition: color 2s ease;
-            color: var(--black);
+            color: var(--white);           
         }
     }
   }

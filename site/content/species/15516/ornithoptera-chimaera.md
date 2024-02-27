@@ -1,9 +1,0 @@
----
-title: "15516"
-category: "Ornithoptera chimaera"
-draft: false
-date: 2024-02-22 13:03:50
-languages:
-  French: ["La chimère", "Ornithoptère chimère"]
-  English: ["Chimaera Birdwing"]
----

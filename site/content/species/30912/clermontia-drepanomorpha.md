@@ -1,9 +1,0 @@
----
-title: "30912"
-category: "Clermontia drepanomorpha"
-draft: false
-date: 2024-02-22 13:03:50
-languages:
-  Hawaiian: ["oha", "oha Wai"]
-  English: ["Kohala Clermontia"]
----
