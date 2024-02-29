@@ -12,15 +12,19 @@ public_folder: "/img"
 local_backend: true
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, ie.: "New Post"
-    folder: "site/content/post" # The path to the folder where the documents are stored
+  - name: "species" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Species" # Used in the UI, ie.: "New Post"
+    folder: "site/content/species" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Draft", name: "draft", widget: "boolean"} 
+      - {label: "Title", name: "title", widget: "string"} 
+      - {label: "Publish Date", name: "date", widget: "datetime"} 
+      - {label: "Scientific Name", name: "category", widget: "string"} 
+      - {label: "Image", name: "image", widget: "image", required: false} 
+      - {label: "Common Names", name: "languages", widget: "object", fields:  
+          - {label: "Language", name: "name", widget: "string", required: true} 
+          - {label: "Names", name: "names", widget: "list", allow_add: true}} 
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
