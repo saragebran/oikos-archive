@@ -1,38 +1,45 @@
 <div class="mw9 center">
-    <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
+  <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
       {{ range $index, $page := first 2671 (where .Site.RegularPages "Section" "species") }} 
       {{ $randomIndex := mod $index (len $.Site.Params.natureColors) }}
-            <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" {{ with .Params.image }} style="background-image: url('{{ . }}');background-size:cover;background-repeat:no-repeat;background-position: center center;" {{ end }}>
-                <div class="no-underline pa3 mb2 db w-100 flex flex-column justify-center items-center">
-                    {{ $commonNames := .Params.languages }}
-                    {{ if index $commonNames "English" }}
-                    {{ $englishNames := index $commonNames "English" }}
-                    <!-- If English common name exists, display it unless an image is present -->
-                    <h2 class="f5 b lh-title mb1 secondary tc common-name {{ with .Params.image }} dn {{ end }}" title="{{ .Params.category }}"> <a class="no-underline" href="{{ .RelPermalink }}">{{ range first 1 $englishNames }}{{ . }}{{ end }}</a></h2>
-                    {{ else }}
-                    <!-- If English common name does not exist, list other languages -->
-                    {{ if .Params.image }} <a href="{{ .RelPermalink }}" class="w-100 h-100"></a> {{ end }}
-                    <h2 class="f5 b lh-title mb1 secondary tc common-name" title="{{ .Params.category }}"><a href="{{ .RelPermalink }}"></a></h2>
-                    <div class="noSpeciesName">
-                        <p class="f6 ma0 secondary">There is no <span class="current-language">English</span> name for this species, but it has been given a name in 
-                            {{ $commonNames := .Params.languages }}
-                            {{ $languages := slice }}
-                            <!-- Construct a list of languages excluding English -->
-                            {{ range $lang, $val := $commonNames }}
-                              {{ if ne $lang "English" }}
-                                {{ $languages = $languages | append $lang }}
+      <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" {{ with .Params.image }} style="background-image: url('{{ . }}');background-size:cover;background-repeat:no-repeat;background-position: center center;" {{ end }}>
+          <div class="no-underline pa3 mb2 db w-100 flex flex-column justify-center items-center">
+              {{ $englishNames := slice }}
+              {{ range .Params.languages }}
+                  {{ if eq .language "English" }}
+                      {{ $englishNames = .names }}
+                  {{ end }}
+              {{ end }}
+              {{ if gt (len $englishNames) 0 }}
+                  <!-- If English common names exist, display the first one unless an image is present -->
+                  <h2 class="f5 b lh-title mb1 secondary tc common-name {{ with .Params.image }} dn {{ end }}" title="{{ .Params.category }}">
+                      <a class="no-underline" href="{{ .RelPermalink }}">{{ index $englishNames 0 }}</a>
+                  </h2>
+              {{ else }}
+                  <!-- If no English common name exists, list names in other languages -->
+                  {{ if .Params.image }}<a href="{{ .RelPermalink }}" class="w-100 h-100"></a>{{ end }}
+                  <h2 class="f5 b lh-title mb1 secondary tc common-name" title="{{ .Params.category }}">
+                      <a href="{{ .RelPermalink }}"></a>
+                  </h2>
+                  <div class="noSpeciesName">
+                      <p class="f6 ma0 secondary">There is no <span class="current-language">English</span> name for this species, but it has been given a name in 
+                          {{ $languages := slice }}
+                          <!-- Construct a list of languages excluding English -->
+                          {{ range .Params.languages }}
+                              {{ if ne .language "English" }}
+                                  {{ $languages = $languages | append .language }}
                               {{ end }}
-                            {{ end }}
-                            {{ $lastIndex := sub (len $languages) 1 }}
-                            {{ range $index, $lang := $languages }}
+                          {{ end }}
+                          {{ $lastIndex := sub (len $languages) 1 }}
+                          {{ range $index, $lang := $languages }}
                               <a href="#" class="language-link" data-lang="{{ $lang }}">{{ $lang | humanize }}</a>
                               {{- if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }}, and {{- else }}, {{- end }}
-                            {{ end }}
-                        </p>
-                    </div>
-                    {{ end }}
-                </div>
-            </li>
-        {{ end }}
-    </ul>
-  </div>
+                          {{ end }}
+                      </p>
+                  </div>
+              {{ end }}
+          </div>
+      </li>
+      {{ end }}
+  </ul>
+</div>
