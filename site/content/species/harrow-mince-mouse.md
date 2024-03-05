@@ -7,7 +7,6 @@ languages:
   - language: English
     names:
       - Herring
-      - Prince Herring
       - Ornamental Bird
   - language: Spanish
     names:
