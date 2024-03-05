@@ -1,8 +1,0 @@
----
-title: "6219"
-category: "Dacnomys millardi"
-draft: false
-date: 2024-02-22 13:03:50
-languages:
-  English: ["Millard's Rat"]
----
