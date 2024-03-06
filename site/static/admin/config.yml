@@ -14,7 +14,7 @@ local_backend: true
 collections: # A list of collections the CMS should be able to edit
   - name: "species" # Used in routes, i.e.: /admin/collections/:slug/edit
     label: "Species" # Used in the UI, i.e.: "New Post"
-    folder: site/content/species
+    folder: "site/content/species"
     path: '{{slug}}/_index'
     media_folder: ''
     public_folder: ''
