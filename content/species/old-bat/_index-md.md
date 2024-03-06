@@ -11,6 +11,9 @@ languages:
       - Mung Bat
       - Fun Bat
       - Some Bat
+  - language: Spanish
+    names:
+      - Bato Bato
 representations:
   - description: |
       I fell in love
