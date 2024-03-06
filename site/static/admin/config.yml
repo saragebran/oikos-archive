@@ -14,11 +14,11 @@ local_backend: true
 collections: # A list of collections the CMS should be able to edit
   - name: "species" # Used in routes, i.e.: /admin/collections/:slug/edit
     label: "Species" # Used in the UI, i.e.: "New Post"
-    folder: "site/content/species" # The path to the folder where the documents are stored
-    media_folder: "site/content/species/images" # This sets the media folder for this collection
-    public_folder: "/content/species/images" # This sets the public path for the media
+    folder: content/species
+    path: '{{slug}}/_index.md'
+    media_folder: ''
+    public_folder: ''
     create: true # Allow users to create new documents in this collection
-    slug: "{{uuid}}-{{slug}}"
     fields: # The fields each document in this collection will have
       - {label: "Draft", name: "draft", widget: "boolean", default: false, hidden: true}
       - {label: "Title", name: "title", widget: "string"}
