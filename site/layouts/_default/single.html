@@ -2,7 +2,15 @@
 
 {{ .Title }}
 {{ .Date }}
-{{ with .Params.image }} <img src="{{ . }}" alt=""> {{ end }}
+{{ range .Params.representations }}
+  <div class="representation">
+    <p>{{ .description | markdownify }}</p>
+    {{ if .image }}
+      <img src="{{ .image | relURL }}" alt="Representation image">
+    {{ end }}
+  </div>
+{{ end }}
+
 {{ .Content }}
 
 {{ end }}

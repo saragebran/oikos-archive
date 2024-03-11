@@ -12,6 +12,6 @@ languages:
 representations:
   - description: |
       I saw you in the sea and thought you were a mouse
-    image: /fishface.jpg
+    image: /img/fishface.jpg
 ---
 Something

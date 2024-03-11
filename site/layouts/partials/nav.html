@@ -6,7 +6,7 @@
 
     <!-- Language Selector -->
     <div class="flex text-dark mr3">
-        <select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">{{ $uniqueLanguages := slice }}{{ range first 2671 (where .Site.RegularPages "Section" "species") }}{{ range $lang, $_ := .Params.languages }}{{ if not (in $uniqueLanguages $lang) }}{{ $uniqueLanguages = $uniqueLanguages | append $lang }}{{ end }}{{ end }}{{ end }}{{ range $lang := $uniqueLanguages }}
+        <select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">{{ $uniqueLanguages := slice }}{{ range where .Site.RegularPages "Section" "species" }}{{ range $lang, $_ := .Params.languages }}{{ if not (in $uniqueLanguages $lang) }}{{ $uniqueLanguages = $uniqueLanguages | append $lang }}{{ end }}{{ end }}{{ end }}{{ range $lang := $uniqueLanguages }}
             <option value="{{ $lang }}">{{ $lang | humanize }}</option>{{ end }}
         </select>
     </div>
