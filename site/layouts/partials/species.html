@@ -1,64 +1,4 @@
 <div class="mw9 center">
-  <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
-    {{ $speciesSection := .Site.GetPage "section" "species" }}
-    {{ with $speciesSection }}
-    {{ range $index, $page := .Sections }}
-        {{ $randomIndex := mod $index (len $.Site.Params.natureColors) }}
-        {{ if and .Params.representations (gt (len .Params.representations) 0) }}
-          {{ $representation := index .Params.representations 0 }}
-          {{ $imageRelPath := $representation.image }}
-          {{ if $imageRelPath }}
-            {{ $imageUrl := $imageRelPath | relURL }}
-            <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" style="background-image: url('{{ $imageUrl }}');background-size:cover;background-repeat:no-repeat;background-position: center center;">
-          {{ else }}
-            <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
-          {{ end }}
-        {{ else }}
-          <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
-        {{ end }}
-        <div class="no-underline pa3 mb2 db w-100 flex flex-column justify-center items-center">
-          {{ $englishNames := slice }}
-          {{ range .Params.languages }}
-            {{ if eq .language "English" }}
-              {{ $englishNames = .names }}
-            {{ end }}
-          {{ end }}
-          {{ if gt (len $englishNames) 0 }}
-            <h2 class="f5 b lh-title mb1 secondary tc common-name" title="{{ .Params.category }}">
-              <a class="no-underline" href="{{ .RelPermalink }}">{{ index $englishNames 0 }}</a>
-            </h2>
-          {{ else }}
-            <div class="noSpeciesName">
-              <p class="f6 ma0 secondary">There is no <span class="current-language">English</span> name for this species, but it has been given a name in
-                {{ $languages := slice }}
-                {{ range .Params.languages }}
-                  {{ if ne .language "English" }}
-                    {{ $languages = $languages | append .language }}
-                  {{ end }}
-                {{ end }}
-                {{ $lastIndex := sub (len $languages) 1 }}
-                {{ range $index, $lang := $languages }}
-                  <a href="#" class="language-link" data-lang="{{ $lang }}">{{ $lang | humanize }}</a>
-                  {{- if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }}, and {{- else }}, {{- end }}
-                {{ end }}
-              </p>
-            </div>
-          {{ end }}
-        </div>
-        </li>
-      {{ end }}
-    {{ end }}
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-<div class="mw9 center">
     <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
       {{ $speciesSection := .Site.GetPage "section" "species" }}
       {{ with $speciesSection }}
@@ -67,8 +7,7 @@
           {{ with (index .Params.representations 0) }}
             {{ $imageRelPath := .image }}
             {{ $filename := replace $imageRelPath "/" "" }}
-            {{ $lowerTitle := $page.Title | lower }}
-            {{ $slugifiedTitle := $lowerTitle | replace " " "-" }}
+            {{ $slugifiedTitle := $page.Title | urlize }}
             {{ if $filename }}
             {{ $imageUrl := print "/" $page.Section "/" $slugifiedTitle "/" $filename }}
               

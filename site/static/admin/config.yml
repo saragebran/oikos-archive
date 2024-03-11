@@ -11,15 +11,15 @@ public_folder: "/img"
 
 local_backend: true
 
-collections: # A list of collections the CMS should be able to edit
-  - name: "species" # Used in routes, i.e.: /admin/collections/:slug/edit
-    label: "Species" # Used in the UI, i.e.: "New Post"
+collections:
+  - name: "species"
+    label: "Species"
     folder: "site/content/species"
-    path: '{{slug}}/_index'
+    path: '{{category}}/{{slug}}/_index'
     media_folder: ''
     public_folder: ''
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection will have
+    create: true
+    fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: false, hidden: true}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", hidden: true}
@@ -39,14 +39,29 @@ collections: # A list of collections the CMS should be able to edit
             widget: "list"
             field: {label: "Name", name: "name", widget: "string"}
       - {label: "What is known about this species and the threat of its extinction?", name: "body", widget: "markdown"}
-      - label: "Representation"
-        name: "representations"
-        create: true
-        delete: false
-        widget: "list"
-        fields:
-          - {label: "Describe your representation", name: "description", widget: "markdown", hint: "This could be a title for your representation or a longer story of how you came to know of this species or describing why you created this image. Remember you are responsible for uploading an image that you have the right to distribute. We hold no rights to the image."}
-          - {label: "Image", name: "image", widget: "image" }
+
+  - name: "representations"
+    label: "Representations"
+    folder: "site/content/representations"
+    create: true
+    fields:
+      - label: "Species"
+        name: "species"
+        widget: "relation"
+        collection: "species"
+        search_fields: ["title", "scientificName"]
+        value_field: "path"
+        display_fields: ["title"]
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+        hint: "Describe your representation or the story behind it."
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        media_folder: "{{fields.species}}"  # Dynamic path based on related species
+        public_folder: "{{fields.species}}"  # Adjust if necessary
+
   - name: "pages"
     label: "Pages"
     create: true # Switch to false in order to not allow users to edit the pages.
