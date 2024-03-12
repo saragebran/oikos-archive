@@ -15,7 +15,7 @@ collections:
   - name: "species"
     label: "Species"
     folder: "site/content/species"
-    path: '{{category}}/{{slug}}/_index'
+    path: '{{slug}}/_index'
     media_folder: ''
     public_folder: ''
     create: true
@@ -39,12 +39,16 @@ collections:
             widget: "list"
             field: {label: "Name", name: "name", widget: "string"}
       - {label: "What is known about this species and the threat of its extinction?", name: "body", widget: "markdown"}
-
   - name: "representations"
     label: "Representations"
-    folder: "site/content/representations"
+    identifier_field: "title"  
+    folder: "site/content/species"
     create: true
     fields:
+      - label: "Title"  
+        name: "title"
+        widget: "string"
+        hint: Write the title of your representation.
       - label: "Species"
         name: "species"
         widget: "relation"
@@ -52,6 +56,7 @@ collections:
         search_fields: ["title", "scientificName"]
         value_field: "path"
         display_fields: ["title"]
+        required: true
       - label: "Description"
         name: "description"
         widget: "markdown"
@@ -59,8 +64,8 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        media_folder: "{{fields.species}}"  # Dynamic path based on related species
-        public_folder: "{{fields.species}}"  # Adjust if necessary
+        media_folder: "{{fields.species}}/images/"
+        public_folder: "{{fields.species}}/images/"
 
   - name: "pages"
     label: "Pages"
