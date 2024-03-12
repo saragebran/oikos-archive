@@ -1,7 +1,7 @@
 ---
-title: hey
+title: Master Bat In the Cave
 species: Old Bat
 description: |
-  now
+  now it's terrible
 image: site/content/species/old-bat/images/bat.jpeg
 ---
