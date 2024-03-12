@@ -56,7 +56,6 @@ collections:
         search_fields: ["title", "scientificName"]
         value_field: "path"
         display_fields: ["title"]
-        required: true
       - label: "Description"
         name: "description"
         widget: "markdown"
