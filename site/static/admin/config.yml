@@ -43,6 +43,7 @@ collections:
     label: "Representations"
     identifier_field: "title"  
     folder: "site/content/species"
+    path: "{{fields.species}}"
     create: true
     fields:
       - label: "Title"  
@@ -54,8 +55,8 @@ collections:
         widget: "relation"
         collection: "species"
         search_fields: ["title", "scientificName"]
-        value_field: "path"
-        display_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title", "scientificName"]
       - label: "Description"
         name: "description"
         widget: "markdown"
@@ -63,8 +64,8 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        media_folder: "{{fields.species}}/images/"
-        public_folder: "{{fields.species}}/images/"
+        media_folder: "{{fields.species}}/images"
+        public_folder: "{{fields.species}}/images"
 
   - name: "pages"
     label: "Pages"

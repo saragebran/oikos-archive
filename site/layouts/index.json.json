@@ -1,17 +1,21 @@
-{{- $pages := first 2671 (where .Site.RegularPages "Section" "species") -}}
+{{- $pages := where .Site.Pages "Section" "species" -}}
 [
 {{- range $index, $page := $pages -}}
   {{- if $index }},{{ end -}}
   {
-    "scientificName": {{ $page.Params.category | jsonify }},
+    {{- with $page.Params.scientificName -}}
+    "scientificName": {{ $page.Params.scientificName | jsonify }},
+    {{- end -}}
+    {{- with $page.Params.languages -}}
     "commonNames": {
-      {{- $languages := $page.Params.languages -}}
+      {{- $languages := . -}}
       {{- $lenLanguages := len $languages -}}
       {{- $counter := 0 -}}
       {{- range $lang, $names := $languages -}}
         {{- $counter = add $counter 1 -}}
         {{ $lang | jsonify }}: [{{ range $i, $name := $names }}{{ if $i }}, {{ end }}{{ $name | jsonify }}{{ end }}]{{ if lt $counter $lenLanguages }},{{ end }}
       {{- end }}
+    {{- end -}}
     }
   }
 {{- end }}
