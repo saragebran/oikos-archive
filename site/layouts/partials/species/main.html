@@ -57,6 +57,32 @@
       {{ end }}
     </ul>
   </div>
+
+
+
+  {{ $speciesSection := .Site.GetPage "section" "species" }}
+  {{ with $speciesSection }}
+    {{ range .Pages }} <!-- Iterating over species -->
+      {{ range .Resources }}
+        {{ if eq .Params.kind "representation" }} <!-- Check if it's a representation -->
+          {{ $imageRelPath := .Params.image }} <!-- Get the relative image path -->
+          {{ if $imageRelPath }}
+            <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" style="background-image: url('{{ $imageRelPath }}'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+              <!-- Content for representation -->
+            </li>
+          {{ else }}
+            <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
+              <!-- Content for representations without an image -->
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ end }} <!-- Correctly closing the inner range loop -->
+    {{ end }}
+  {{ end }}
+  
+  
+  
+
   
 
   

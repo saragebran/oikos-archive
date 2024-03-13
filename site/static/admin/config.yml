@@ -14,17 +14,28 @@ local_backend: true
 collections:
   - name: "species"
     label: "Species"
+    # slug: "{{title}}-{{uuid}}"
     folder: "site/content/species"
     path: '{{slug}}/_index'
     media_folder: ''
     public_folder: ''
     create: true
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean", default: false, hidden: true}
+      - {label: "ID", name: "uuid", widget: "uuid"}
+      # - {label: "Slug", name: "title_uuid", widget: "hidden", default: "{{title}}-{{uuid}}"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime", hidden: true}
-      - {label: "Last Modified", name: "lastmod", widget: "datetime", hidden: true}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Last Modified", name: "lastmod", widget: "datetime"}
       - {label: "Scientific Name", name: "scientificName", widget: "string"}
+      - label: "Color"
+        name: "color"
+        widget: "color"
+        hint: "What color do you think of as connected to this species?"
+        default: "#00ff00"  # Optional default color
+        required: false  # Optional, set to true if the color selection is mandatory
+        allowInput: true  # Optional, allows users to input a color value directly
+        enableAlpha: false  # Optional, set to true to allow selection of colors with alpha transparency
+
       - label: "Category"
         name: "category"
         widget: "select"
@@ -43,7 +54,6 @@ collections:
     label: "Representations"
     identifier_field: "title"  
     folder: "site/content/species"
-    path: "{{fields.species}}"
     create: true
     fields:
       - label: "Title"  
@@ -54,13 +64,13 @@ collections:
         name: "species"
         widget: "relation"
         collection: "species"
-        search_fields: ["title", "scientificName"]
+        search_fields: ["title"]
         value_field: "title"
-        display_fields: ["title", "scientificName"]
+        display_fields: ["title"]
       - label: "Description"
         name: "description"
-        widget: "markdown"
-        hint: "Describe your representation or the story behind it."
+        widget: "text"
+        hint: "Describe your picture or the story behind it."
       - label: "Image"
         name: "image"
         widget: "image"

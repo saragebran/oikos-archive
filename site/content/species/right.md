@@ -1,4 +1,5 @@
 ---
+kind: representation
 title: right
 species: Funny Fish
 description: This
