@@ -14,46 +14,35 @@ local_backend: true
 collections:
   - name: "species"
     label: "Species"
-    # slug: "{{title}}-{{uuid}}"
+    slug: "{{uuid}}"
     folder: "site/content/species"
     path: '{{slug}}/_index'
     media_folder: ''
     public_folder: ''
     create: true
     fields:
-      - {label: "ID", name: "uuid", widget: "uuid"}
-      # - {label: "Slug", name: "title_uuid", widget: "hidden", default: "{{title}}-{{uuid}}"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "ID", name: "uuid", widget: "uuid", allow_regenerate: false}
+      - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
+      - {label: "What do you call this species?", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Last Modified", name: "lastmod", widget: "datetime"}
       - {label: "Scientific Name", name: "scientificName", widget: "string"}
-      - label: "Color"
-        name: "color"
-        widget: "color"
-        hint: "What color do you think of as connected to this species?"
-        default: "#00ff00"  # Optional default color
-        required: false  # Optional, set to true if the color selection is mandatory
-        allowInput: true  # Optional, allows users to input a color value directly
-        enableAlpha: false  # Optional, set to true to allow selection of colors with alpha transparency
-
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Animal", "Plant", "Fungus"]
+      - {label: "Color", name: "color", widget: "color", hint: "What color do you think of as connected to this species?", default: "#00ff00", required: false, allowInput: true, enableAlpha: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
       - label: "Common Names"
         name: "languages"
         widget: "list"
         fields:
           - {label: "Language", name: "language", widget: "string"}
-          - label: "Names"
-            name: "names"
-            widget: "list"
-            field: {label: "Name", name: "name", widget: "string"}
+          - {label: "Names", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
       - {label: "What is known about this species and the threat of its extinction?", name: "body", widget: "markdown"}
   - name: "representations"
     label: "Representations"
     identifier_field: "title"  
-    folder: "site/content/species"
+    folder: "site/content/representations"
+    path: "{{species}}/index"
+    media_folder: ''
+    public_folder: ''
     create: true
     fields:
       - label: "Title"  
@@ -65,7 +54,7 @@ collections:
         widget: "relation"
         collection: "species"
         search_fields: ["title"]
-        value_field: "title"
+        value_field: "uuid"
         display_fields: ["title"]
       - label: "Description"
         name: "description"
@@ -74,8 +63,8 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        media_folder: "{{fields.species}}/images"
-        public_folder: "{{fields.species}}/images"
+        # media_folder: "{{fields.species}}/img"
+        # public_folder: "{{fields.species}}/img"
 
   - name: "pages"
     label: "Pages"
