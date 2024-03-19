@@ -1,88 +1,30 @@
 <div class="mw9 center">
     <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
       {{ $speciesSection := .Site.GetPage "section" "species" }}
+      {{ $representations := .Site.GetPage "section" "representations" }}
       {{ with $speciesSection }}
-      {{ range $index, $page := .Sections }}
-          {{ $randomIndex := mod $index (len $.Site.Params.natureColors) }}
-          {{ with (index .Params.representations 0) }}
-            {{ $imageRelPath := .image }}
-            {{ $filename := replace $imageRelPath "/" "" }}
-            {{ $lowerTitle := $page.Title | lower }}
-            {{ $slugifiedTitle := $lowerTitle | replace " " "-" }}
-            {{ if $filename }}
-            {{ $imageUrl := print "/" $page.Section "/" $slugifiedTitle "/" $filename }}
-              
-              <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" style="background-image: url('{{ $imageUrl }}'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-                <div class="no-underline pa3 mb2 db w-100 flex flex-column justify-center items-center">
-                  {{ $englishNames := slice }}
-                  {{ range .Params.languages }}
-                    {{ if eq .language "English" }}
-                      {{ $englishNames = append $englishNames .names }}
-                    {{ end }}
-                  {{ end }}
-                  {{ if gt (len $englishNames) 0 }}
-                    <h2 class="f5 b lh-title mb1 secondary tc common-name" title="{{ .Params.category }}">
-                      <a class="no-underline" href="{{ .RelPermalink }}">{{ index $englishNames 0 }}</a>
-                    </h2>
-                  {{ else }}
-                    <div class="noSpeciesName">
-                      <p class="f6 ma0 secondary">There is no <span class="current-language">English</span> name for this species, but it has been given a name in
-                        {{ $languages := slice }}
-                        {{ range .Params.languages }}
-                          {{ if ne .language "English" }}
-                            {{ $languages = append $languages .language }}
-                          {{ end }}
-                        {{ end }}
-                        {{ $lastIndex := sub (len $languages) 1 }}
-                        {{ range $index, $lang := $languages }}
-                          <a href="#" class="language-link" data-lang="{{ $lang }}">{{ $lang | humanize }}</a>
-                          {{- if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }}, and {{- else }}, {{- end }}
-                        {{ end }}
-                      </p>
-                    </div>
-                  {{ end }}
-                </div>
-              </li>
-            {{ else }}
-              <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
-                <!-- Content for items without an image -->
-              </li>
+        {{ $representations := $representations }}
+        {{ range $index, $page := .Sections }}
+          <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
+            {{ $speciesId := $page.Params.speciesid }} 
+            {{ $speciesColor := $page.Params.color }}
+            {{ with $representations }}
+              {{ range $index, $page := .Pages }}
+                {{ if eq $page.Params.species $speciesId }}
+                <p>{{ $speciesId }}</p>
+                <p>{{ $speciesColor }}</p>
+                  <img src="{{ $page.Params.image }}" alt="">
+                {{ else }}
+                  <h1>{{ $page.Params.Title }}</h1>
+                {{ end }}
+              {{ end }}
             {{ end }}
-          {{ else }}
-            <li color="{{ index $.Site.Params.natureColors $randomIndex }}" class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
-              <!-- Content for items without representations -->
-            </li>
-          {{ end }}
+          </li>
         {{ end }}
       {{ end }}
     </ul>
-  </div>
-
-
-
-  {{ $speciesSection := .Site.GetPage "section" "species" }}
-  {{ with $speciesSection }}
-    {{ range .Pages }} <!-- Iterating over species -->
-      {{ range .Resources }}
-        {{ if eq .Params.kind "representation" }} <!-- Check if it's a representation -->
-          {{ $imageRelPath := .Params.image }} <!-- Get the relative image path -->
-          {{ if $imageRelPath }}
-            <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli" style="background-image: url('{{ $imageRelPath }}'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-              <!-- Content for representation -->
-            </li>
-          {{ else }}
-            <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
-              <!-- Content for representations without an image -->
-            </li>
-          {{ end }}
-        {{ end }}
-      {{ end }} <!-- Correctly closing the inner range loop -->
-    {{ end }}
-  {{ end }}
   
   
-  
-
   
 
   

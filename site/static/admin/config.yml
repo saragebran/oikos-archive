@@ -40,7 +40,7 @@ collections:
     label: "Representations"
     identifier_field: "title"  
     folder: "site/content/representations"
-    path: "{{species-id}}/index"
+    path: "{{speciesid}}/index"
     media_folder: ''
     public_folder: ''
     create: true
@@ -51,7 +51,7 @@ collections:
         widget: "string"
         hint: Write the title of your representation.
       - label: "Species"
-        name: "species-id"
+        name: "speciesid"
         widget: "relation"
         collection: "species"
         search_fields: ["title"]
@@ -64,9 +64,10 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        # media_folder: "{{fields.species}}/img"
-        # public_folder: "{{fields.species}}/img"
-
+        media_library: 
+          config:
+            multiple: false  # Allow only single image selection
+            base_media_folder: "representations/{{fields.speciesid}}" 
   - name: "pages"
     label: "Pages"
     create: true # Switch to false in order to not allow users to edit the pages.
