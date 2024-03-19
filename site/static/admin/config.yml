@@ -40,8 +40,8 @@ collections:
     label: "Representations"
     identifier_field: "title"  
     folder: "site/content/representations"
-    path: "{{speciesid}}/index"
-    media_folder: ''
+    path: "{{speciesid}}/{{title}}"
+    media_folder: '/site/content/representations/{{speciesid}}'
     public_folder: "/representations/{{speciesid}}"
     create: true
     fields:
@@ -64,10 +64,6 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        media_library: 
-          config:
-            multiple: false  # Allow only single image selection
-            base_media_folder: "representations/{{fields.speciesid}}" 
   - name: "pages"
     label: "Pages"
     create: true # Switch to false in order to not allow users to edit the pages.
