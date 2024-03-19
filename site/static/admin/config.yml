@@ -42,7 +42,7 @@ collections:
     folder: "site/content/representations"
     path: "{{speciesid}}/index"
     media_folder: ''
-    public_folder: ''
+    public_folder: "/representations/{{speciesid}}"
     create: true
     fields:
       - {label: "Kind", name: "kind", widget: "hidden", default: "representations"}
