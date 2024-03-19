@@ -45,12 +45,13 @@ collections:
     public_folder: ''
     create: true
     fields:
+      - {label: "Kind", name: "kind", widget: "hidden", default: "representations"}
       - label: "Title"  
         name: "title"
         widget: "string"
         hint: Write the title of your representation.
       - label: "Species"
-        name: "species"
+        name: "species-id"
         widget: "relation"
         collection: "species"
         search_fields: ["title"]
