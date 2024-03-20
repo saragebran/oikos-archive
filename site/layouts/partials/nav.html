@@ -6,9 +6,29 @@
 
     <!-- Language Selector -->
     <div class="flex text-dark mr3">
-        <select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">{{ $uniqueLanguages := slice }}{{ range where .Site.RegularPages "Section" "species" }}{{ range $lang, $_ := .Params.languages }}{{ if not (in $uniqueLanguages $lang) }}{{ $uniqueLanguages = $uniqueLanguages | append $lang }}{{ end }}{{ end }}{{ end }}{{ range $lang := $uniqueLanguages }}
-            <option value="{{ $lang }}">{{ $lang | humanize }}</option>{{ end }}
+        <select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">
+            <!-- Options will be populated by JavaScript -->
         </select>
     </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('/index.json')
+        .then(response => response.json())
+        .then(data => {
+          const languages = data[0].languages; // Assuming the languages are in the first object
+          const selectElement = document.getElementById('languages');
+          
+          languages.forEach(language => {
+            const option = document.createElement('option');
+            option.value = language;
+            option.textContent = language; // Use language as the text content; modify if necessary
+            selectElement.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Error loading the languages:', error));
+    });
+  </script>
+
 

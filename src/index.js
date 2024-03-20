@@ -124,15 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // Element is in view
-        const color = entry.target.getAttribute('color');
-        entry.target.style.backgroundColor = color;
+        // const color = entry.target.getAttribute('color');
+        // entry.target.style.backgroundColor = color;
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.addEventListener('click', handleLanguageLinkClick);
         });
         entry.target.classList.add('inView'); 
       } else {
         // Element is out of view;
-        entry.target.style.backgroundColor = ''; // Reset background color
+        // entry.target.style.backgroundColor = ''; // Reset background color
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.removeEventListener('click', handleLanguageLinkClick);             
         });

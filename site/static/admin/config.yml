@@ -11,6 +11,9 @@ public_folder: "/img"
 
 local_backend: true
 
+sortable_fields:
+  fields: ['commit_date', 'title', 'commit_author', 'language.en']
+
 collections:
   - name: "species"
     label: "Species"
@@ -22,20 +25,19 @@ collections:
     create: true
     fields:
       - {label: "ID", name: "uuid", widget: "uuid", allow_regenerate: false}
-      - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
-      - {label: "What do you call this species?", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Last Modified", name: "lastmod", widget: "datetime"}
-      - {label: "Scientific Name", name: "scientificName", widget: "string"}
-      - {label: "Color", name: "color", widget: "color", hint: "What color do you think of as connected to this species?", default: "#00ff00", required: false, allowInput: true, enableAlpha: false}
-      - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
-      - label: "Common Names"
+      - label: "Name of Species in Your Language"
         name: "languages"
         widget: "list"
         fields:
           - {label: "Language", name: "language", widget: "string"}
           - {label: "Names", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
-      - {label: "What is known about this species and the threat of its extinction?", name: "body", widget: "markdown"}
+      - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
+      - {label: "Publish Date", name: "date", widget: "datetime", create: false}
+      - {label: "Last Modified", name: "lastmod", widget: "datetime"}
+      - {label: "Scientific Name", name: "scientificName", widget: "string"}
+      - {label: "Color", name: "color", widget: "color", hint: "What color do you think of as connected to this species?", default: "#00ff00", required: false, allowInput: true, enableAlpha: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
+      - {label: "What do you know about this species?", name: "body", widget: "markdown"}
   - name: "representations"
     label: "Representations"
     identifier_field: "title"  
@@ -62,8 +64,8 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        media_folder: "representations/{{fields.species}}"
-        public_folder: "representations/{{fields.species}}"
+        media_folder: "{{fields.species}}"
+        public_folder: "{{fields.species}}"
   - name: "pages"
     label: "Pages"
     create: true # Switch to false in order to not allow users to edit the pages.

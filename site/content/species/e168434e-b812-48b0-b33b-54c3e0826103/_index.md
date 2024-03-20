@@ -11,5 +11,8 @@ languages:
   - language: English
     names:
       - Bat
+  - language: Danish
+    names:
+      - Flagermus
 ---
 I don't know

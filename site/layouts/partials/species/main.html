@@ -5,17 +5,20 @@
       {{ with $speciesSection }}
         {{ $representations := $representations }}
         {{ range $index, $page := .Sections }}
-          <li class="w5 h5 bw1 b--solid b--secondary ma3 flex speciesli">
-            {{ $speciesId := $page.Params.speciesid }} 
-            {{ $speciesColor := $page.Params.color }}
-            {{ with $representations }}
+          {{ $uuid := $page.Params.uuid }}
+          <li class="w5 h5 bw1 b--solid b--black ma2 flex speciesli" id="{{ $uuid }}" style="background-color: {{$page.Params.color}}; color: white; text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;">
+              {{$page.Params.title}}
+              {{ with $representations }}
               {{ range $index, $page := .Pages }}
-                {{ if eq $page.Params.species $speciesId }}
+              {{ $speciesId := $page.Params.speciesid }} 
+              {{ $speciesColor := $page.Params.color }}
+                {{ if eq $uuid $speciesId }}
                 <p>{{ $speciesId }}</p>
                 <p>{{ $speciesColor }}</p>
-                  <img src="{{ $page.Params.image }}" alt="">
+                  <img src="representations/{{ $page.Params.speciesid}}{{ $page.Params.image }}" alt="">
                 {{ else }}
                   <h1>{{ $page.Params.Title }}</h1>
+                  <p><br>else</p>
                 {{ end }}
               {{ end }}
             {{ end }}

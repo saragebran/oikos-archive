@@ -1,24 +1,52 @@
-{{- $pages := where .Site.Pages "Section" "species" -}}
 [
-{{- range $index, $page := $pages -}}
-  {{- if $index }},{{ end -}}
+  {{- $speciesSection := .Site.GetPage "section" "species" -}}
+  {{- $uniqueLanguages := slice -}}
+  {{- with $speciesSection -}}
+    {{- range $page := .Sections -}}
+      {{- range $lang := $page.Params.languages -}}
+        {{- if not (in $uniqueLanguages $lang.language) -}}
+          {{- $uniqueLanguages = $uniqueLanguages | append $lang.language -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
   {
-    {{- with $page.Params.scientificName -}}
-    "scientificName": {{ $page.Params.scientificName | jsonify }},
-    {{- end -}}
-    {{- with $page.Params.languages -}}
-    "commonNames": {
-      {{- $languages := . -}}
-      {{- $lenLanguages := len $languages -}}
-      {{- $counter := 0 -}}
-      {{- range $lang, $names := $languages -}}
-        {{- $counter = add $counter 1 -}}
-        {{ $lang | jsonify }}: [{{ range $i, $name := $names }}{{ if $i }}, {{ end }}{{ $name | jsonify }}{{ end }}]{{ if lt $counter $lenLanguages }},{{ end }}
-      {{- end }}
-    {{- end -}}
+    "languages": [
+      {{- range $index, $lang := $uniqueLanguages -}}
+        {{- if $index }}, {{ end -}}
+        {{- $lang | jsonify -}}
+      {{- end -}}
+    ]
+  },
+  {
+    "index": {
+      {{- with $speciesSection -}}
+        {{- range $index, $page := .Sections -}}
+          {{- if $index }},{{ end -}}
+          {{- $page.Params.uuid | jsonify }}: {
+            "kind": {{ $page.Params.kind | jsonify }},
+            "date": {{ $page.Params.date | jsonify }},
+            "lastmod": {{ $page.Params.lastmod | jsonify }},
+            "scientificName": {{ $page.Params.scientificName | jsonify }},
+            "category": {{ $page.Params.category | jsonify }},
+            "languages": [
+              {{- range $i, $lang := $page.Params.languages -}}
+                {{- if $i }},{{ end -}}
+                {
+                  "language": {{ $lang.language | jsonify }},
+                  "names": [
+                    {{- range $j, $name := $lang.names -}}
+                      {{- if $j }}, {{ end -}}
+                      {{- $name | jsonify -}}
+                    {{- end -}}
+                  ]
+                }
+              {{- end -}}
+            ]
+          }
+        {{- end -}}
+      {{- end -}}
     }
   }
-{{- end }}
 ]
-
-
