@@ -35,7 +35,7 @@ collections:
       - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
       - {label: "Publish Date", name: "date", widget: "datetime", create: false}
       - {label: "Last Modified", name: "lastmod", widget: "datetime"}
-      - {label: "Scientific Name", name: "scientificName", widget: "string"}
+      - {label: "Scientific Name (or other unique identifier)", name: "scientificName", widget: "string"}
       - {label: "Color", name: "color", widget: "color", hint: "What color do you think of as connected to this species?", default: "#00ff00", required: false, allowInput: true, enableAlpha: false}
       - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
       - {label: "What do you know about this species?", name: "body", widget: "markdown"}
@@ -47,26 +47,27 @@ collections:
     create: true
     fields:
       - {label: "Kind", name: "kind", widget: "hidden", default: "representations"}
-      - label: "Title"  
-        name: "title"
-        widget: "string"
-        hint: Write the title of your representation.
       - label: "Species"
         name: "speciesid"
         widget: "relation"
         collection: "species"
-        search_fields: ["languages.*.names"]
+        search_fields: ["scientificName"]
         value_field: "uuid"
-        display_fields: ["languages.*.names"]
+        display_fields: ["scientificName"]
+      - label: "Upload an image from your computer"
+        name: "image"
+        widget: "image"
+        hint: "Max file size: 512kb"
+        media_folder: "{{fields.species}}"
+        public_folder: "{{fields.species}}"
+      - label: "Title"  
+        name: "title"
+        widget: "string"
+        hint: Title your artwork.
       - label: "Description"
         name: "description"
         widget: "text"
         hint: "Describe your picture or the story behind it."
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        media_folder: "{{fields.species}}"
-        public_folder: "{{fields.species}}"
   - name: "pages"
     label: "Pages"
     create: true # Switch to false in order to not allow users to edit the pages.

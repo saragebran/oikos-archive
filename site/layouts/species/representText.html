@@ -1,11 +1,12 @@
 {{- $representations := .Site.GetPage "section" "representations" -}}
 {{- $uuid := .Params.uuid -}}
+{{- $scientificName := .Params.scientificName -}}
 {{- with $representations -}}
     {{- range $index, $page := .Pages -}}
       {{ $speciesId := $page.Params.speciesid }}
         {{- if ne $uuid $speciesId -}}
             <div class="bottom-0">This species has no representation. Be the first to share your vision of it.</div>
-            <a href='/admin/#/collections/representations/new/{{$speciesId}}'><button>represent</button></a>
+            <a href='/admin/#/collections/representations/new/{{$scientificName}}'><button>represent</button></a>
         {{- end -}}
     {{- end -}}
 {{- end -}}
