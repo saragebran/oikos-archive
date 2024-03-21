@@ -1,0 +1,10 @@
+{{- $representations := .Site.GetPage "section" "representations" -}}
+{{- $uuid := .Params.uuid -}}
+{{- with $representations -}}
+    {{- range $index, $page := .Pages -}}
+      {{ $speciesId := $page.Params.speciesid }}
+        {{- if eq $uuid $speciesId -}}
+            representations/{{ $page.Params.speciesid}}{{ $page.Params.image }}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

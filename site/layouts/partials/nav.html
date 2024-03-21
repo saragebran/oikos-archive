@@ -7,7 +7,7 @@
     <!-- Language Selector -->
     <div class="flex text-dark mr3">
         <select class="w5 pa1 br0 bw1 f6 bg-primary b--black" name="languages" id="languages">
-            <!-- Options will be populated by JavaScript -->
+            <option value="English">English</option>
         </select>
     </div>
 </nav>
@@ -17,18 +17,21 @@
       fetch('/index.json')
         .then(response => response.json())
         .then(data => {
-          const languages = data[0].languages; // Assuming the languages are in the first object
+          const languages = data[0].languages;
           const selectElement = document.getElementById('languages');
           
           languages.forEach(language => {
-            const option = document.createElement('option');
-            option.value = language;
-            option.textContent = language; // Use language as the text content; modify if necessary
-            selectElement.appendChild(option);
+            if (language !== 'English') { // Skip the 'English' language
+              const option = document.createElement('option');
+              option.value = language;
+              option.textContent = language;
+              selectElement.appendChild(option);
+            }
           });
         })
         .catch(error => console.error('Error loading the languages:', error));
     });
   </script>
+  
 
 

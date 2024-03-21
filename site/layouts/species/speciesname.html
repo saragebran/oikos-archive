@@ -1,0 +1,16 @@
+{{- $englishName := "" -}}
+{{- $fallbackName := "" -}}
+
+{{- range .Params.languages -}}
+  {{- if eq .language "English" -}}
+    {{- $englishName = index .names 0 -}}
+  {{- else if eq $fallbackName "" -}}
+    {{- $fallbackName = index .names 0 -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $englishName -}}
+  {{- $englishName -}}
+{{- else -}}
+  {{- $fallbackName -}}
+{{- end -}}

@@ -18,6 +18,7 @@ collections:
   - name: "species"
     label: "Species"
     slug: "{{uuid}}"
+    identifier_field: "uuid"
     folder: "site/content/species"
     path: '{{slug}}/_index'
     media_folder: ''
@@ -54,9 +55,9 @@ collections:
         name: "speciesid"
         widget: "relation"
         collection: "species"
-        search_fields: ["title"]
+        search_fields: ["languages.*.names"]
         value_field: "uuid"
-        display_fields: ["title"]
+        display_fields: ["languages.*.names"]
       - label: "Description"
         name: "description"
         widget: "text"

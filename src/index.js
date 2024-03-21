@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // Element is in view
-        // const color = entry.target.getAttribute('color');
-        // entry.target.style.backgroundColor = color;
+        const imglink = entry.target.getAttribute('imagelink');
+        entry.target.style.backgroundImage = `url('${imglink}')`;
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.addEventListener('click', handleLanguageLinkClick);
         });
