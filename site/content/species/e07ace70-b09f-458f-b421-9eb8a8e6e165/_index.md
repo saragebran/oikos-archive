@@ -9,7 +9,7 @@ category: Animal
 languages:
   - language: Spanish
     names:
-      - Mouse
+      - Mouseo
   - language: English
     names:
       - Mouse
