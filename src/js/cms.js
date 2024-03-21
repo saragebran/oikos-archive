@@ -5,7 +5,7 @@ import styles from "!to-string-loader!css-loader!postcss-loader!sass-loader!../c
 
 import SpeciesPreview from "./cms-preview-templates/species";
 
- CMS.registerEventListener({
+CMS.registerEventListener({
     name: 'login',
     handler: ({ author: { login, name } }) => {
       const hashSegments = window.location.hash.split('/');
@@ -51,19 +51,26 @@ import SpeciesPreview from "./cms-preview-templates/species";
                   }, index * 100); // Delay to simulate typing speed
                 });
               }
-              const inputField = document.getElementById(':r2:');
-              simulateTyping(inputField, sciname, () => {
-                // Callback function to execute after typing is complete
-                console.log('Typing complete');
-                const button = document.querySelector('button[data-testid="choose-upload"]');
-                if (button) {
-                  button.focus();
-                }            
-              }); 
+  
+              // Select the input field inside the specific parent div
+              const inputField = document.querySelector('.CMS_Autocomplete_input-wrapper input');
+              if (inputField) {
+                simulateTyping(inputField, sciname, () => {
+                    // Callback function to execute after typing is complete
+                    console.log('Typing complete');
+                    const button = document.querySelector('button[data-testid="choose-upload"]');
+                    if (button) {
+                      button.focus();
+                    }
+                });
+              } else {
+                console.error('Input field not found');
+              }
         }, 2000); // Adjust the timeout duration based on how long it takes for the options to appear
       }
     },
-  }); 
+  });
+  
   
   
   

@@ -9,6 +9,6 @@ category: Animal
 languages:
   - language: Danish
     names:
-      - Flagermusenerihusetnuogventer
+      - Flagermus
 ---
 I don't know

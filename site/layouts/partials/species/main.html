@@ -1,20 +1,29 @@
 <div class="mw9 center">
-    <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
-      {{ $speciesSection := .Site.GetPage "section" "species" }}
-      {{ with $speciesSection }}
-        {{ range $index, $page := .Sections }}
-          {{ $uuid := $page.Params.uuid }}
-          <li class="w5 h5 bw1 b--solid b--black ma2 flex speciesli" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg"}}' style="background-color: {{$page.Params.color}}; background-size: fit; background-repeat: no-repeat; background-position: center center; color: white; text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;">
+  <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
+    {{ $speciesSection := .Site.GetPage "section" "species" }}
+    {{ with $speciesSection }}
+      {{ range $index, $page := .Sections }}
+        {{ $uuid := $page.Params.uuid }}
+        <li class="w5 h5 bw1 b--solid b--black ma2 flex speciesli" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg" }}' style="background-color: {{ $page.Params.color }}; background-size: fit; background-repeat: no-repeat; background-position: center center; color: white; text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;">
           <div class="ma1">
             <h2 class="--font-family-title f4 w-two-thirds-l word-wrap">{{ .Render "speciesname" }}</h2>
-            {{ .Render "representText" }}
+            {{ $representations := .Site.GetPage "section" "representations" }}
+            {{ $hasRepresentation := false }}
+            {{ range $representations.Pages }}
+              {{ if eq $uuid .Params.speciesid }}
+                {{ $hasRepresentation = true }}
+              {{ end }}
+            {{ end }}
+            {{ if not $hasRepresentation }}
+              <div class="noRep">This species has no representation. Be the first to share your vision of it.</div>
+              <a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'><button>represent</button></a>
+            {{ end }}
           </div>
-          </li>
-        {{ end }}
+        </li>
       {{ end }}
-    </ul>
-  
-  
-  
+    {{ end }}
+  </ul>
+</div>
+
 
   
