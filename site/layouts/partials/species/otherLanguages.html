@@ -1,0 +1,22 @@
+<!-- layouts/partials/species/otherLanguages.html -->
+{{ $allLanguages := slice }}
+{{/* Collect all languages */}}
+{{ range .languages }}
+  {{ $allLanguages = $allLanguages | append .language }}
+{{ end }}
+
+{{/* Create a new slice excluding 'English' */}}
+{{ $nonEnglishLanguages := slice }}
+{{ range $allLanguages }}
+  {{ if ne . "English" }}
+    {{ $nonEnglishLanguages = $nonEnglishLanguages | append . }}
+  {{ end }}
+{{ end }}
+
+{{ $lastIndex := sub (len $nonEnglishLanguages) 1 }}
+{{ if gt (len $nonEnglishLanguages) 0 }}
+  {{ range $index, $lang := $nonEnglishLanguages }}
+    {{- $lang }}
+    {{- if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }} and {{- else }}, {{- end }}
+  {{ end }}
+{{ end }}

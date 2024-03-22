@@ -11,27 +11,6 @@
         </select>
     </div>
 </nav>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      fetch('/index.json')
-        .then(response => response.json())
-        .then(data => {
-          const languages = data[0].languages;
-          const selectElement = document.getElementById('languages');
-          
-          languages.forEach(language => {
-            if (language !== 'English') { // Skip the 'English' language
-              const option = document.createElement('option');
-              option.value = language;
-              option.textContent = language;
-              selectElement.appendChild(option);
-            }
-          });
-        })
-        .catch(error => console.error('Error loading the languages:', error));
-    });
-  </script>
   
 
 

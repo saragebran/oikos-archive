@@ -2,6 +2,27 @@
 
 import "./css/main.scss";
 
+function loadLanguageDropdown() {
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('/index.json')
+      .then(response => response.json())
+      .then(data => {
+        const languages = data[0].languages;
+        const selectElement = document.getElementById('languages');
+        
+        languages.forEach(language => {
+          if (language !== 'English') { // Skip the 'English' language
+            const option = document.createElement('option');
+            option.value = language;
+            option.textContent = language;
+            selectElement.appendChild(option);
+          }
+        });
+      })
+      .catch(error => console.error('Error loading the languages:', error));
+  });
+}
+
 
 function capitalizeWords(str) {
     return str
@@ -10,29 +31,44 @@ function capitalizeWords(str) {
       .join(' '); // Join the words back into a single string
   }
 
-function handleLanguageLinkClick(event) {
+  function handleLanguageLinkClick(event) {
     event.preventDefault(); // Prevent the default link action
     const lang = event.target.dataset.lang.toLowerCase(); // Get the language code from the clicked link
     const speciesLi = event.target.closest('.speciesli'); // Find the closest .speciesli container
-    const h2Element = speciesLi.querySelector('h2[title]'); // Find the h2 element with the title attribute
-    const scientificName = h2Element.getAttribute('title'); // Get the scientific name from the title attribute
-    const noSpeciesText = speciesLi.querySelector('.noSpeciesName'); // Get the scientific name from the title attribute
+    const uuid = speciesLi.id; // Use the id of the speciesLi element as the UUID
 
     // Fetch the JSON data
     fetch('/index.json')
         .then(response => response.json())
         .then(data => {
-            // Find the species data by scientific name
-            const species = data.find(species => species.scientificName === scientificName);
+            const speciesData = data[1].index[uuid]; // Access the species data using the UUID
 
-            if (species && species.commonNames && species.commonNames[lang]) {
-                // Extract the common name for the selected language
-                const commonName = species.commonNames[lang]; // Directly access the common name
-                const commonNameCapitalized = capitalizeWords(commonName[0]); // Capitalize the common name
-                h2Element.innerHTML = `<a class="no-underline" href="${h2Element.querySelector('a').getAttribute('href')}">${commonNameCapitalized}</a>`; // Update the h2 content while preserving the link
-                noSpeciesText.style.display = 'none'; // Hide the no species text element
+            if (speciesData && speciesData.languages) {
+                // Find the language object
+                const languageObject = speciesData.languages.find(langObj => langObj.language.toLowerCase() === lang);
+
+                if (languageObject && languageObject.names.length > 0) {
+                    // Extract the common name for the selected language
+                    const commonName = languageObject.names[0];
+                    const commonNameCapitalized = capitalizeWords(commonName);
+
+                    // Update the displayed common name
+                    const commonNameElement = speciesLi.querySelector('.common-name');
+                    if (commonNameElement) {
+                        commonNameElement.innerText = commonNameCapitalized;
+                        commonNameElement.classList.remove('dn'); // Show the common name element
+                    }
+
+                    // Hide the noSpeciesName div
+                    const noSpeciesNameDiv = speciesLi.querySelector('.noSpeciesName');
+                    if (noSpeciesNameDiv) {
+                        noSpeciesNameDiv.classList.add('dn');
+                    }
+                } else {
+                    console.error('Common name not available in this language:', lang);
+                }
             } else {
-                console.error('Common name not available in this language or species not found:', scientificName, lang);
+                console.error('Species not found:', uuid);
             }
         })
         .catch(error => {
@@ -50,49 +86,76 @@ function fetchCommonNamesData(selectedLanguage) {
 }
 
 function updateAllCommonNames(selectedLanguage, data) {
-  document.querySelectorAll('.common-name').forEach(element => {
-      const scientificName = element.title;
-      const matchingObject = data.find(item => item.scientificName === scientificName);
-      if (matchingObject && matchingObject.commonNames[selectedLanguage]) {
-          const commonName = matchingObject.commonNames[selectedLanguage];
-          console.log(commonName[0]);
-          const commonNameCapitalized = capitalizeWords(commonName[0]);
-          element.querySelector('a').textContent = commonNameCapitalized;
-          // Remove the noSpeciesName div when common name exists
-          let noSpeciesNameDiv = element.nextElementSibling;
-          if (noSpeciesNameDiv && noSpeciesNameDiv.classList.contains('noSpeciesName')) {
-              noSpeciesNameDiv.remove();
-          }
+  const speciesIndex = data[1].index;
+
+  document.querySelectorAll('.speciesli').forEach(element => {
+    const uuid = element.id;
+    const matchingObject = speciesIndex[uuid];
+
+    if (matchingObject) {
+      const languageObject = matchingObject.languages.find(lang => lang.language === selectedLanguage);
+      const commonNameElement = element.querySelector('.common-name');
+      const noSpeciesNameDiv = element.querySelector('.noSpeciesName');
+
+      if (languageObject && languageObject.names.length > 0) {
+        const commonName = languageObject.names[0];
+        const commonNameCapitalized = capitalizeWords(commonName);
+
+        if (commonNameElement) {
+          commonNameElement.textContent = commonNameCapitalized;
+          commonNameElement.classList.remove('dn'); // Show common name
+        }
+
+        if (noSpeciesNameDiv) {
+          noSpeciesNameDiv.classList.add('dn'); // Hide noSpeciesName div
+        }
       } else {
-          // If no common name in selected language, show other available languages
-          showAvailableLanguages(element, matchingObject ? matchingObject.commonNames : {}, selectedLanguage);          
+        if (commonNameElement) {
+          commonNameElement.classList.add('dn'); // Hide common name
+        }
+
+        const commonNames = matchingObject.languages.reduce((acc, lang) => {
+          acc[lang.language] = lang.names[0]; // Assuming we want to display the first name
+          return acc;
+        }, {});
+
+        if (noSpeciesNameDiv) {
+          noSpeciesNameDiv.classList.remove('dn'); // Show noSpeciesName div
+          showAvailableLanguages(element, commonNames, selectedLanguage);
+        }
       }
+    }
   });
 }
 
 function showAvailableLanguages(element, commonNames, selectedLanguage, observer) {
-  if (!observer) {
-  // Remove existing noSpeciesName div if it exists to avoid duplicates
-  let noSpeciesNameDiv = element.nextElementSibling;
-  // console.log(noSpeciesNameDiv);
-  if (!noSpeciesNameDiv || !noSpeciesNameDiv.classList.contains('noSpeciesName')) {
-      noSpeciesNameDiv = document.createElement('div');
-      noSpeciesNameDiv.className = 'noSpeciesName';
-      element.parentNode.insertBefore(noSpeciesNameDiv, element.nextSibling);
-      element.querySelector('a').textContent = ""; // Remove common name if no species name
-      
-  }
-  
-  const languages = Object.keys(commonNames).filter(lang => lang !== selectedLanguage);
-  let languageLinks = languages.map(lang => `<a href="#" class="language-link" data-lang="${capitalizeWords(lang)}">${capitalizeWords(lang)}</a>`).join(', ').replace(/, ([^,]*)$/, ', and $1');
+  // Assuming the noSpeciesNameDiv is directly following the element
+  let noSpeciesNameDiv = element.querySelector('.noSpeciesName');
 
-  noSpeciesNameDiv.innerHTML = `<p class="f6 ma0 secondary">There is no <span class="current-language">${capitalizeWords(selectedLanguage)}</span> name for this species, but it has been given a name in ${languageLinks}.</p>`;
-  attachLanguageLinkListeners(noSpeciesNameDiv); // Attach click event listeners to newly added language links
-  } else {
-      // Attach click event listeners to newly added language links
+  // Check if noSpeciesNameDiv exists and has the correct class
+  if (noSpeciesNameDiv && noSpeciesNameDiv.classList.contains('noSpeciesName')) {
+    // Filter out the selected language to avoid showing it in the list
+    const languages = Object.keys(commonNames).filter(lang => lang.toLowerCase() !== selectedLanguage.toLowerCase());
+
+    // Create links for each language and format the list with an Oxford comma
+    let languageLinks = languages
+      .map(lang => `<a href="#" class="language-link" data-lang="${capitalizeWords(lang)}">${capitalizeWords(lang)}</a>`)
+      .join(', ')
+      .replace(/, ([^,]*)$/, ', and $1'); // Replace the last comma with ', and'
+
+    // Update the content of noSpeciesNameDiv with the formatted list of languages
+    noSpeciesNameDiv.innerHTML = `There is no <span class="current-language">${capitalizeWords(selectedLanguage)}</span> name for this species, but it has been given a name in ${languageLinks}.`;
+
+    if (observer) {
+      // Attach mutation observer to the noSpeciesNameDiv if provided
       observer.observe(noSpeciesNameDiv);
+    } else {
+      // Attach event listeners to the language links if observer is not used
+      attachLanguageLinkListeners(noSpeciesNameDiv);
+    }
+  } else {
+    console.error('No .noSpeciesName div found for the element.');
   }
-
 }
 
 function attachLanguageLinkListeners(element) {
@@ -150,3 +213,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+loadLanguageDropdown()

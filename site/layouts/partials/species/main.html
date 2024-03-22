@@ -4,9 +4,28 @@
     {{ with $speciesSection }}
       {{ range $index, $page := .Sections }}
         {{ $uuid := $page.Params.uuid }}
-        <li class="w5 h5 bw1 b--solid b--black ma2 flex speciesli" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg" }}' style="background-color: {{ $page.Params.color }}; background-size: fit; background-repeat: no-repeat; background-position: center center; color: white; text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;">
+        <li class="w5 h5 bw1 b--solid b--black ma2 flex speciesli" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg" }}' style="background-color: {{ $page.Params.color }}; background-size: cover; background-repeat: repeat; background-position: center center; color: white; text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;">
           <div class="ma1">
-            <h2 class="--font-family-title f4 w-two-thirds-l word-wrap">{{ .Render "speciesname" }}</h2>
+            {{ $englishName := "" }}
+            {{ $otherName := "" }}
+            {{ range $page.Params.languages }}
+              {{ if eq .language "English" }}
+                {{ $englishName = index .names 0 }}
+                {{ else }}
+                {{ $otherName = index .names 0}}
+              {{ end }}
+            {{ end }}
+
+            {{ if $englishName }}
+              <h2 class="--font-family-title f4 w-two-thirds-l word-wrap common-name">{{ $englishName }}</h2>
+              <div class="noSpeciesName dn">No common name available in English.</div>
+              <div class="giveLanguageName dn"><button>Give it an English name</button></div>
+            {{ else }}
+              <h2 class="--font-family-title f4 w-two-thirds-l word-wrap common-name dn">{{ $otherName }}</h2>
+              <div class="noSpeciesName">No common name available in English, but it has been given a name in {{ partial "species/otherLanguages" (dict "languages" $page.Params.languages) }}</div>
+              <div class="giveLanguageName"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index"><button>Give it an <span class="glnName">English</span> name</button></a></div>
+            {{ end }}
+
             {{ $representations := .Site.GetPage "section" "representations" }}
             {{ $hasRepresentation := false }}
             {{ range $representations.Pages }}
@@ -24,6 +43,3 @@
     {{ end }}
   </ul>
 </div>
-
-
-  

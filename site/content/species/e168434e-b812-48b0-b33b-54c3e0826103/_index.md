@@ -10,5 +10,11 @@ languages:
   - language: Danish
     names:
       - Flagermus
+  - language: Spanish
+    names:
+      - murciélago
+  - language: Albanian
+    names:
+      - shkop
 ---
 I don't know
