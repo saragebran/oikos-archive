@@ -55,14 +55,10 @@ function handleLanguageLinkClick(event) {
                     const commonNameElement = speciesLi.querySelector('.common-name');
                     if (commonNameElement) {
                         commonNameElement.innerText = commonNameCapitalized;
-                        commonNameElement.classList.remove('dn'); // Show the common name element
+                          commonNameElement.classList.remove('dn');                        
                     }
 
-                    // Hide the noSpeciesName div
-                    const noSpeciesNameDiv = speciesLi.querySelector('.noSpeciesName');
-                    if (noSpeciesNameDiv) {
-                        noSpeciesNameDiv.classList.add('dn');
-                    }
+
                 } else {
                     console.error('Common name not available in this language:', lang);
                 }
@@ -104,7 +100,12 @@ function updateAllCommonNames(selectedLanguage, data) {
 
         if (commonNameElement) {
           commonNameElement.textContent = commonNameCapitalized;
-          commonNameElement.classList.remove('dn'); // Show common name
+          if (commonNameElement.classList.contains('has-rep')) {
+            // If the element has the 'has-rep' class, remove the 'dn' class
+            commonNameElement.classList.add('dn');
+          } else {
+            commonNameElement.classList.remove('dn'); // Show common name
+          }
         }
 
         if (noSpeciesNameDiv) {
@@ -121,7 +122,13 @@ function updateAllCommonNames(selectedLanguage, data) {
 
       } else {
         if (commonNameElement) {
-          commonNameElement.classList.add('dn'); // Hide common name
+          if (commonNameElement.classList.contains('has-rep')) {
+            commonNameElement.classList.add('dn');
+          } else {
+            commonNameElement.classList.remove('dn');
+          }  
+
+        
         }
 
         if (nameInfo) {
