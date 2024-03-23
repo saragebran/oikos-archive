@@ -44,6 +44,7 @@ CMS.registerEventListener({
                       setTimeout(callback, 500); // Adjust delay as necessary to allow suggestions to appear
                       // Simulate pressing the arrow down key
                       simulateKeyPress(inputField, 'ArrowDown');
+                      
                                           
                       // Simulate pressing the 'Enter' key
                       simulateKeyPress(inputField, 'Enter');
