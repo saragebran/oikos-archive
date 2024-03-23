@@ -12,3 +12,25 @@
         }
     }
   }
+
+  .rep-info, .name-info {
+    transition: transform 0.5s ease;
+  }
+  
+  .rep-info {
+    transform: translateY(100%); /* Start below the view */
+  }
+  
+  .name-info {
+    transform: translateY(-100%); /* Start above the view */
+  }
+  
+  .speciesli:hover .rep-info {
+    transform: translateY(0); /* Move into view on hover */
+  }
+  
+  .speciesli:hover .name-info {
+    transform: translateY(0); /* Move into view on hover */
+  }
+  
+

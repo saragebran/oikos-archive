@@ -23,7 +23,6 @@ function loadLanguageDropdown() {
   });
 }
 
-
 function capitalizeWords(str) {
     return str
       .split(' ') // Split the string into an array of words
@@ -31,7 +30,7 @@ function capitalizeWords(str) {
       .join(' '); // Join the words back into a single string
   }
 
-  function handleLanguageLinkClick(event) {
+function handleLanguageLinkClick(event) {
     event.preventDefault(); // Prevent the default link action
     const lang = event.target.dataset.lang.toLowerCase(); // Get the language code from the clicked link
     const speciesLi = event.target.closest('.speciesli'); // Find the closest .speciesli container
@@ -95,7 +94,9 @@ function updateAllCommonNames(selectedLanguage, data) {
     if (matchingObject) {
       const languageObject = matchingObject.languages.find(lang => lang.language === selectedLanguage);
       const commonNameElement = element.querySelector('.common-name');
+      const nameInfo = element.querySelector('.name-info');
       const noSpeciesNameDiv = element.querySelector('.noSpeciesName');
+      const editNameBtn = element.querySelector('.giveLanguageName');
 
       if (languageObject && languageObject.names.length > 0) {
         const commonName = languageObject.names[0];
@@ -109,9 +110,26 @@ function updateAllCommonNames(selectedLanguage, data) {
         if (noSpeciesNameDiv) {
           noSpeciesNameDiv.classList.add('dn'); // Hide noSpeciesName div
         }
+
+        if (nameInfo) {
+          nameInfo.classList.add('dn'); // Hide name info
+        }
+
+        if (editNameBtn) {
+          editNameBtn.classList.add('dn'); // Hide edit name button
+        }
+
       } else {
         if (commonNameElement) {
           commonNameElement.classList.add('dn'); // Hide common name
+        }
+
+        if (nameInfo) {
+          nameInfo.classList.remove('dn'); // Show name info
+        }
+
+        if (editNameBtn) {
+          editNameBtn.classList.remove('dn'); // Show edit name button
         }
 
         const commonNames = matchingObject.languages.reduce((acc, lang) => {
@@ -141,11 +159,10 @@ function showAvailableLanguages(element, commonNames, selectedLanguage, observer
     let languageLinks = languages
       .map(lang => `<a href="#" class="language-link" data-lang="${capitalizeWords(lang)}">${capitalizeWords(lang)}</a>`)
       .join(', ')
-      .replace(/, ([^,]*)$/, ', and $1'); // Replace the last comma with ', and'
+      .replace(/, ([^,]*)$/, ' and $1'); // Replace the last comma with ', and'
 
     // Update the content of noSpeciesNameDiv with the formatted list of languages
-    noSpeciesNameDiv.innerHTML = `There is no <span class="current-language">${capitalizeWords(selectedLanguage)}</span> name for this species, but it has been given a name in ${languageLinks}.`;
-
+    noSpeciesNameDiv.innerHTML = `<div>No common name available in <span>${capitalizeWords(selectedLanguage)}</span>, but it has been given a name in ${languageLinks}.</div>`;
     if (observer) {
       // Attach mutation observer to the noSpeciesNameDiv if provided
       observer.observe(noSpeciesNameDiv);
@@ -153,6 +170,7 @@ function showAvailableLanguages(element, commonNames, selectedLanguage, observer
       // Attach event listeners to the language links if observer is not used
       attachLanguageLinkListeners(noSpeciesNameDiv);
     }
+    applyScrollingAnimation(element);
   } else {
     console.error('No .noSpeciesName div found for the element.');
   }
@@ -164,9 +182,42 @@ function attachLanguageLinkListeners(element) {
   });
 }
 
+function applyScrollingAnimation(targetElement) {
+  const elements = targetElement.querySelectorAll('.noRep div, .noSpeciesName div');
+
+  elements.forEach(element => {
+    const contentWidth = element.scrollWidth;
+    const parentWidth = element.parentElement.offsetWidth;
+    const distanceToScroll = contentWidth + parentWidth;
+
+    const animationName = `scrollHorizontally-${element.className}-${Math.random().toString(36).substring(2, 9)}`;
+
+    if (contentWidth > parentWidth) {
+      const style = document.createElement('style');
+      style.type = 'text/css';
+      const keyframes = `
+        @keyframes ${animationName} {
+          from {
+            transform: translateX(${parentWidth}px);
+          }
+          to {
+            transform: translateX(-${contentWidth}px);
+          }
+        }
+      `;
+      style.innerHTML = keyframes;
+      document.head.appendChild(style);
+
+      element.style.animation = `${animationName} ${distanceToScroll / 50}s linear infinite`;
+    }
+  });
+}
+
+
 // Add event listener to language selector dropdown
 document.addEventListener('DOMContentLoaded', function() {
   const languageSelect = document.getElementById('languages');
+
 
   // Listen for changes on the language select dropdown
   languageSelect.addEventListener('change', function() {
@@ -192,17 +243,21 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.addEventListener('click', handleLanguageLinkClick);
         });
+        applyScrollingAnimation(entry.target); // Apply animation
         entry.target.classList.add('inView'); 
       } else {
         // Element is out of view;
-        // entry.target.style.backgroundColor = ''; // Reset background color
         entry.target.querySelectorAll('.language-link').forEach(link => {
           link.removeEventListener('click', handleLanguageLinkClick);             
+        });
+        entry.target.querySelectorAll('.noRep div, .noSpeciesName div').forEach(element => {
+          element.style.animation = 'none'; // Remove animation
         });
         entry.target.classList.remove('inView'); 
       }
     });
   };
+  
   
 
   const observer = new IntersectionObserver(observerCallback, options);

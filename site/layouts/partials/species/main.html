@@ -1,43 +1,51 @@
-<div class="mw9 center">
-  <ul id="blog-list" class="flex flex-wrap mhn1-ns pa3 justify-center">
+<div class="mw9 center mt5-m mb5-m">
+  <ul id="species-container" class="flex flex-wrap mhn1-ns pa3 justify-center">
     {{ $speciesSection := .Site.GetPage "section" "species" }}
     {{ with $speciesSection }}
       {{ range $index, $page := .Sections }}
         {{ $uuid := $page.Params.uuid }}
-        <li class="w5 h5 bw1 b--solid b--black ma2 flex speciesli" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg" }}' style="background-color: {{ $page.Params.color }}; background-size: cover; background-repeat: repeat; background-position: center center; color: white; text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;">
-          <div class="ma1">
-            {{ $englishName := "" }}
-            {{ $otherName := "" }}
-            {{ range $page.Params.languages }}
-              {{ if eq .language "English" }}
-                {{ $englishName = index .names 0 }}
-                {{ else }}
-                {{ $otherName = index .names 0}}
-              {{ end }}
-            {{ end }}
+        {{ $englishName := "" }}
+        {{ $otherName := "" }}
+        {{ range $page.Params.languages }}
+          {{ if eq .language "English" }}
+            {{ $englishName = index .names 0 }}
+            {{ else }}
+            {{ $otherName = index .names 0}}
+          {{ end }}
+        {{ end }}
+        {{ $representations := .Site.GetPage "section" "representations" }}
+        {{ $hasRepresentation := false }}
+        {{ range $representations.Pages }}
+          {{ if eq $uuid .Params.speciesid }}
+            {{ $hasRepresentation = true }}
+          {{ end }}
+        {{ end }}
+        <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg" }}' style="background-color: {{ $page.Params.color }}; background-size: cover; background-repeat: repeat; background-position: center center;">
 
             {{ if $englishName }}
-              <h2 class="--font-family-title f4 w-two-thirds-l word-wrap common-name">{{ $englishName }}</h2>
-              <div class="noSpeciesName dn">No common name available in English.</div>
-              <div class="giveLanguageName dn"><button>Give it an English name</button></div>
+            <div class="name-info absolute bb pt1 left-0 top-0 f6 w-100 bg-white h2 overflow-hidden nowrap dn">
+              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap dn">No common name available in English, but it has been given a name in {{ partial "species/otherLanguages" (dict "languages" $page.Params.languages) }}</div>
+              <div class="giveLanguageName w-25 dib absolute pl3 dn"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
+            </div>
+              {{ else }}
+            <div class="name-info absolute bb pt1 left-0 top-0 f6 w-100 bg-white h2 overflow-hidden nowrap">
+              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap"><div style="animation: scrollHorizontally 30s linear infinite;">No common name available in English, but it has been given a name in {{ partial "species/otherLanguages" (dict "languages" $page.Params.languages) }}</div></div>
+              <div class="giveLanguageName w-25 dib absolute pl3"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
+            </div>
+              {{ end }}          
+          <div class="flex title white items-center justify-center w-100 h-100" style="text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;">
+            {{ if $englishName }}
+              <h2 class="--font-family-title f3 word-wrap common-name">{{ $englishName }}</h2>
             {{ else }}
-              <h2 class="--font-family-title f4 w-two-thirds-l word-wrap common-name dn">{{ $otherName }}</h2>
-              <div class="noSpeciesName">No common name available in English, but it has been given a name in {{ partial "species/otherLanguages" (dict "languages" $page.Params.languages) }}</div>
-              <div class="giveLanguageName"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index"><button>Give it an <span class="glnName">English</span> name</button></a></div>
-            {{ end }}
-
-            {{ $representations := .Site.GetPage "section" "representations" }}
-            {{ $hasRepresentation := false }}
-            {{ range $representations.Pages }}
-              {{ if eq $uuid .Params.speciesid }}
-                {{ $hasRepresentation = true }}
-              {{ end }}
-            {{ end }}
-            {{ if not $hasRepresentation }}
-              <div class="noRep">This species has no representation. Be the first to share your vision of it.</div>
-              <a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'><button>represent</button></a>
+              <h2 class="--font-family-title f3 word-wrap common-name dn">{{ $otherName }}</h2>
             {{ end }}
           </div>
+          {{ if not $hasRepresentation }}
+            <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 bg-white">
+                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">This species has no representation. Be the first to share your vision of this species.</div></div>
+                <div class="w-25 dib absolute pl3"><a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'>add</a></div>
+            </div>
+          {{ end }}
         </li>
       {{ end }}
     {{ end }}

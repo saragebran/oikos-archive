@@ -31,7 +31,11 @@ collections:
         widget: "list"
         fields:
           - {label: "Language", name: "language", widget: "string"}
-          - {label: "Names", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
+          - label: "Names"
+            name: "names"
+            widget: "list"
+            fields: 
+              - {label: "Name", name: "name", widget: "string"}
       - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
       - {label: "Publish Date", name: "date", widget: "datetime", create: false}
       - {label: "Last Modified", name: "lastmod", widget: "datetime"}
@@ -51,9 +55,9 @@ collections:
         name: "speciesid"
         widget: "relation"
         collection: "species"
-        search_fields: ["scientificName"]
+        search_fields: ["languages.*.names.*.name"]
         value_field: "uuid"
-        display_fields: ["scientificName"]
+        display_fields: ["languages.*.names.*.name"]
       - label: "Upload an image from your computer"
         name: "image"
         widget: "image"
