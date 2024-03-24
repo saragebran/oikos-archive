@@ -28,7 +28,7 @@ function capitalizeWords(str) {
       .split(' ') // Split the string into an array of words
       .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize the first letter of each word
       .join(' '); // Join the words back into a single string
-  }
+}
 
 function handleLanguageLinkClick(event) {
     event.preventDefault(); // Prevent the default link action
@@ -57,8 +57,6 @@ function handleLanguageLinkClick(event) {
                         commonNameElement.innerText = commonNameCapitalized;
                           commonNameElement.classList.remove('dn');                        
                     }
-
-
                 } else {
                     console.error('Common name not available in this language:', lang);
                 }
@@ -191,32 +189,83 @@ function attachLanguageLinkListeners(element) {
 
 function applyScrollingAnimation(targetElement) {
   const elements = targetElement.querySelectorAll('.noRep div, .noSpeciesName div');
+    elements.forEach(element => {
+      const contentWidth = element.scrollWidth;
+      const parentWidth = element.parentElement.offsetWidth;
+      const distanceToScroll = contentWidth + parentWidth;
 
-  elements.forEach(element => {
-    const contentWidth = element.scrollWidth;
-    const parentWidth = element.parentElement.offsetWidth;
-    const distanceToScroll = contentWidth + parentWidth;
+      const animationName = `scrollHorizontally-${element.className}-${Math.random().toString(36).substring(2, 9)}`;
 
-    const animationName = `scrollHorizontally-${element.className}-${Math.random().toString(36).substring(2, 9)}`;
-
-    if (contentWidth > parentWidth) {
-      const style = document.createElement('style');
-      style.type = 'text/css';
-      const keyframes = `
-        @keyframes ${animationName} {
-          from {
-            transform: translateX(${parentWidth}px);
+      if (contentWidth > parentWidth) {
+        const style = document.createElement('style');
+        style.type = 'text/css';
+        const keyframes = `
+          @keyframes ${animationName} {
+            from {
+              transform: translateX(${parentWidth}px);
+            }
+            to {
+              transform: translateX(-${contentWidth}px);
+            }
           }
-          to {
-            transform: translateX(-${contentWidth}px);
-          }
-        }
-      `;
-      style.innerHTML = keyframes;
-      document.head.appendChild(style);
+        `;
+        style.innerHTML = keyframes;
+        document.head.appendChild(style);
 
-      element.style.animation = `${animationName} ${distanceToScroll / 50}s linear infinite`;
-    }
+        element.style.animation = `${animationName} ${distanceToScroll / 50}s linear infinite`;
+      }
+    });
+}
+
+function applyMistAnimation(targetElement) {
+  const paths = document.querySelectorAll('.path');
+  const bgstroke = document.querySelector('.bgstroke');
+  const bounds = bgstroke.getBoundingClientRect();
+  const variability = 800; // Max variability for control points
+  const updateInterval = 5000; // Interval to update target positions
+  const lerpFactor = 0.0005; // Factor to control the smoothing (lower is smoother)
+
+  paths.forEach((path) => {
+    let currentPath = path.getAttribute('d').match(/[a-zA-Z][^a-zA-Z]*/g).map(cmd => {
+      const points = cmd.slice(1).trim().split(/[\s,]+/).map(Number).filter(num => !isNaN(num));
+      return {
+        type: cmd.charAt(0),
+        points: points
+      };
+    });
+
+    let targetPath = JSON.parse(JSON.stringify(currentPath)); // Deep copy
+
+    const updateTargetPath = () => {
+      // Assuming the first point doesn't move, use its position to limit the control points
+      const baseX = currentPath[0].points[0];
+      const baseY = currentPath[0].points[1];
+
+      // Update only the control point of the Q command
+      // Ensure the new points are within a certain range to keep them inside the .bgstroke element
+      targetPath[1].points[0] = Math.min(Math.max(baseX + (Math.random() * 2 * variability - variability), 0), bounds.width);
+      targetPath[1].points[1] = Math.min(Math.max(baseY + (Math.random() * 2 * variability - variability), 0), bounds.height);
+
+      // Update the end point of the Q command, which is the control point of the T command
+      targetPath[1].points[2] = Math.min(Math.max(baseX + (Math.random() * 2 * variability - variability), 0), bounds.width);
+      targetPath[1].points[3] = Math.min(Math.max(baseY + (Math.random() * 2 * variability - variability), 0), bounds.height);
+    };
+
+    const animatePath = () => {
+      // Lerp the Q command control and end points linearly
+      for (let i = 0; i < 4; i++) {
+        currentPath[1].points[i] += (targetPath[1].points[i] - currentPath[1].points[i]) * lerpFactor;
+      }
+      
+      // Generate the new d attribute
+      const newD = currentPath.map(cmd => `${cmd.type}${cmd.points.join(' ')}`).join(' ');
+      path.setAttribute('d', newD);
+      
+      requestAnimationFrame(animatePath);
+    };
+
+    setInterval(updateTargetPath, updateInterval);
+    animatePath();
   });
 }
 
@@ -251,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
           link.addEventListener('click', handleLanguageLinkClick);
         });
         applyScrollingAnimation(entry.target); // Apply animation
+        applyMistAnimation(entry.target); // Apply animation
         entry.target.classList.add('inView'); 
       } else {
         // Element is out of view;
