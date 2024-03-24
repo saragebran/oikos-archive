@@ -17,6 +17,25 @@
     display: none;
 }
 
+.title {
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;
+}
+
+.speciesli .has-rep {
+  display: none;
+}
+
+.speciesli:hover .bgstroke,
+.speciesli:hover .title,
+.speciesli:hover .common-name {
+  display: flex;
+}
+
+
+
+
+
+
   .rep-info, .name-info {
     transition: transform 0.5s ease;
   }

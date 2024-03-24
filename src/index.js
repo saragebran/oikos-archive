@@ -167,7 +167,7 @@ function showAvailableLanguages(element, commonNames, selectedLanguage, observer
       .replace(/, ([^,]*)$/, ' and $1'); // Replace the last comma with ', and'
 
     // Update the content of noSpeciesNameDiv with the formatted list of languages
-    noSpeciesNameDiv.innerHTML = `<div>No common name available in <span>${capitalizeWords(selectedLanguage)}</span>, but it has been given a name in ${languageLinks}.</div>`;
+    noSpeciesNameDiv.innerHTML = `<div>No <span>${capitalizeWords(selectedLanguage)}</span> name has been given, but it has been given a name in ${languageLinks}.</div>`;
     if (observer) {
       // Attach mutation observer to the noSpeciesNameDiv if provided
       observer.observe(noSpeciesNameDiv);
@@ -269,7 +269,6 @@ function applyMistAnimation(targetElement) {
   });
 }
 
-
 // Add event listener to language selector dropdown
 document.addEventListener('DOMContentLoaded', function() {
   const languageSelect = document.getElementById('languages');
@@ -290,30 +289,43 @@ document.addEventListener('DOMContentLoaded', () => {
     threshold: 0.01
   };
 
+  const stopAnimationMap = {}; // Object to store stop functions for mist animations
+
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
+      const elementId = entry.target.id; // Assume each target has a unique ID for reference
+  
       if (entry.isIntersecting) {
         // Element is in view
-        const imglink = entry.target.getAttribute('imagelink');
-        entry.target.style.backgroundImage = `url('${imglink}')`;
-        entry.target.querySelectorAll('.language-link').forEach(link => {
-          link.addEventListener('click', handleLanguageLinkClick);
-        });
-        applyScrollingAnimation(entry.target); // Apply animation
-        applyMistAnimation(entry.target); // Apply animation
-        entry.target.classList.add('inView'); 
+        if (!entry.target.classList.contains('inView')) {
+          const imglink = entry.target.getAttribute('imagelink');
+          entry.target.style.backgroundImage = `url('${imglink}')`;
+          entry.target.querySelectorAll('.language-link').forEach(link => {
+            link.addEventListener('click', handleLanguageLinkClick);
+          });
+          applyScrollingAnimation(entry.target); // Apply scrolling animation
+          stopAnimationMap[elementId] = applyMistAnimation(entry.target); // Apply mist animation and store the stop function
+          entry.target.classList.add('inView');
+        }
       } else {
-        // Element is out of view;
-        entry.target.querySelectorAll('.language-link').forEach(link => {
-          link.removeEventListener('click', handleLanguageLinkClick);             
-        });
-        entry.target.querySelectorAll('.noRep div, .noSpeciesName div').forEach(element => {
-          element.style.animation = 'none'; // Remove animation
-        });
-        entry.target.classList.remove('inView'); 
+        // Element is out of view
+        if (entry.target.classList.contains('inView')) {
+          entry.target.querySelectorAll('.language-link').forEach(link => {
+            link.removeEventListener('click', handleLanguageLinkClick);
+          });
+          entry.target.querySelectorAll('.noRep div, .noSpeciesName div').forEach(element => {
+            element.style.animation = 'none'; // Remove specific animations
+          });
+          if (stopAnimationMap[elementId]) {
+            stopAnimationMap[elementId](); // Stop the mist animation
+            delete stopAnimationMap[elementId]; // Remove the stop function reference
+          }
+          entry.target.classList.remove('inView');
+        }
       }
     });
   };
+  
   
   
 

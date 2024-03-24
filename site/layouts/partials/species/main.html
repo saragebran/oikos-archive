@@ -20,21 +20,17 @@
             {{ $hasRepresentation = true }}
           {{ end }}
         {{ end }}
-        <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{ $uuid }}" imagelink='{{ .Render "backgroundimg" }}' style="background-size: cover; background-repeat: repeat; background-position: center center;">
-            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap {{ if $englishName }}dn{{ end }}">
-              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap dn"><div>No common name available in English, but it has been given a name in {{ partial "species/otherLanguages" (dict "languages" $page.Params.languages) }}</div></div>
-              <div class="giveLanguageName w-25 dib absolute pl3 dn"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
+        <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{ $uuid }}" {{ if $hasRepresentation }} imagelink='{{ .Render "backgroundimg" }}' style="background-size: cover; background-repeat: repeat; background-position: center center;"{{ end }}>
+            <div class="flex title items-center justify-center w-100 h-100 {{ if $hasRepresentation }}has-rep{{ end }}">
+                {{ .Render "stroke" }}
+                <h2 class="--font-family-title z-1 f3 word-wrap common-name {{ if $hasRepresentation }}has-rep{{ end }}" style="color: {{ $page.Params.color }};">{{ if $englishName }}{{ $englishName }}{{else}}{{ $otherName }}{{ end }}</h2>
             </div>
-            <div class="flex title items-center justify-center w-100 h-100" style="text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;">
-              {{ if $englishName }}
-              {{ .Render "stroke" }}
-                <h2 style="color: {{ $page.Params.color }};" class="--font-family-title z-1 f3 word-wrap common-name {{ if $hasRepresentation }}dn has-rep{{ end }}">{{ $englishName }}</h2>
-                {{ else }}
-                <h2 style="color: {{ $page.Params.color }};" class="--font-family-title z-1 f3 word-wrap common-name {{ if $hasRepresentation }}dn has-rep{{ end }}">{{ $otherName }}</h2>
-                {{ end }}
+            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap {{ if $englishName }}dn{{ end }}">
+              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1 {{ if $englishName }}dn{{ end }}"><div>No English name has been given, but it has been given a name in {{ .Render "otherLanguages" }}</div></div>
+              <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName }}dn{{ end }}"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
             </div>
             <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation }}dn{{ end }}">
-                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">This species has no representation. Be the first to share your vision of this species.</div></div>
+                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">Share your vision of this species.</div></div>
                 <div class="w-25 dib absolute pl3"><a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'>add</a></div>
             </div>
         </li>

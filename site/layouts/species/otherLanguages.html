@@ -1,7 +1,7 @@
 <!-- layouts/partials/species/otherLanguages.html -->
 {{ $allLanguages := slice }}
 {{/* Collect all languages */}}
-{{ range .languages }}
+{{ range .Page.Params.languages }}
   {{ $allLanguages = $allLanguages | append .language }}
 {{ end }}
 
