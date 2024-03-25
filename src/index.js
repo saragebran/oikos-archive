@@ -218,56 +218,59 @@ function applyScrollingAnimation(targetElement) {
 }
 
 function applyMistAnimation(targetElement) {
-  const paths = document.querySelectorAll('.path');
-  const bgstroke = document.querySelector('.bgstroke');
+  const paths = targetElement.querySelectorAll('.morphing-path');
+  const bgstroke = targetElement.querySelector('.bgstroke');
   const bounds = bgstroke.getBoundingClientRect();
-  const variability = 800; // Max variability for control points
-  const updateInterval = 5000; // Interval to update target positions
-  const lerpFactor = 0.0005; // Factor to control the smoothing (lower is smoother)
+  const variability = 100; // Max variability for control points
+  const updateInterval = 5000; // Update target positions every 5 seconds
+
+  let intervals = []; // Store interval IDs for later cleanup
 
   paths.forEach((path) => {
-    let currentPath = path.getAttribute('d').match(/[a-zA-Z][^a-zA-Z]*/g).map(cmd => {
-      const points = cmd.slice(1).trim().split(/[\s,]+/).map(Number).filter(num => !isNaN(num));
-      return {
-        type: cmd.charAt(0),
-        points: points
-      };
-    });
+   // console.log(`Initial path data: ${path.getAttribute('d')}`);
+    const intervalId = setInterval(() => {
+      let d = path.getAttribute('d');
+      let commands = d.match(/[a-zA-Z][^a-zA-Z]*/g);
 
-    let targetPath = JSON.parse(JSON.stringify(currentPath)); // Deep copy
+      let updatedCommands = commands.map((cmd) => {
+        let type = cmd.charAt(0);
+        let points = cmd.slice(1).trim().split(/[\s,]+/).map(Number);
 
-    const updateTargetPath = () => {
-      // Assuming the first point doesn't move, use its position to limit the control points
-      const baseX = currentPath[0].points[0];
-      const baseY = currentPath[0].points[1];
+        if (type === 'M') {
+          // Log the move command points for debugging
+         // console.log(`Move command points before update: ${points}`);
+          return cmd;
+        } else if (type === 'Q' || type === 'T') {
+          // Log the original points for debugging
+         // console.log(`Original points for ${type} command: ${points}`);
 
-      // Update only the control point of the Q command
-      // Ensure the new points are within a certain range to keep them inside the .bgstroke element
-      targetPath[1].points[0] = Math.min(Math.max(baseX + (Math.random() * 2 * variability - variability), 0), bounds.width);
-      targetPath[1].points[1] = Math.min(Math.max(baseY + (Math.random() * 2 * variability - variability), 0), bounds.height);
+          points = points.map((point, i) => {
+            let maxBound = i % 2 === 0 ? bounds.width : bounds.height;
+            let updatedPoint = Math.min(Math.max(point + Math.random() * variability - variability / 2, 0), maxBound);
+            
+            // Log the updated points for debugging
+            console.log(`Updated point: ${updatedPoint}`);
+            return updatedPoint;
+          });
 
-      // Update the end point of the Q command, which is the control point of the T command
-      targetPath[1].points[2] = Math.min(Math.max(baseX + (Math.random() * 2 * variability - variability), 0), bounds.width);
-      targetPath[1].points[3] = Math.min(Math.max(baseY + (Math.random() * 2 * variability - variability), 0), bounds.height);
-    };
+          return `${type}${points.join(' ')}`;
+        } else {
+          return cmd;
+        }
+      });
 
-    const animatePath = () => {
-      // Lerp the Q command control and end points linearly
-      for (let i = 0; i < 4; i++) {
-        currentPath[1].points[i] += (targetPath[1].points[i] - currentPath[1].points[i]) * lerpFactor;
-      }
-      
-      // Generate the new d attribute
-      const newD = currentPath.map(cmd => `${cmd.type}${cmd.points.join(' ')}`).join(' ');
-      path.setAttribute('d', newD);
-      
-      requestAnimationFrame(animatePath);
-    };
+      path.setAttribute('d', updatedCommands.join(' '));
+    }, updateInterval);
 
-    setInterval(updateTargetPath, updateInterval);
-    animatePath();
+    intervals.push(intervalId);
   });
+
+  // Return a stop function to clear intervals
+  return () => intervals.forEach(clearInterval);
 }
+
+
+
 
 // Add event listener to language selector dropdown
 document.addEventListener('DOMContentLoaded', function() {
