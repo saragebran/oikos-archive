@@ -33,9 +33,7 @@ collections:
           - {label: "Language", name: "language", widget: "string"}
           - {label: "Name", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
       - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
-      - {label: "Publish Date", name: "date", widget: "datetime", create: false}
-      - {label: "Last Modified", name: "lastmod", widget: "datetime"}
-      - {label: "Scientific Name (or other unique identifier)", name: "scientificName", widget: "string"}
+      - {label: "Scientific Name", name: "scientificName", widget: "string", required: false}
       - {label: "Color", name: "color", widget: "color", hint: "What color do you think of as connected to this species?", default: "#00ff00", required: false, allowInput: true, enableAlpha: false}
       - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
       - {label: "What do you know about this species?", name: "body", widget: "markdown"}

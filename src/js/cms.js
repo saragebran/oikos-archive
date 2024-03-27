@@ -4,6 +4,7 @@ import CMS from "@staticcms/core";
 import styles from "!to-string-loader!css-loader!postcss-loader!sass-loader!../css/main.scss";
 
 import SpeciesPreview from "./cms-preview-templates/species";
+import RepresentationsPreview from "./cms-preview-templates/representations";
 
 
   
@@ -13,4 +14,5 @@ import SpeciesPreview from "./cms-preview-templates/species";
 
 CMS.registerPreviewStyle(styles, { raw: true });
 CMS.registerPreviewTemplate("species", SpeciesPreview);
+CMS.registerPreviewTemplate("representations", RepresentationsPreview);
 CMS.init();

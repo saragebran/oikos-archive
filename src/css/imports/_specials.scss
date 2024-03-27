@@ -21,15 +21,19 @@
   text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;
 }
 
-.speciesli .has-rep {
-  display: none;
+.title-white {
+  text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0 0.05em white;
 }
 
+ .speciesli .has-rep {
+  display: none;
+}
+/*
 .speciesli:hover .bgstroke,
 .speciesli:hover .title,
 .speciesli:hover .common-name {
   display: flex;
-}
+} */
 
 
 .morphing-path {

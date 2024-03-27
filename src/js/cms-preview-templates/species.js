@@ -1,25 +1,57 @@
 import { useMediaAsset } from "@staticcms/core";
-import format from "date-fns/format";
-import parseISO from "date-fns/parseISO";
 import React from "react";
 
-const SpeciesPreview = ({ entry, widgetFor, collection, field }) => {
-  const image = useMediaAsset(entry.data.image, collection, field, entry);
+const SpeciesPreview = ({ entry, widgetFor }) => {
 
-  return (
-    <div className="mw6 center ph3 pv4">
-      <h1 className="f2 lh-title b mb3">{entry.data.title}</h1>
-      <div className="flex justify-between text-dark">
-        <p>{format(parseISO(entry.data.date), "iii, MMM d, yyyy")}</p>
-        <p>Read in x minutes</p>
-      </div>
-      <div className="cms mw6">
-        <p>{entry.data.description}</p>
-        {image && <img src={image} alt={entry.data.title} />}
-        {widgetFor("body")}
-      </div>
+// Function to render languages and their respective names
+const renderLanguages = (languages) => {
+  if (!Array.isArray(languages)) {
+    return <p>Language: </p>;
+  }
+
+  return languages.map((lang, index) => {
+    if (!Array.isArray(lang.names)) {
+      return <li key={index}>{lang.language}?</li>;
+    }
+    return (
+      <li key={index}>
+        {lang.language}: {lang.names.join(', ')}
+      </li>
+    );
+  });
+};
+
+// Function to get the first name from the first language
+const getAlternativeScientificName = () => {
+  if (Array.isArray(entry.data.languages) && entry.data.languages.length > 0) {
+    const firstLanguage = entry.data.languages[0];
+    if (Array.isArray(firstLanguage.names) && firstLanguage.names.length > 0) {
+      return firstLanguage.names[0];
+    }
+  }
+  return 'Unknown';
+};
+
+
+return (
+  <div className="mw6 center ph3 pv4 cms">
+    <div style={{ backgroundColor: entry.data.color }}>
+      <h1 className="f2 pl1 lh-title b mb3 title-white">
+        {entry.data.scientificName || getAlternativeScientificName()}
+      </h1>
     </div>
-  );
+    <div className="flex justify-between items-center">
+      <p>{`Species Category: ${entry.data.category}`}</p>
+    </div>
+    <h2>Names in different Languages</h2>
+    <ul>{renderLanguages(entry.data.languages)}</ul>
+    <div className="cms mw6">
+      <div className="pt2">----</div>
+      <div><h2>Collective knowledge and stories about {entry.data.scientificName || 'the ' + getAlternativeScientificName()}</h2></div>
+      {widgetFor("body")}
+    </div>
+  </div>
+);
 };
 
 export default SpeciesPreview;

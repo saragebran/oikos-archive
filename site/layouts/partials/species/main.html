@@ -30,7 +30,7 @@
               <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName }}dn{{ end }}"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
             </div>
             <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation }}dn{{ end }}">
-                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">Share your vision of this species.</div></div>
+                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">Share your vision of the {{ if $englishName }}{{ $englishName }}{{else}}{{ $otherName }}{{ end }}</div></div>
                 <div class="w-25 dib absolute pl3"><a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'>add</a></div>
             </div>
         </li>
