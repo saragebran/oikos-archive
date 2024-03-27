@@ -14,7 +14,7 @@ languages:
     names:
       - Vampiro
 kind: species
-scientificName: Batus
+scientificName: ""
 color: "#5906b1"
 category: Animal
 ---
