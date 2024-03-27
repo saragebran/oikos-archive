@@ -3,7 +3,7 @@ uuid: 6b27e2c8-e865-48e9-bf47-3834b376d39f
 languages:
   - language: español
     names:
-      - Palm tree casero
+      - El cocotero casero
 kind: species
 color: "#819a0a"
 category: Plant
