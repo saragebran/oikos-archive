@@ -1,7 +1,7 @@
 ---
 uuid: 6b27e2c8-e865-48e9-bf47-3834b376d39f
 languages:
-  - language: Español
+  - language: español
     names:
       - Palm tree casero
 kind: species
