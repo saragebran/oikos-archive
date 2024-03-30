@@ -1,40 +1,96 @@
 <div class="mw9 center mt5 mb5 min-vh-100">
-  <ul id="species-container" class="flex flex-wrap mhn1 pa3 justify-center">
-    {{ $speciesSection := .Site.GetPage "section" "species" }}
-    {{ with $speciesSection }}
-      {{ range $index, $page := .Sections }}
-        {{ $uuid := $page.Params.uuid }}
-        {{ $englishName := "" }}
-        {{ $otherName := "" }}
-        {{ range $page.Params.languages }}
-          {{ if eq .language "English" }}
-            {{ $englishName = index .names 0 }}
-            {{ else }}
-            {{ $otherName = index .names 0}}
-          {{ end }}
-        {{ end }}
-        {{ $representations := .Site.GetPage "section" "representations" }}
-        {{ $hasRepresentation := false }}
-        {{ range $representations.Pages }}
-          {{ if eq $uuid .Params.speciesid }}
-            {{ $hasRepresentation = true }}
-          {{ end }}
-        {{ end }}
-        <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{ $uuid }}" {{ if $hasRepresentation }} imagelink='{{ .Render "backgroundimg" }}' style="background-size: cover; background-repeat: repeat; background-position: center center;"{{ end }}>
-            <div class="flex title items-center justify-center w-100 h-100 {{ if $hasRepresentation }}has-rep{{ end }}">
-                {{ .Render "stroke" }}
-                <h2 class="--font-family-title z-1 f3 word-wrap common-name {{ if $hasRepresentation }}has-rep{{ end }}" style="color: {{ $page.Params.color }};">{{ if $englishName }}{{ $englishName }}{{else}}{{ $otherName }}{{ end }}</h2>
+    <ul id="species-container" class="flex flex-wrap mhn1 pa3 justify-center">
+      {{- $speciesSection := .Site.GetPage "section" "species" -}}
+      {{- with $speciesSection -}}
+        {{- range $index, $page := .Sections -}}
+          {{- $uuid := $page.Params.uuid -}}
+          {{- $englishName := "" -}}
+          {{- $otherName := "" -}}
+          {{- range $page.Params.languages -}}
+            {{- if eq .language "English" -}}
+              {{- $englishName = index .names 0 -}}
+            {{- else -}}
+              {{- $otherName = index .names 0 -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $representations := .Site.GetPage "section" "representations" -}}
+          {{- $hasRepresentation := false -}}
+          {{- range $representations.Pages -}}
+            {{- if eq $uuid .Params.speciesid -}}
+              {{- $hasRepresentation = true -}}
+            {{- end -}}
+          {{- end -}}
+          <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{- $uuid -}}" {{- if $hasRepresentation -}} style="background-size: cover; background-repeat: repeat; background-position: center center;"{{- end -}}>
+            <a href="{{ $page.Permalink }}" class="no-underline w5 h5">
+                {{- if $hasRepresentation -}} <img imagelink='{{- $page.Render "backgroundimg" -}}' src="" alt=""> {{- end -}}
+              <div class="flex title items-center justify-center w-100 h-100 {{ if $hasRepresentation }}has-rep{{ end }}">
+                {{- $color := .Page.Params.color | strings.TrimPrefix "#" -}}
+                {{- $rHex := substr $color 0 2 -}}
+                {{- $gHex := substr $color 2 2 -}}
+                {{- $bHex := substr $color 4 2 -}}
+                {{- $rInt := int (printf "0x%s" $rHex) -}}
+                {{- $gInt := int (printf "0x%s" $gHex) -}}
+                {{- $bInt := int (printf "0x%s" $bHex) -}}
+                {{- $rComp := printf "%02x" (sub 255 $rInt) -}}
+                {{- $gComp := printf "%02x" (sub 255 $gInt) -}}
+                {{- $bComp := printf "%02x" (sub 255 $bInt) -}}
+                {{- $complimentaryColor := print "#" $rComp $gComp $bComp -}}
+                {{- $width := 250.0 -}}
+                {{- $height := 250.0 -}}
+                {{- $minControlX := 10.0 -}}
+                {{- $maxControlX := 445.0 -}}
+                {{- $minControlY := 10.0 -}}
+                {{- $maxControlY := 150.0 -}}
+                {{- $variance := 10.0 -}}
+                {{/* Shuffle an array of numbers from 1 to 9 */}}
+                {{- $numbers := shuffle (seq 1 9) -}}
+                {{/* Use the first two numbers from the shuffled array for randomness */}}
+                {{- $randX := div (float (index $numbers 0)) 9.0 -}}
+                {{- $randY := div (float (index $numbers 1)) 9.0 -}}
+                {{/* Calculate the random control points within the allowed variance */}}
+                {{- $controlX := add (mul (sub $maxControlX $minControlX) $randX) $minControlX -}}
+                {{- $controlY := add (mul (sub $maxControlY $minControlY) $randY) $minControlY -}}
+                {{/* Introduce additional randomness to the control points using variance */}}
+                {{- $controlX = add $controlX (mul (sub (mul $randX 2) 1) $variance) -}}
+                {{- $controlY = add $controlY (mul (sub (mul $randY 2) 1) $variance) -}}
+                {{/* Generate the SVG path with the computed control points */}}
+                {{- $path := printf "M100 220 Q %.2f %.2f, 145 80 T %.2f %.2f" $controlX $controlY $width $height -}}
+                <div class="absolute bgstroke top-0 left-0 w-100 h-100" style="filter: blur(20px);">
+                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- $path -}}"></path>
+                  </svg>
+                </div>
+                <h2 class='--font-family-title z-1 f3 common-name tc no-underline' style="color: {{- $complimentaryColor -}}">
+                  {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
+                </h2>
+                <div id="namesContainer-{{- $uuid -}}" class="dn">
+                  {{- range $page.Params.languages -}}
+                    {{- range .names -}}
+                      <span>{{- . | title -}}</span>
+                    {{- end -}}
+                  {{- end -}}
+                </div>                
+              </div>
+            </a>
+            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap">
+              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1">
+                <div>This species has been given a name in {{- $page.Render "otherLanguages" -}}</div>
+              </div>
+              <div class="giveLanguageName w-25 dib absolute pl3 {{- if $englishName -}}dn{{- end -}}">
+                <a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">edit</a>
+              </div>
             </div>
-            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap {{ if $englishName }}dn{{ end }}">
-              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1 {{ if $englishName }}dn{{ end }}"><div>No English name has been given, but it has been given a name in {{ .Render "otherLanguages" }}</div></div>
-              <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName }}dn{{ end }}"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
+            <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation -}}dn{{- end -}}">
+              <div class="noRep dib w-75 br overflow-hidden nowrap">
+                <div class="black">Share your vision of The {{ if $englishName -}}{{- $englishName -}}{{- else -}}{{ $otherName -}}{{- end -}}</div>
+              </div>
+              <div class="w-25 dib absolute pl3">
+                <a href='/admin/#/collections/representations/new/{{ $page.Params.scientificName }}'>add</a>
+              </div>
             </div>
-            <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation }}dn{{ end }}">
-                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">Share your vision of the {{ if $englishName }}{{ $englishName }}{{else}}{{ $otherName }}{{ end }}</div></div>
-                <div class="w-25 dib absolute pl3"><a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'>add</a></div>
-            </div>
-        </li>
-      {{ end }}
-    {{ end }}
-  </ul>
-</div>
+          </li>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </div>
+

@@ -24,8 +24,10 @@ collections:
     media_folder: ''
     public_folder: ''
     create: true
+    summary: "{{category}} - {{scientificName}}"
     fields:
       - {label: "ID", name: "uuid", widget: "uuid", allow_regenerate: false}
+      - {label: "Scientific Name (or any other way of uniquely identifying the species)", name: "scientificName", widget: "string"}
       - label: "Language"
         name: "languages"
         widget: "list"
@@ -33,10 +35,9 @@ collections:
           - {label: "Language", name: "language", widget: "string"}
           - {label: "Name", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
       - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
-      - {label: "Scientific Name", name: "scientificName", widget: "string", required: false}
-      - {label: "Color", name: "color", widget: "color", hint: "What color do you think of as connected to this species?", default: "#00ff00", required: false, allowInput: true, enableAlpha: false}
+      - {label: "What color do you feel is connected to this species?", name: "color", widget: "color", default: "#00ff00", allowInput: true, enableAlpha: false}
       - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
-      - {label: "What do you know about this species?", name: "body", widget: "markdown"}
+      - {label: "Add your personal story or knowledge about this species (don't delete existing text)", name: "body", widget: "markdown"}
   - name: "representations"
     label: "Representations"
     identifier_field: "title"  

@@ -4,6 +4,9 @@ languages:
   - language: español
     names:
       - Colibrí jardinero
+  - language: English
+    names:
+      - Hummingbird
 kind: species
 color: "#08aaad"
 category: Animal
