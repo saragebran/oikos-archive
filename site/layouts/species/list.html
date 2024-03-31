@@ -7,14 +7,25 @@
     <div id="image-container" class="w-100 flex justify-center pa3">
       {{- .Render "hasRep" -}}
       {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
-      <img class="mht6" src="{{ .Scratch.Get "imgPath" }}" alt="" onclick="toggleFullScreen(this)">
+      <div>
+        <div>
+          <img class="mht6" src="{{ .Scratch.Get "imgPath" }}" alt="" onclick="toggleFullScreen(this)">
+        </div>
+        {{- if $hasRepresentation -}}
+        <div class="flex flex-row justify-between f6">
+          <div><i>{{ if .Params.title }}{{ .Params.title }}{{ else }}Untitled{{ end }}</i></div>
+          <div>Shared by: {{ if .Params.author }}{{ .Params.author }}{{ else }}Unknown Artist{{ end }}</div>
+          <div>{{ if .Params.contact }}{{ .Params.contact }}{{ else }}?{{ end }}</div>
+        {{- end -}}
+        </div>
+      </div>
     </div>
 
     {{- .Render "englishName" -}}
     {{- $englishName := .Scratch.Get "englishName" | title -}} 
     {{- $otherName := .Scratch.Get "otherName" | title -}}
 
-    {{- .Render "colorPathCalc" -}}
+    {{- .Render "pathCalc" -}}
 
     <!-- Content container -->
     <div id="content-container" class="w-100 flex flex-column items-center justify-center pa3">
@@ -24,40 +35,47 @@
         <svg width="350px" height="150px" xmlns="http://www.w3.org/2000/svg" style="filter:blur(20px)">
             <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- .Scratch.Get "svgPath" -}}"></path>
           </svg>     
-        <h1 class="f2 title --font-family-title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
+        <h2 class="f2 title --font-family-title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
           {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
-        </h1>   
+        </h2>   
       </div>
 
       <!-- Additional Info -->
       <div class="info-container pa3">
-        <ul class="f6 list pl0">
-          {{- range .Params.languages -}}
-            {{- $currentLanguage := .language }} <!-- Capture the current language in a variable -->
-            {{- with .names -}} <!-- Ensure .names exists and is a slice -->
-              <li>
-                <strong>{{ $currentLanguage }}:</strong> <!-- Use the captured language variable -->
-                {{- range . -}} <!-- Now this ranges over the names -->
-                  <span>{{ . | title }}</span>
-                  {{- if not (eq (index . (sub (len .) 1)) .) }}{{ end }} <!-- Corrected context for names slice -->
-                {{- end -}}
-              </li>
+        <div>
+          <h2 class="f4">Info</h2>
+          <ul>
+            <li class="f6">Species Category: {{ .Params.category }}</li>
+            <li class="f6">Scientific Name: {{- if .Params.scientificName -}}{{ .Params.scientificName -}}{{- else }} ?{{- end -}}</li>
+          </ul>
+        </div>
+        <div class="mt3">
+          <h2 class="f4">Names</h2>
+          <ul class="f6 list pl0">
+            {{- range .Params.languages -}}
+              {{- $currentLanguage := .language }} 
+              {{- with .names -}} 
+                <li>
+                  <strong>{{ $currentLanguage }}:</strong> 
+                  {{- range . -}} 
+                    <span>{{ . | title }}</span>
+                    {{- if not (eq (index . (sub (len .) 1)) .) }}{{ end }} 
+                  {{- end -}}
+                </li>
+              {{- end -}}
             {{- end -}}
-          {{- end -}}
-        </ul>
-        
-              
+          </ul>
+        </div>
         <div class="mt3 f6">
+          <h2 class="f4">Collective stories and knowledge about The {{ if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}</h2>
           {{- if .Content -}}
             <p>{{ .Content }}</p>
           {{- else -}}
-            <p>No description available.</p>
+            <p>No stories available.</p>
           {{- end -}}
         </div>
       </div>
-      
     </div>
-
   </div>
 </div>
 

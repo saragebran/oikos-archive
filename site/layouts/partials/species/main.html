@@ -17,7 +17,7 @@
             <a href="{{ $page.Permalink }}" class="no-underline w5 h5">
                 {{- if $hasRepresentation -}} <img imagelink='{{- $page.Render "backgroundimg" -}}' src="" alt=""> {{- end -}}
               <div class="flex title items-center justify-center w-100 h-100 {{ if $hasRepresentation }}has-rep{{ end }}">
-                {{ .Render "colorPathCalc"}}
+                {{ .Render "pathCalc"}}
                 <div class="absolute bgstroke top-0 left-0 w-100 h-100" style="filter: blur(20px);">
                   <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{ .Scratch.Get "svgPath" -}}"></path>
