@@ -5,6 +5,9 @@ languages:
   - language: English
     names:
       - Amur leopard
+  - language: Spanish
+    names:
+      - Something else
 kind: species
 color: "#da5604"
 category: Animal

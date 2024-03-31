@@ -37,7 +37,8 @@
             </a>
             <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap">
               <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1">
-                <div>This species has been given a name in {{- $page.Render "otherLanguages" -}}</div>
+                {{/* TO-DO: get rid of this english name workaround by figuring out what's wrong with otherLanguages  */}}
+                <div>This species has been given a name in {{ if $englishName -}} English,{{- end }}{{- $page.Render "otherLanguages" -}}</div>
               </div>
               <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName -}}dn{{- end -}}">
                 <a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">edit</a>

@@ -12,12 +12,15 @@
         </div>
         {{- if $hasRepresentation -}}
           {{- $representations := .Site.GetPage "section" "representations" -}}
+          {{- $uuid := .Params.uuid -}}
           {{- range $representations.Pages -}}
-            <div class="flex flex-column f6">
-              <div><i class="i">{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "?" }})</div>
-              <div>{{ .Params.author | default "Unknown Artist" }}</div>
-              <div>{{ .Params.contact | default "?" }}</div>
-            </div>
+            {{- if eq $uuid .Params.speciesid -}}
+              <div class="flex flex-column f6">
+                <div><i class="i">{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "?" }})</div>
+                <div>{{ .Params.author | default "Unknown Artist" }}</div>
+                <div>{{ .Params.contact | default "?" }}</div>
+              </div>
+            {{- end -}}
           {{- end }}
         {{- else -}}
           {{- .Render "englishName" -}}
