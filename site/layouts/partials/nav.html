@@ -10,13 +10,13 @@
         </a>
         <div class="dropdown-add">
             <div class="flex text-dark mr3">
-                <div class="h2 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
-                    <a class="no-underline" href="/admin/#/collections/species/entries/new">New Species</a>
+                <div class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
+                    <a class="no-underline" href="{{ if .IsHome }}/admin/#/collections/species/entries/new{{else}}/admin/#/collections/species/entries/{{- .Params.uuid -}}/_index{{ end }}">{{ if .IsHome }}New{{else}}Edit{{ end }} Species</a>
                 </div>
             </div>
             <div class="flex text-dark mr3">
-                <div class="h2 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
-                    <a class="no-underline" href="/admin/#/collections/representations/entries/new">New Artwork</a>
+                <div class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
+                    <a class="no-underline" href="/admin/#/collections/representations/entries/new">{{ if .IsHome }}New{{else}}Add{{ end }} Artwork</a>
                 </div>
             </div>
         </div>

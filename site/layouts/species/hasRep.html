@@ -1,0 +1,17 @@
+{{- $representations := .Site.GetPage "section" "representations" -}}
+{{- $uuid := .Page.Params.uuid -}}
+{{- $hasRepresentation := false -}}
+{{- $imgPath := "" -}}  <!-- Initialize the string variable -->
+
+<div class="dn rep-paths">
+{{- range $representations.Pages -}}
+  {{- if and (eq $uuid .Params.speciesid) (not $hasRepresentation) -}}
+    {{- $hasRepresentation = true -}}
+    {{- $imgPath = print "representations/" $uuid .Params.image -}}  <!-- Store the image path -->
+    <p>{{ $imgPath }}</p>
+  {{- end -}}
+{{- end }}
+</div>
+
+{{- .Scratch.Set "hasRepresentation" $hasRepresentation -}}
+{{- .Scratch.Set "imgPath" $imgPath -}}

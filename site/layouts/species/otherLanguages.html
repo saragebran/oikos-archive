@@ -12,10 +12,10 @@
   {{- end -}}
 {{- end -}}
 
-{{- $lastIndex := sub (len $nonEnglishLanguages) 1 -}}
-{{- if gt (len $nonEnglishLanguages) 0 -}}
-  {{- range $index, $lang := $nonEnglishLanguages -}}
-    {{- $lang }}
-    {{- if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }} and {{- else }}, {{- end }}
+{{ $lastIndex := sub (len $nonEnglishLanguages) 1 }}
+{{ if gt (len $nonEnglishLanguages) 0 }}
+  {{ range $index, $lang := $nonEnglishLanguages }}
+    {{ $lang -}}
+    {{ if eq $index $lastIndex }}.{{ else if eq $index (sub $lastIndex 1) }} and {{- else }}, {{ end }}
   {{- end -}}
 {{- end -}}

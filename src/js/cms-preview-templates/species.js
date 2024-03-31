@@ -128,10 +128,10 @@ const ComplementarySquare = ({ color }) => {
         <div className="flex title items-center justify-center w-100 h-100">
           <div className="absolute bgstroke top-0 left-0 w-100 h-100" style={{ filter: 'blur(20px)' }}>
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <path className="cms-mist" id="morphing-path" fill="transparent" stroke={complimentaryColor} strokeWidth="100" d={path}></path>
+              <path className="cms-mist" id="morphing-path" fill="transparent" stroke={color} strokeWidth="100" d={path}></path>
             </svg>
           </div>
-          <h2 className="--font-family-title z-1 f3 word-wrap common-name" style={{color}}>
+          <h2 className="--font-family-title z-1 f3 word-wrap common-name" style={{ color: complimentaryColor }}>
             {getNames() || entry.data.scientificName || '?'}
           </h2>
         </div>

@@ -167,3 +167,46 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(element);
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Function to convert RGB color to Hex
+  const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
+      const hex = parseInt(x).toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+  }).join('');
+
+  // Function to calculate the complementary color
+  function getComplementaryColor(hex) {
+      // Remove the hash at the start if it's there
+      hex = hex.replace('#', '');
+
+      // Convert hex to RGB
+      let r = parseInt(hex.substring(0, 2), 16);
+      let g = parseInt(hex.substring(2, 4), 16);
+      let b = parseInt(hex.substring(4, 6), 16);
+
+      // Calculate the complementary color
+      r = (255 - r).toString(16).padStart(2, '0');
+      g = (255 - g).toString(16).padStart(2, '0');
+      b = (255 - b).toString(16).padStart(2, '0');
+
+      // Return the complementary color with a hash
+      return `#${r}${g}${b}`;
+  }
+
+  // Apply the complementary color to all elements with the 'comp-color' class
+  const elements = document.querySelectorAll('.comp-color');
+
+  elements.forEach(el => {
+      // Get the current text color of the element
+      const currentColor = window.getComputedStyle(el).color;
+
+      // Convert the color to hexadecimal if it's in rgb(a) format
+      const rgbValues = currentColor.match(/\d+/g).map(Number);
+      const hexColor = rgbValues.length >= 3 ? rgbToHex(...rgbValues) : currentColor;
+
+      // Set the complementary color as the new text color
+      el.style.color = getComplementaryColor(hexColor);
+  });
+});

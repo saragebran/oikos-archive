@@ -1,7 +1,3 @@
-
-
-
-
 {{- define "main" -}}
 
 <div class="mw9 center mt5 mb5 min-vh-100">
@@ -9,58 +5,16 @@
 
     <!-- Image container -->
     <div id="image-container" class="w-100 flex justify-center pa3">
-      {{- $representations := .Site.GetPage "section" "representations" -}}
-      {{- $hasRepresentation := false -}}
-      {{ $uuid := .Params.uuid }}
-      {{- range $representations.Pages -}}
-        {{- if eq $uuid .Params.speciesid -}}
-          {{- $hasRepresentation := true -}}
-          <img class="mht6" src="representations/{{ $uuid }}{{ .Params.image }}" alt="" onclick="toggleFullScreen(this)">
-        {{- end -}}
-      {{- end -}}
+      {{- .Render "hasRep" -}}
+      {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
+      <img class="mht6" src="{{ .Scratch.Get "imgPath" }}" alt="" onclick="toggleFullScreen(this)">
     </div>
 
-    {{- $englishName := "" -}}
-    {{- $otherName := "" -}}
-    {{- range .Params.languages -}}
-      {{- if eq .language "English" -}}
-        {{- $englishName = index .names 0 -}}
-      {{- else -}}
-        {{- $otherName = index .names 0 -}}
-      {{- end -}}
-    {{- end -}} 
+    {{- .Render "englishName" -}}
+    {{- $englishName := .Scratch.Get "englishName" | title -}} 
+    {{- $otherName := .Scratch.Get "otherName" | title -}}
 
-    {{- $color := .Params.color | strings.TrimPrefix "#" -}}
-    {{- $rHex := substr $color 0 2 -}}
-    {{- $gHex := substr $color 2 2 -}}
-    {{- $bHex := substr $color 4 2 -}}
-    {{- $rInt := int (printf "0x%s" $rHex) -}}
-    {{- $gInt := int (printf "0x%s" $gHex) -}}
-    {{- $bInt := int (printf "0x%s" $bHex) -}}
-    {{- $rComp := printf "%02x" (sub 255 $rInt) -}}
-    {{- $gComp := printf "%02x" (sub 255 $gInt) -}}
-    {{- $bComp := printf "%02x" (sub 255 $bInt) -}}
-    {{- $complimentaryColor := print "#" $rComp $gComp $bComp -}}
-    {{- $width := 250.0 -}}
-    {{- $height := 250.0 -}}
-    {{- $minControlX := 10.0 -}}
-    {{- $maxControlX := 445.0 -}}
-    {{- $minControlY := 10.0 -}}
-    {{- $maxControlY := 150.0 -}}
-    {{- $variance := 10.0 -}}
-    {{/* Shuffle an array of numbers from 1 to 9 */}}
-    {{- $numbers := shuffle (seq 1 9) -}}
-    {{/* Use the first two numbers from the shuffled array for randomness */}}
-    {{- $randX := div (float (index $numbers 0)) 9.0 -}}
-    {{- $randY := div (float (index $numbers 1)) 9.0 -}}
-    {{/* Calculate the random control points within the allowed variance */}}
-    {{- $controlX := add (mul (sub $maxControlX $minControlX) $randX) $minControlX -}}
-    {{- $controlY := add (mul (sub $maxControlY $minControlY) $randY) $minControlY -}}
-    {{/* Introduce additional randomness to the control points using variance */}}
-    {{- $controlX = add $controlX (mul (sub (mul $randX 2) 1) $variance) -}}
-    {{- $controlY = add $controlY (mul (sub (mul $randY 2) 1) $variance) -}}
-    {{/* Generate the SVG path with the computed control points */}}
-    {{- $path := printf "M100 220 Q %.2f %.2f, 145 80 T %.2f %.2f" $controlX $controlY $width $height -}}
+    {{- .Render "colorPathCalc" -}}
 
     <!-- Content container -->
     <div id="content-container" class="w-100 flex flex-column items-center justify-center pa3">
@@ -68,24 +22,32 @@
       <!-- SVG and Title -->
       <div class="svg-container tc w-100 mb3 mt3">
         <svg width="350px" height="150px" xmlns="http://www.w3.org/2000/svg" style="filter:blur(20px)">
-            <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- $path -}}"></path>
+            <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- .Scratch.Get "svgPath" -}}"></path>
           </svg>     
-        <h1 class="f2 title --font-family-title" style="color: {{- $complimentaryColor -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
+        <h1 class="f2 title --font-family-title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
           {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
         </h1>   
       </div>
 
       <!-- Additional Info -->
       <div class="info-container pa3">
-        <div class="f4">
+        <ul class="f6 list pl0">
           {{- range .Params.languages -}}
-            <div class="dib mr2">{{ .language }}:</div>
-            {{- range .names -}}
-              <div class="dib mr2">{{ . | title }}</div>
+            {{- $currentLanguage := .language }} <!-- Capture the current language in a variable -->
+            {{- with .names -}} <!-- Ensure .names exists and is a slice -->
+              <li>
+                <strong>{{ $currentLanguage }}:</strong> <!-- Use the captured language variable -->
+                {{- range . -}} <!-- Now this ranges over the names -->
+                  <span>{{ . | title }}</span>
+                  {{- if not (eq (index . (sub (len .) 1)) .) }}{{ end }} <!-- Corrected context for names slice -->
+                {{- end -}}
+              </li>
             {{- end -}}
           {{- end -}}
-        </div>
-        <div class="mt3">
+        </ul>
+        
+              
+        <div class="mt3 f6">
           {{- if .Content -}}
             <p>{{ .Content }}</p>
           {{- else -}}
@@ -98,20 +60,21 @@
 
   </div>
 </div>
+
 <script>
-    // JavaScript function to toggle full screen for the image
-    function toggleFullScreen(imgElement) {
-      if (!document.fullscreenElement) {
-        imgElement.requestFullscreen().catch(err => {
-          alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
+  function toggleFullScreen(imgElement) {
+  if (!document.fullscreenElement) {
+    imgElement.requestFullscreen().catch(err => {
+      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
     }
-    </script>
+  }
+}
+</script>
+
 {{- end -}}
 
 

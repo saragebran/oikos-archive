@@ -1,0 +1,12 @@
+{{- $englishName := "" -}}
+{{- $otherName := "" -}}
+{{- range .Page.Params.languages -}}
+{{- if eq .language "English" -}}
+  {{- $englishName = index .names 0 -}}
+{{- else -}}
+  {{- $otherName = index .names 0 -}}
+{{- end -}}
+{{- end -}}
+
+{{ .Scratch.Set "englishName" $englishName }}
+{{ .Scratch.Set "otherName" $otherName }}

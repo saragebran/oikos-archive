@@ -1,0 +1,21 @@
+{{- $width := 250.0 -}}
+{{- $height := 250.0 -}}
+{{- $minControlX := 10.0 -}}
+{{- $maxControlX := 445.0 -}}
+{{- $minControlY := 10.0 -}}
+{{- $maxControlY := 150.0 -}}
+{{- $variance := 10.0 -}}
+{{/* Shuffle an array of numbers from 1 to 9 */}}
+{{- $numbers := shuffle (seq 1 9) -}}
+{{/* Use the first two numbers from the shuffled array for randomness */}}
+{{- $randX := div (float (index $numbers 0)) 9.0 -}}
+{{- $randY := div (float (index $numbers 1)) 9.0 -}}
+{{/* Calculate the random control points within the allowed variance */}}
+{{- $controlX := add (mul (sub $maxControlX $minControlX) $randX) $minControlX -}}
+{{- $controlY := add (mul (sub $maxControlY $minControlY) $randY) $minControlY -}}
+{{/* Introduce additional randomness to the control points using variance */}}
+{{- $controlX = add $controlX (mul (sub (mul $randX 2) 1) $variance) -}}
+{{- $controlY = add $controlY (mul (sub (mul $randY 2) 1) $variance) -}}
+{{/* Generate the SVG path with the computed control points */}}
+{{- $path := printf "M100 220 Q %.2f %.2f, 145 80 T %.2f %.2f" $controlX $controlY $width $height -}}
+{{- .Scratch.Set "svgPath" $path -}} 
