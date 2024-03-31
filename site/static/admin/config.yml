@@ -41,8 +41,11 @@ collections:
   - name: "representations"
     label: "Representations"
     identifier_field: "title"  
-    folder: "site/content/representations/{{speciesid}}"
+    folder: "site/content/representations"
+    path: '{{speciesid}}/{{title}}'
     create: true
+    media_folder: ''
+    public_folder: ''
     fields:
       - {label: "Kind", name: "kind", widget: "hidden", default: "representations"}
       - label: "Species"
@@ -57,8 +60,6 @@ collections:
         name: "image"
         widget: "image"
         hint: "Max file size: 512kb"
-        media_folder: "{{fields.speciesid}}"
-        public_folder: "{{fields.speciesid}}"
       - label: "Title"  
         name: "title"
         widget: "string"
