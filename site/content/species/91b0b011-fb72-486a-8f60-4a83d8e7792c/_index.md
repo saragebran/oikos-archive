@@ -5,11 +5,13 @@ languages:
   - language: English
     names:
       - Amur leopard
-  - language: Spanish
+  - language: Español
     names:
-      - Something else
+      - Leopardo Amur
 kind: species
 color: "#da5604"
 category: Animal
 ---
 The Amur leopard is important ecologically, economically and culturally. Conservation of its habitat benefits other species, including Amur tigers and prey species like deer. With the right conservation efforts, we can bring them back and ensure long-term conservation.
+
+Soñaba en tener uno en mi casa de pequeña, porque se parecen a los gatos, solo que mas bonitos.
