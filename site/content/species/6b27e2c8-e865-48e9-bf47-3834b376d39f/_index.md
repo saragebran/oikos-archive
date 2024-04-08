@@ -4,6 +4,9 @@ languages:
   - language: español
     names:
       - El cocotero casero
+  - language: español
+    names:
+      - another name
 kind: species
 color: "#819a0a"
 category: Plant

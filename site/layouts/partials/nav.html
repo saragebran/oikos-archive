@@ -1,33 +1,28 @@
+{{- define "header" -}}
 <nav class="fixed top-0 w-100 flex justify-between h3 items-center center bg-white bb z-999">
-    <!-- Logo -->
     <a href="/" class="db mr4 pl3">
        <div>Visions of a Disappearing World</div>
     </a>
-
-        <!-- Language Selector -->
-        <div class="flex text-dark mr3">
-            <select class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
-                <option value="English">English</option>
-            </select>
-        </div>
-
 <div class="flex">
-    <div class="flex text-dark mr3">
-        <div class="h2 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
-            <a class="no-underline" href="/admin/#/collections/species/entries/new">New Species</a>
-        </div>
-    </div>
-
-    <div class="flex text-dark mr3">
-        <div class="h2 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
-            <a class="no-underline" href="/admin/#/collections/representations/entries/new">New Artwork</a>
+    <div class="flex text-dark mr3 w-100 h-100">
+        <a class="no-underline plusBtn" href="/admin/#/collections/species/entries/new">
+            <div class="h2 w2 bt bb bl br tc f3 bg-white normal b--black" name="languages" id="languages">+</div>
+        </a>
+        <div class="dropdown-add">
+            <div class="flex text-dark mr3">
+                <div class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
+                    <a class="no-underline" href="{{ if .IsHome }}/admin/#/collections/species/entries/new{{else}}/admin/#/collections/species/entries/{{- .Params.uuid -}}/_index{{ end }}">{{ if .IsHome }}New{{else}}Edit{{ end }} Species</a>
+                </div>
+            </div>
+            <div class="flex text-dark mr3">
+                <div class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black" name="languages" id="languages">
+                    <a class="no-underline" href="/admin/#/collections/representations/entries/new">{{ if .IsHome }}New{{else}}Add{{ end }} Artwork</a>
+                </div>
+            </div>
         </div>
     </div>
 </div> 
-
-
-
 </nav>
-  
+{{- end -}}
 
 

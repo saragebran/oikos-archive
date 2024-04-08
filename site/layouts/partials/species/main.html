@@ -1,40 +1,61 @@
 <div class="mw9 center mt5 mb5 min-vh-100">
-  <ul id="species-container" class="flex flex-wrap mhn1 pa3 justify-center">
-    {{ $speciesSection := .Site.GetPage "section" "species" }}
-    {{ with $speciesSection }}
-      {{ range $index, $page := .Sections }}
-        {{ $uuid := $page.Params.uuid }}
-        {{ $englishName := "" }}
-        {{ $otherName := "" }}
-        {{ range $page.Params.languages }}
-          {{ if eq .language "English" }}
-            {{ $englishName = index .names 0 }}
-            {{ else }}
-            {{ $otherName = index .names 0}}
-          {{ end }}
-        {{ end }}
-        {{ $representations := .Site.GetPage "section" "representations" }}
-        {{ $hasRepresentation := false }}
-        {{ range $representations.Pages }}
-          {{ if eq $uuid .Params.speciesid }}
-            {{ $hasRepresentation = true }}
-          {{ end }}
-        {{ end }}
-        <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{ $uuid }}" {{ if $hasRepresentation }} imagelink='{{ .Render "backgroundimg" }}' style="background-size: cover; background-repeat: repeat; background-position: center center;"{{ end }}>
-            <div class="flex title items-center justify-center w-100 h-100 {{ if $hasRepresentation }}has-rep{{ end }}">
-                {{ .Render "stroke" }}
-                <h2 class="--font-family-title z-1 f3 word-wrap common-name {{ if $hasRepresentation }}has-rep{{ end }}" style="color: {{ $page.Params.color }};">{{ if $englishName }}{{ $englishName }}{{else}}{{ $otherName }}{{ end }}</h2>
+    <ul id="species-container" class="flex flex-wrap mhn1 pa3 justify-center">
+      {{- $speciesSection := .Site.GetPage "section" "species" -}}
+      {{- with $speciesSection -}}
+        {{- range $index, $page := .Sections -}}
+          
+          {{- $uuid := $page.Params.uuid -}}
+
+          {{- .Render "englishName" -}}
+          {{- $englishName := .Scratch.Get "englishName" | title -}} 
+          {{- $otherName := .Scratch.Get "otherName" | title -}}
+
+          {{- .Render "hasRep" -}}
+          {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
+
+          <li class="w5 h5 bt bb br bl b--black ma2 relative speciesli overflow-hidden" id="{{- $uuid -}}" {{- if $hasRepresentation -}} style="background-size: cover; background-repeat: repeat; background-position: center center;"{{- end -}}>
+            <a href="{{ $page.Permalink }}" class="no-underline w5 h5">
+                {{- if $hasRepresentation -}} <img imagelink='{{- $page.Render "backgroundimg" -}}' src="" alt=""> {{- end -}}
+              <div class="flex title items-center justify-center w-100 h-100 {{ if $hasRepresentation }}has-rep{{ end }}">
+                {{ .Render "pathCalc"}}
+                <div class="absolute bgstroke top-0 left-0 w-100 h-100" style="filter: blur(20px);">
+                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{ .Scratch.Get "svgPath" -}}"></path>
+                  </svg>
+                </div>
+                <h2 class='--font-family-title z-1 f3 comp-color common-name tc no-underline' style="color: {{- $page.Params.color -}}">
+                  {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
+                </h2>
+                <div id="namesContainer-{{- $uuid -}}" class="dn">
+                  {{- range $page.Params.languages -}}
+                    {{- range .names -}}
+                      <span>{{- . | title -}}</span>
+                    {{- end -}}
+                  {{- end -}}
+                </div>                
+              </div>
+            </a>
+            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap">
+              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1">
+                {{/* TO-DO: get rid of this english name workaround by figuring out what's wrong with otherLanguages  */}}
+                <div>This species has been given a name in {{ if $englishName -}} English,{{- end }}{{- $page.Render "otherLanguages" -}}</div>
+              </div>
+              <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName -}}dn{{- end -}}">
+                <a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">edit</a>
+              </div>
             </div>
-            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap {{ if $englishName }}dn{{ end }}">
-              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1 {{ if $englishName }}dn{{ end }}"><div>No English name has been given, but it has been given a name in {{ .Render "otherLanguages" }}</div></div>
-              <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName }}dn{{ end }}"><a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">add</a></div>
+            <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation -}}dn{{- end -}}">
+              <div class="noRep dib w-75 br overflow-hidden nowrap">
+                <div class="black">Share your vision of The {{ if $englishName -}}{{- $englishName -}}{{- else -}}{{ $otherName -}}{{- end -}}</div>
+              </div>
+              <div class="w-25 dib absolute pl3">
+                <a href='/admin/#/collections/representations/new/{{ $page.Params.scientificName }}'>add</a>
+              </div>
             </div>
-            <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation }}dn{{ end }}">
-                <div class="noRep dib w-75 br overflow-hidden nowrap"><div class="black">Share your vision of the {{ if $englishName }}{{ $englishName }}{{else}}{{ $otherName }}{{ end }}</div></div>
-                <div class="w-25 dib absolute pl3"><a href='/admin/#/collections/representations/new/{{ .Params.scientificName }}'>add</a></div>
-            </div>
-        </li>
-      {{ end }}
-    {{ end }}
-  </ul>
-</div>
+          </li>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </div>
+
+

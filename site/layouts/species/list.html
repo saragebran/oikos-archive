@@ -1,5 +1,101 @@
-{{ define "main" }}
+{{- define "main" -}}
 
-{{ partial "species/main" . }}
+<div class="mw9 center mt5 mb5 min-vh-100">
+  <div class="flex flex-wrap mhn1 pa3 justify-center">
+    <!-- Image container -->
+    <div id="image-container" class="w-100 flex justify-center pa3">
+      {{- .Render "hasRep" -}}
+      {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
+      <div>
+        <div>
+          <img class="mht6" src="{{ .Scratch.Get "imgPath" }}" alt="" onclick="toggleFullScreen(this)">
+        </div>
+        {{- if $hasRepresentation -}}
+          {{- $representations := .Site.GetPage "section" "representations" -}}
+          {{- $uuid := .Params.uuid -}}
+          {{- range $representations.Pages -}}
+            {{- if eq $uuid .Params.speciesid -}}
+              <div class="flex flex-column f6">
+                <div><i class="i">{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "?" }})</div>
+                <div>{{ .Params.author | default "Unknown Artist" }}</div>
+                <div>{{ .Params.contact | default "?" }}</div>
+              </div>
+            {{- end -}}
+          {{- end }}
+        {{- else -}}
+          {{- .Render "englishName" -}}
+          {{- $englishName := .Scratch.Get "englishName" | title -}} 
+          {{- $otherName := .Scratch.Get "otherName" | title -}}
+          {{- .Render "pathCalc" -}}
+          <!-- SVG and Title -->
+          <div class="svg-container tc w-100 mb3 mt3">
+            <svg width="350px" height="150px" xmlns="http://www.w3.org/2000/svg" style="filter:blur(20px)">
+                <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- .Scratch.Get "svgPath" -}}"></path>
+              </svg>     
+            <h2 class="f2 title --font-family-title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
+              {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
+            </h2>   
+          </div>
+        {{- end }}
+      </div>
+    </div>
+    <!-- Additional Info -->
+    <div id="content-container" class="w-100 flex flex-column items-center justify-center pa3"> 
+      <div class="info-container pa3">
+        <div>
+          <h2 class="f4">Info</h2>
+          <ul>
+            <li class="f6">Species Category: {{ .Params.category }}</li>
+            <li class="f6">Scientific Name: {{- if .Params.scientificName -}}{{ .Params.scientificName -}}{{- else }} ?{{- end -}}</li>
+          </ul>
+        </div>
+        <div class="mt3">
+          <h2 class="f4">Names</h2>
+          <ul class="f6 list pl0">
+            {{- range .Params.languages -}}
+              {{- $currentLanguage := .language }} 
+              {{- with .names -}} 
+                <li>
+                  <strong>{{ $currentLanguage }}:</strong> 
+                  {{- range . -}} 
+                    <span>{{ . | title }}</span>
+                    {{- if not (eq (index . (sub (len .) 1)) .) }}{{ end }} 
+                  {{- end -}}
+                </li>
+              {{- end -}}
+            {{- end -}}
+          </ul>
+        </div>
+        <div class="mt3 f6">
+          {{- .Render "englishName" -}}
+          {{- $englishName := .Scratch.Get "englishName" | title -}} 
+          {{- $otherName := .Scratch.Get "otherName" | title -}}
+          <h2 class="f4">Collective stories and knowledge about The {{ if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}</h2>
+          {{- if .Content -}}
+            <p>{{ .Content }}</p>
+          {{- else -}}
+            <p>No stories available.</p>
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-{{end}}
+<script>
+  function toggleFullScreen(imgElement) {
+  if (!document.fullscreenElement) {
+    imgElement.requestFullscreen().catch(err => {
+      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+</script>
+
+{{- end -}}
+
+
