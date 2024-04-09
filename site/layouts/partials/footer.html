@@ -10,11 +10,25 @@
 		<div class="ml2 mr2 overflow-y-scroll pt6 intro-text z-1">
 			<div>
 				{{- $pages := .Site.GetPage "section" "pages" -}}
-                {{- range $pages.Pages -}}
-                    {{- if eq .Title "About" -}}
-                        {{- .Content -}}
-                    {{- end -}}
-                {{- end -}}
+				{{- range $pages.Pages -}}
+					{{- if eq .File.BaseFileName "intro" -}}
+						<!-- Render intro content in its own div -->
+						<div class="intro">
+							{{ .Content }}
+						</div>
+					{{- end -}}
+				{{- end -}}
+				{{- range $pages.Pages -}}
+					{{- if eq .File.BaseFileName "intro" -}}
+					{{- else -}}
+						<details>
+							<summary>{{ .Title }}</summary>
+							<div>
+								{{ .Content }}
+							</div>
+						</details>
+					{{- end -}}
+				{{- end -}}
 			</div>
 		</div>
 	</div>

@@ -83,11 +83,10 @@ collections:
         hint: "The year that you created the artwork"
   - name: "pages"
     label: "Pages"
-    create: true # Switch to false in order to not allow users to edit the pages.
-    files:
-      - file: "site/content/pages/about.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {label: Title, name: title, widget: string}
-          - {label: About La Chicharra, name: body, widget: markdown}
+    folder: "site/content/pages/{{slug}}"
+    create: true # Allows creation of new pages within the admin interface
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
