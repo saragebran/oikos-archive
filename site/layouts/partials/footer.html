@@ -1,17 +1,25 @@
 {{- define "footer" -}}
-<footer class="pv3 ph3 black fixed bottom-0 w-100 bt h3 b--black bg-white">
-	<div class="mw7 center pt1">
-		<div class="measure-narrow center mb4">
-			<img src="/img/logo.svg" alt="A logo" class="db w4 center mb4 br0">
+<footer class="fixed h3 bottom-0 w-100 bt b--black bg-white z-999 closed" id="footer">
+	<div class="absolute top-0 h3 w-100 z-3 bg-white" id="chicharra-container">
+		<div class="flex top-0 items-center h-100 w-100 justify-center">
+			<img src="/img/lachicarra.svg" alt="page logo representing the Chicharra" class="db h-75" id="chicharra" style="cursor: pointer;">
 		</div>
-		<div class="flex-ns justify-between">
+	</div>
+	<div class="welcome-wrapper flex justify-center relative" style="height: 100vh;">
+		<div class="gradient-overlay absolute w-100 h3 z-2" style="background: linear-gradient(to bottom, white, transparent);"></div>
+		<div class="ml2 mr2 overflow-y-scroll pt6 intro-text z-1">
 			<div>
-				<h3 class="f4 b lh-title mb2 primary">Social media</h3>
-				<ul class="mhn2"></ul>
+				{{- $pages := .Site.GetPage "section" "pages" -}}
+                {{- range $pages.Pages -}}
+                    {{- if eq .Title "About" -}}
+                        {{- .Content -}}
+                    {{- end -}}
+                {{- end -}}
 			</div>
 		</div>
 	</div>
 </footer>
+
 {{- end -}}
 
 

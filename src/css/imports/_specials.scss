@@ -19,8 +19,19 @@ $fade-duration: 5s; /* align the with the fade interval in the javascript at src
   display: block;
 }
 
+.plusBtn:hover {
+  color: var(--white);
+  background-color: var(--black);
+  stroke: var(--white); 
+}
 
+.plusBtn {
+  font-weight: var(--body-font-weight);
+}
 
+#plusPath {
+  stroke: var(--black);
+}
 
   ::-webkit-scrollbar {
     display: none;
@@ -112,4 +123,20 @@ $fade-duration: 5s; /* align the with the fade interval in the javascript at src
     transform: scale(0.8); // Shrink a bit as it fades out
     filter: blur(40px);
   }
+}
+
+.edit-button {
+  letter-spacing: .1rem;
+  font-weight: var(--bold-font-weight);
+  font-size: var(--font-size-button);
+}
+
+.edit-button:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.gradient-overlay {
+  top: var(--spacing-extra-large);
+  pointer-events: none; /* Ensures clicks go through the pseudo-element */
 }

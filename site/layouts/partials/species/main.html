@@ -1,4 +1,4 @@
-<div class="mw9 center mt5 mb5 min-vh-100">
+<div class="mw9 center mt2 mb5 min-vh-100">
     <ul id="species-container" class="flex flex-wrap mhn1 pa3 justify-center">
       {{- $speciesSection := .Site.GetPage "section" "species" -}}
       {{- with $speciesSection -}}
@@ -23,7 +23,7 @@
                     <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{ .Scratch.Get "svgPath" -}}"></path>
                   </svg>
                 </div>
-                <h2 class='--font-family-title z-1 f3 comp-color common-name tc no-underline' style="color: {{- $page.Params.color -}}">
+                <h2 class='z-1 f3 comp-color common-name tc no-underline' style="color: {{- $page.Params.color -}}">
                   {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
                 </h2>
                 <div id="namesContainer-{{- $uuid -}}" class="dn">
@@ -35,21 +35,29 @@
                 </div>                
               </div>
             </a>
-            <div class="name-info absolute bb pt1 left-0 top-0 f6 normal w-100 bg-white h2 overflow-hidden nowrap">
-              <div class="noSpeciesName dib w-75 br overflow-hidden nowrap z-1">
+            <div class="name-info absolute bb left-0 top-0 f6 normal w-100 bg-white h1 overflow-hidden nowrap">
+              <div class="noSpeciesName dib w-75 br h-100 overflow-hidden nowrap z-1">
                 {{/* TO-DO: get rid of this english name workaround by figuring out what's wrong with otherLanguages  */}}
                 <div>This species has been given a name in {{ if $englishName -}} English,{{- end }}{{- $page.Render "otherLanguages" -}}</div>
               </div>
-              <div class="giveLanguageName w-25 dib absolute pl3 {{ if $englishName -}}dn{{- end -}}">
-                <a href="/admin/#/collections/species/entries/{{ $uuid }}/_index">edit</a>
+              <div class="giveLanguageName absolute h-100 w-25 dib">
+                <a class="no-underline" href="/admin/#/collections/species/entries/{{ $uuid }}/_index">
+                  <div class="flex w-100 h-100 justify-center items-center edit-button ttu bold">
+                    <div>edit</div>
+                  </div>
+                </a>
               </div>
             </div>
-            <div class="rep-info pt1 absolute bt w-100 nowrap h2 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation -}}dn{{- end -}}">
-              <div class="noRep dib w-75 br overflow-hidden nowrap">
+            <div class="rep-info absolute bt w-100 nowrap h1 left-0 bottom-0 f6 normal bg-white {{ if $hasRepresentation -}}dn{{- end -}}">
+              <div class="noRep dib w-75 br h-100 overflow-hidden nowrap">
                 <div class="black">Share your vision of The {{ if $englishName -}}{{- $englishName -}}{{- else -}}{{ $otherName -}}{{- end -}}</div>
               </div>
-              <div class="w-25 dib absolute pl3">
-                <a href='/admin/#/collections/representations/new/{{ $page.Params.scientificName }}'>add</a>
+              <div class="absolute h-100 w-25 dib">
+                <a class="no-underline" href='/admin/#/collections/representations/new/{{ $page.Params.scientificName }}'>
+                  <div class="flex w-100 h-100 justify-center items-center edit-button ttu bold">
+                   <div>add</div>
+                  </div>
+                </a>
               </div>
             </div>
           </li>

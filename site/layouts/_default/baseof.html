@@ -2,7 +2,9 @@
 <html class="bg-white" lang="{{ $.Site.Language.Lang }}">
   {{ partial "head" . }}
   <body class="bg-white">
+    {{- if not .IsHome -}}
     {{- block "header" . -}}{{- end -}}
+    {{- end -}}
     {{- block "main" . -}}{{- end -}}
     {{- block "footer" . -}}{{- end -}}
     {{- $script := .Site.Data.webpack.main -}}

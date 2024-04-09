@@ -131,7 +131,7 @@ const ComplementarySquare = ({ color }) => {
               <path className="cms-mist" id="morphing-path" fill="transparent" stroke={color} strokeWidth="100" d={path}></path>
             </svg>
           </div>
-          <h2 className="--font-family-title z-1 f3 word-wrap common-name" style={{ color: complimentaryColor }}>
+          <h2 className="z-1 f3 word-wrap common-name" style={{ color: complimentaryColor }}>
             {getNames() || entry.data.scientificName || '?'}
           </h2>
         </div>

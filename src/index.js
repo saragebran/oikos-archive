@@ -1,5 +1,7 @@
 import "./css/main.scss";
 
+
+
 function loopThroughLanguages(speciesElement) {
   let names = Array.from(speciesElement.querySelectorAll(`#namesContainer-${speciesElement.id} span`)).map(el => el.textContent);
   let currentNameIndex = 0;
@@ -119,7 +121,60 @@ function applyMistAnimation(targetElement) {
   return () => intervals.forEach(clearInterval);
 }
 
-// Do when DOM has loaded
+// Open and close intro
+document.addEventListener("DOMContentLoaded", function() {
+  function closeIntro() {
+    console.log("Closing intro");
+    const intro = document.getElementById("footer");
+    const chicharraContainer = document.getElementById('chicharra-container');
+    const chicharraContainerHeight = chicharraContainer ? chicharraContainer.clientHeight : 0;
+    intro.classList.remove('top-0');
+    intro.style.transition = "top 2s ease-in-out";
+    intro.style.top = `${window.innerHeight - chicharraContainerHeight}px`;  // Adjust based on container height
+    intro.classList.add('closed');
+    intro.classList.remove('open');
+  }
+
+  function openIntro() {
+    console.log("Opening intro");
+    const intro = document.getElementById("footer");
+    intro.style.transition = "top 2s ease-in-out";
+    const chicharraContainer = document.getElementById('chicharra-container');
+    const chicharraContainerHeight = chicharraContainer ? chicharraContainer.clientHeight : 0;
+    intro.style.top = `${window.innerHeight - chicharraContainerHeight}px`;  // Adjust based on container height
+    // call new thing after 1 second timeout
+    setTimeout(function() {
+      intro.style.top = '0px';
+    }, 10);
+    intro.classList.add('open');
+    intro.classList.remove('closed');
+    intro.classList.remove('h3');
+    intro.classList.remove('bottom-0');
+
+  }
+
+  const chicharra = document.getElementById("chicharra");
+  if (chicharra) {
+    chicharra.addEventListener("click", () => {
+      const intro = document.getElementById("footer");
+      if (intro) {
+        if (intro.classList.contains('open')) {
+          closeIntro();
+        } else if (intro.classList.contains('closed')) {
+          openIntro();
+        } else {
+        console.log("Intro is neither open nor closed.");
+        }
+      } else {
+        console.error("The element with ID 'intro' was not found.");
+      }
+    });
+  } else {
+    console.error("The element with ID 'chicharra' was not found.");
+  }
+});
+
+// Observer
 document.addEventListener('DOMContentLoaded', () => {
   const options = {
       root: null,
@@ -168,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
+//Complimentary color converter
 document.addEventListener("DOMContentLoaded", () => {
   // Function to convert RGB color to Hex
   const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {

@@ -1,6 +1,6 @@
 {{- define "main" -}}
 
-<div class="mw9 center mt5 mb5 min-vh-100">
+<div class="mw9 center mt2 mb5 min-vh-100">
   <div class="flex flex-wrap mhn1 pa3 justify-center">
     <!-- Image container -->
     <div id="image-container" class="w-100 flex justify-center pa3">
@@ -32,7 +32,7 @@
             <svg width="350px" height="150px" xmlns="http://www.w3.org/2000/svg" style="filter:blur(20px)">
                 <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- .Scratch.Get "svgPath" -}}"></path>
               </svg>     
-            <h2 class="f2 title --font-family-title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
+            <h2 class="f2 title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
               {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
             </h2>   
           </div>
@@ -46,7 +46,7 @@
           <h2 class="f4">Info</h2>
           <ul>
             <li class="f6">Species Category: {{ .Params.category }}</li>
-            <li class="f6">Scientific Name: {{- if .Params.scientificName -}}{{ .Params.scientificName -}}{{- else }} ?{{- end -}}</li>
+            <li class="f6">Scientific Name: {{ if .Params.scientificName -}}{{ .Params.scientificName -}}{{- else }}?{{- end -}}</li>
           </ul>
         </div>
         <div class="mt3">
