@@ -83,7 +83,7 @@ collections:
         hint: "The year that you created the artwork"
   - name: "pages"
     label: "Pages"
-    folder: "site/content/pages/{{slug}}"
+    folder: "site/content/pages/"
     create: true # Allows creation of new pages within the admin interface
     extension: "md"
     format: "frontmatter"
