@@ -140,3 +140,15 @@ $fade-duration: 5s; /* align the with the fade interval in the javascript at src
   top: var(--spacing-extra-large);
   pointer-events: none; /* Ensures clicks go through the pseudo-element */
 }
+
+/* Hide all paragraphs initially */
+#welcomeTexts p {
+  display: none;
+  opacity: 0;
+  transition: opacity 2s; /* Smooth transition for fading out */
+}
+
+/* Style for the moving chicharra image */
+#welcomeChicharra {
+  transition: transform 4s ease-in; /* Smooth transition for moving the image */
+}

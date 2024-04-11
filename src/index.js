@@ -121,7 +121,72 @@ function applyMistAnimation(targetElement) {
   return () => intervals.forEach(clearInterval);
 }
 
-// Open and close intro
+// Animate the welcome message
+document.addEventListener('DOMContentLoaded', function () {
+  let currentIndex = 0;
+  const typingSpeed = 100; // Speed of typing, lower is faster
+  const paragraphs = document.querySelectorAll('#welcomeTexts p');
+  const chicharraDiv = document.getElementById('welcomeChicharra');
+  const welcomeDiv = document.getElementById('welcomeMessage');
+  const footer = document.getElementById('footer');
+  if (welcomeDiv) {
+    function typeWriter(text, n) {
+      if (n < text.length) {
+        paragraphs[currentIndex].innerHTML = text.substring(0, n + 1);
+        setTimeout(() => typeWriter(text, n + 1), typingSpeed);
+      } else {
+        // Start fading out after typing finishes
+        setTimeout(() => {
+          paragraphs[currentIndex].style.opacity = '0';
+          paragraphs[currentIndex].addEventListener('transitionend', function handler() {
+            this.removeEventListener('transitionend', handler);
+            this.remove(); // Remove the paragraph after it fades out
+            if (currentIndex < paragraphs.length - 1) {
+              currentIndex++;
+              startTyping();
+            } else {
+              animateChicharra();
+            }
+          });
+        }, 2000); // Time before starting to fade out
+      }
+    }
+  
+    function startTyping() {
+      if (currentIndex < paragraphs.length) {
+        paragraphs[currentIndex].style.display = 'block';
+        paragraphs[currentIndex].style.opacity = '1';
+        typeWriter(paragraphs[currentIndex].textContent, 0);
+      }
+    }
+    function animateChicharra() {
+      chicharraDiv.style.transform = 'translateY(75vh)'; // Move the chicharra to the bottom
+      footer.style.transform = 'translateY(200px)'; // Initial move for the footer
+      welcomeDiv.style.opacity = "1";
+    
+      chicharraDiv.addEventListener('transitionend', () => {
+        // Start the opacity transition after chicharra has finished moving
+        welcomeDiv.style.transition = 'opacity 2s';
+        welcomeDiv.style.opacity = "0";
+    
+        // Move the footer back after chicharra finishes its transition
+        footer.style.transition = 'transform 2s';
+        footer.style.transform = 'translateY(0px)';
+    
+        setTimeout(() => {
+          welcomeDiv.remove();
+        }, 2000); // Delay before removing the welcome message
+
+      }, { once: true }); // Ensures the listener is removed after execution
+    }
+    
+  
+    startTyping();
+  }
+});
+
+
+// Open and close footer
 document.addEventListener("DOMContentLoaded", function() {
   function closeIntro() {
     console.log("Closing intro");
@@ -265,3 +330,24 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.color = getComplementaryColor(hexColor);
   });
 });
+
+// Cookie to make sure the welcome message is only displayed on the users first visit to the site.
+/* document.addEventListener('DOMContentLoaded', function () {
+  const welcomeDiv = document.getElementById('welcomeMessage');
+
+  // Check if the 'visited' cookie is set
+  if (document.cookie.split('; ').find(row => row.startsWith('visited='))) {
+    // Hide the welcome message if the cookie exists
+    welcomeDiv.style.display = 'none';
+  } else {
+    // If the cookie doesn't exist, display the message and set the cookie
+    welcomeDiv.style.display = 'block';
+
+    // Set the 'visited' cookie to expire in 365 days
+    const expiration = new Date();
+    expiration.setTime(expiration.getTime() + (365 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + expiration.toUTCString();
+    document.cookie = "visited=true; " + expires + "; path=/";
+  }
+});
+ */
