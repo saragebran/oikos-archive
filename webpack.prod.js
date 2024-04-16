@@ -1,6 +1,5 @@
 const {merge} = require("webpack-merge");
 const path = require("path");
-
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -16,8 +15,8 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, "dist")
   },
 
-  optimization: {
-    minimize: false,
+/*   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
@@ -31,5 +30,5 @@ module.exports = merge(common, {
       }),
       new CssMinimizerPlugin(),
     ]
-  }
+  } */
 });
