@@ -25,11 +25,11 @@ module.exports = merge(common, {
         },
         exclude: /\/node_modules\//,
       }),
-      new MiniCssExtractPlugin({
-        filename: "[name].[fullhash:5].css",
-        chunkFilename: "[id].[fullhash:5].css"
-      }),
-      new CssMinimizerPlugin(),
+      // new MiniCssExtractPlugin({
+      //   filename: "[name].[fullhash:5].css",
+      //   chunkFilename: "[id].[fullhash:5].css"
+      // }),
+      // new CssMinimizerPlugin(),
     ]
   }
 });
