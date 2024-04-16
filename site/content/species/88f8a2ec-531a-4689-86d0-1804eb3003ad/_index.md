@@ -1,7 +1,8 @@
 ---
 uuid: 88f8a2ec-531a-4689-86d0-1804eb3003ad
+scientificName: Colibrí Jardinero
 languages:
-  - language: español
+  - language: Español
     names:
       - Colibrí jardinero
   - language: English
