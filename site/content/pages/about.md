@@ -1,5 +1,5 @@
 ---
-title: "about"
+title: "About"
 date: "2024-04-15T14:09:00.000Z"
 ---
 LaChicharra.com is a place where anyone can take part in naming and representing the endangered species of our world. You can add the name of a species that you care about. You can tell a story about it. You can draw or paint it. Use words, images, or both to express your personal relationship with a species that holds significance to you, whether still present in your environment or remembered from the past.
