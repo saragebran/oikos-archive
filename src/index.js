@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Cookie to make sure the welcome message is only displayed on the users first visit to the site.
-/* document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
   const welcomeDiv = document.getElementById('welcomeMessage');
 
   // Check if the 'visited' cookie is set
@@ -350,4 +350,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.cookie = "visited=true; " + expires + "; path=/";
   }
 });
- */
+

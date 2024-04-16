@@ -1,27 +1,16 @@
 ---
-title: About
-date: 
+title: "about"
+date: "2024-04-15T14:09:00.000Z"
 ---
-This platform invites you to represent and present? your local endangered species, through the language of words, the language of images, or both.
+LaChicharra.com is a place where anyone can take part in naming and representing the endangered species of our world. You can add the name of a species that you care about. You can tell a story about it. You can draw or paint it. Use words, images, or both to express your personal relationship with a species that holds significance to you, whether still present in your environment or remembered from the past.
 
-In practicing ‘naming’ the endangered species in our closest environment, we engage in ways of listening, remembering, and reconnecting in unexpected ways with those species that once existed in our vicinity, or in a milieu of our origin, even if far away, those we knew and never met. This requires us to move inwards in our self, tracking our own emotional and embodied relationship to it, informed by our past, present or lack of relations for the absence of it. How and what we feel, felt, wish, connect, experienced, envision, etc. Move in time to the memory of what was there but is no more, or had retrieved somewhere else - protecting itself from extinction perhaps.
-(the above is lacking the species we never met hmmm, could it be solved by adding: those we knew and never met)
-Use the name you remember, or the name your surrounding community gave to it, or a more just name which you now think should have, or the official common name as stated in The Red List of your country (Further below there are links of Red List of few countries. If your country is not listed, and you wish to contribute to make it easier for others, search for it or ask local scientists. Send us the list link  to xxx)
-A species could have more than one name because of different peoples' ways of naming in different parts of the world. Also it can change if you are translating from one language to another, finding a better rhythm and meaning in the other language,  moving slightly away from the first. 
-If there is an existing entry, done by someone else you could add a translation, or another name used also in the same country, or the same language, even if it's in another country.
-Besides listening to ourselves (memory, sight, hearing, smell) this practice requires our intuition, and creativity, so that we can listen to this specie(s) too, embodying the species. By combining these two: listening to yourself and the species, we could give it a proper name and/or image it should have. 
+**Name it**: You might use a name that's locally recognized, one you feel is more appropriate, or the official name from your country's Red List.
 
-Two representations:  
-Wording
-Write the name you proposed, in your own language or other language you also use. 
-choose a color you think relates to your emotion and/or its emotionally related to this species.
-Write a memory or story of this species: Why have you chosen it? What do you know about it? Or describe what it does, or how it looks …
-It's optional to add the Scientific Name.
-Save it. In ‘Preview’ you can see the result of all entries in this platform.
-Once you save it, you could go to another form of representation: Drawing this specie, 
-Drawing.
-If you feel comfortable with drawing (or if you want to try pertain the discomfort) draw an image of this species. Don’t worry about being one to one identical representation, its a symbolic image. 
-Upload it. PLEASE do not use an existing image from the internet. It would be removed due to copyrights 
-(its allowed to add a link of an existing image?)
-Save it. In Preview you could see the result, of all entries in this platform. 
-The managers of this platform will review and publish all entries once a week, then you could see the outcome. Entries that are too far from reality about a specie, or are not endangered species, won’t be approved. Make sure you investigate if this species(s) is endangered.
+**Describe It**: Write about why you chose this species, share a memory, or describe its characteristics. Feel free to write in your language and select a color that captures your feelings towards the species.
+
+**Illustrate It**: Draw or paint the species as you see it. Your drawing doesn't need to be a perfect representation; it can reflect your perception and feelings.
+
+We review submissions as often as possible, but please be patient as the project is run by volunteers. Please ensure your contributions are original and avoid using copyrighted images. 
+
+_If you sell an artwork through LaChicharra.com we kindly ask for a donation towards running the site of 10% of the sale price._
+
