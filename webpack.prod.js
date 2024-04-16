@@ -1,6 +1,8 @@
 const {merge} = require("webpack-merge");
 const path = require("path");
+
 const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const common = require("./webpack.common.js");
@@ -15,7 +17,7 @@ module.exports = merge(common, {
   },
 
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
@@ -23,27 +25,11 @@ module.exports = merge(common, {
         },
         exclude: /\/node_modules\//,
       }),
-      // Remove or comment out the CssMinimizerPlugin to disable CSS minification
-      // new CssMinimizerPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "[name].[fullhash:5].css",
+        chunkFilename: "[id].[fullhash:5].css"
+      }),
+      new CssMinimizerPlugin(),
     ]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
-      },
-    ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].[fullhash:5].css",
-      chunkFilename: "[id].[fullhash:5].css"
-    })
-  ]
+  }
 });
