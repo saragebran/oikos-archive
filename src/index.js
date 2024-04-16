@@ -311,8 +311,9 @@ document.addEventListener("DOMContentLoaded", () => {
       g = (255 - g).toString(16).padStart(2, '0');
       b = (255 - b).toString(16).padStart(2, '0');
 
-      // Return the complementary color with a hash
-      return `#${r}${g}${b}`;
+      // Return the complementary color with a hash if you want the common names to appear in a complimentary color
+     // return `#${r}${g}${b}`;
+      return `#fff`;
   }
 
   // Apply the complementary color to all elements with the 'comp-color' class

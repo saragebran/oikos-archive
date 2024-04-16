@@ -158,3 +158,7 @@ $fade-duration: 5s; /* align the with the fade interval in the javascript at src
   transition: height 1s ease-in-out; /* Ensure this line is correctly set */
   height: 0; /* Initial state */
 }
+
+a:focus {
+  border: none;
+}
