@@ -1,5 +1,6 @@
 ---
 uuid: e168434e-b812-48b0-b33b-54c3e0826103
+scientificName: Kerivoula hardwickii
 languages:
   - language: Danish
     names:
@@ -13,8 +14,10 @@ languages:
   - language: Portuguese
     names:
       - Vampiro
+  - language: English
+    names:
+      - Common Woolly Bat
 kind: species
-scientificName: ""
 color: "#5906b1"
 category: Animal
 ---
