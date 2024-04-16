@@ -3,22 +3,24 @@
 <div class="mw9 center mt2 mb5 min-vh-100">
   <div class="flex flex-wrap mhn1 pa3 justify-center">
     <!-- Image container -->
-    <div id="image-container" class="w-100 flex justify-center pa3">
+    <div id="image-container" class="w-100 flex inline-flex justify-center pa3">
       {{- .Render "hasRep" -}}
       {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
-      <div>
-        <div>
-          <img class="mht6" src="{{ .Scratch.Get "imgPath" }}" alt="" onclick="toggleFullScreen(this)">
-        </div>
+      
         {{- if $hasRepresentation -}}
           {{- $representations := .Site.GetPage "section" "representations" -}}
           {{- $uuid := .Params.uuid -}}
           {{- range $representations.Pages -}}
             {{- if eq $uuid .Params.speciesid -}}
-              <div class="flex flex-column f6">
-                <div><i class="i">{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "?" }})</div>
-                <div>{{ .Params.author | default "Unknown Artist" }}</div>
-                <div>{{ .Params.contact | default "?" }}</div>
+              <div class="mr2 ml2">
+                <div>
+                  <img class="mht6" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="" onclick="toggleFullScreen(this)">
+                </div>
+                <div class="flex flex-column f6">
+                  <div><i class="i">{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "?" }})</div>
+                  <div>{{ .Params.author | default "Unknown Artist" }}</div>
+                  <div>{{ .Params.contact | default "?" }}</div>
+                </div>
               </div>
             {{- end -}}
           {{- end }}
@@ -37,7 +39,7 @@
             </h2>   
           </div>
         {{- end }}
-      </div>
+      
     </div>
     <!-- Additional Info -->
     <div id="content-container" class="w-100 flex flex-column items-center justify-center pa3"> 
