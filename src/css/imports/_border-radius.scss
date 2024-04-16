@@ -23,7 +23,7 @@
 		border-bottom-right-radius: 0;
 }
 
-@media (--breakpoint-not-small) {
+@media screen and (min-width: 40em) {
 .br0-ns {     border-radius: 0; }
 
 .br1-ns {     border-radius: var(--border-radius); }
@@ -50,7 +50,7 @@
 }
 }
 
-@media (--breakpoint-medium) {
+@media screen and (min-width: 50em) {
 .br0-m {     border-radius: 0; }
 
 .br1-m {     border-radius: var(--border-radius); }
@@ -77,7 +77,7 @@
 }
 }
 
-@media (--breakpoint-large) {
+@media screen and (min-width: 60em) {
 .br0-l {     border-radius: 0; }
 
 .br1-l {     border-radius: var(--border-radius); }
