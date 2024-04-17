@@ -1,10 +1,12 @@
 {{- $representations := .Site.GetPage "section" "representations" -}}
 {{- $uuid := .Params.uuid -}}
+{{- $shown := false -}} <!-- Flag to check if an image has already been shown -->
 {{- with $representations -}}
-    {{- range $index, $page := .Pages -}}
-      {{ $speciesId := $page.Params.speciesid }}
-        {{- if eq $uuid $speciesId -}}
-            representations/{{ $page.Params.speciesid}}{{ $page.Params.image }}
-        {{- end -}}
+  {{- range $index, $page := .Pages -}}
+    {{- if and (eq $uuid $page.Params.speciesid) (not $shown) -}}
+      <!-- Display the path to the image -->
+      /representations/{{ $page.Params.speciesid }}/{{ $page.Params.image }}
+      {{- $shown = true -}} <!-- Set the flag to true after showing the first image -->
     {{- end -}}
+  {{- end -}}
 {{- end -}}

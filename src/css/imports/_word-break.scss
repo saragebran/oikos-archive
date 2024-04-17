@@ -3,19 +3,19 @@
 .word-nowrap { word-break: keep-all; }
 .hyphenate { hyphens: auto; }
 
-@media (--breakpoint-not-small) {
+@media screen and (min-width: 40em) {
   .word-normal-ns { word-break: normal; }
   .word-wrap-ns { word-break: break-all; }
   .word-nowrap-ns { word-break: keep-all; }
 }
 
-@media (--breakpoint-medium) {
+@media screen and (min-width: 50em) {
   .word-normal-m { word-break: normal; }
   .word-wrap-m { word-break: break-all; }
   .word-nowrap-m { word-break: keep-all; }
 }
 
-@media (--breakpoint-large) {
+@media screen and (min-width: 60em) {
   .word-normal-l { word-break: normal; }
   .word-wrap-l { word-break: break-all; }
   .word-nowrap-l { word-break: keep-all; }

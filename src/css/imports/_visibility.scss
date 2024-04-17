@@ -5,7 +5,7 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-@media (--breakpoint-not-small) {
+@media screen and (min-width: 40em) {
   .clip-ns {
     position: fixed !important;
     _position: absolute !important;
@@ -14,7 +14,7 @@
   }
 }
 
-@media (--breakpoint-medium) {
+@media screen and (min-width: 50em) {
   .clip-m {
     position: fixed !important;
     _position: absolute !important;
@@ -23,7 +23,7 @@
   }
 }
 
-@media (--breakpoint-large) {
+@media screen and (min-width: 60em) {
   .clip-l {
     position: fixed !important;
     _position: absolute !important;

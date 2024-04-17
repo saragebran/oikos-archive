@@ -1,37 +1,84 @@
 {{- define "footer" -}}
 <footer class="fixed h3 bottom-0 w-100 bt b--black bg-white z-999 closed" id="footer">
 	<div class="absolute top-0 h3 w-100 z-3 bg-white" id="chicharra-container">
-		<div class="flex top-0 items-center h-100 w-100 justify-center">
-			<img src="/img/lachicarra.svg" alt="page logo representing the Chicharra" class="db h-75" id="chicharra" style="cursor: pointer;">
+		<div class="flex top-0 items-center h-100 w-100 justify-between">
+			<div class="db h-75 ml2">
+				<a class="no-underline" target="_blank" href="/admin/#/collections/representations/entries/new">
+					<img class="h-100" src="/img/plusBtn.svg" alt=""><span class="f6 dn di-ns">add new artwork</span>
+				</a>
+			</div>
+			<div class="db h-75">
+				<img src="/img/lachicarra.svg" alt="page logo representing the Chicharra" class="h-100" id="chicharra" style="cursor: pointer;">
+			</div>
+			<div class="db h-75 mr2">
+				<a class="no-underline" target="_blank" href="/admin/#/collections/species/entries/new">
+					<span class="f6 dn di-ns">add new species</span><img class="h-100" src="/img/plusBtn.svg" alt="">
+				</a>
+			</div>
 		</div>
 	</div>
 	<div class="welcome-wrapper flex justify-center relative" style="height: 100vh;">
 		<div class="gradient-overlay absolute w-100 h3 z-2" style="background: linear-gradient(to bottom, white, transparent);"></div>
-		<div class="ml2 mr2 overflow-y-scroll pt6 intro-text z-1">
-			<div>
+		<div class="overflow-y-scroll pt6 intro-text z-1">
+			<div class="flex flex-wrap">
 				{{- $pages := .Site.GetPage "section" "pages" -}}
 				{{- range $pages.Pages -}}
 					{{- if eq .File.BaseFileName "intro" -}}
-						<!-- Render intro content in its own div -->
-						<div class="intro">
-							{{ .Content }}
+						<div class="w-50-ns pl3 pr3">
+							<div class="intro f5 i w-75-ns">
+								{{ .Content }}
+							</div>
+							<div class="f6 i">
+								{{ partial "datewithordinal.html" . }}, {{ .Params.author }}
+							</div>
 						</div>
 					{{- end -}}
 				{{- end -}}
+				<div class="bl-ns pr3 pl3 mt4 mt0-ns w-50-ns">
 				{{- range $pages.Pages -}}
 					{{- if eq .File.BaseFileName "intro" -}}
 					{{- else -}}
-						<details>
-							<summary>{{ .Title }}</summary>
-							<div>
-								{{ .Content }}
-							</div>
-						</details>
+
+					<div>
+						<div class="pointer f5-ns ttu bold toggle-button tc tl-ns mb4 mb2-ns bb"><strong>{{ .Title }}</strong></div>
+						<div class="f5 aboutContent" style="height: 0; overflow: hidden;">
+							{{ .Content }}
+						</div>
+					</div>
+					
+						
 					{{- end -}}
 				{{- end -}}
+				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    const buttons = document.querySelectorAll('.toggle-button');
+		
+		    buttons.forEach(button => {
+		        button.addEventListener('click', function() {
+		            const content = this.nextElementSibling; // assuming content div is right after button
+		            if (content.style.height !== '0px') {
+		                content.style.height = '0px';
+		            } else {
+		                // Temporarily change to auto to calculate the height
+		                content.style.height = 'auto';
+		                const height = content.clientHeight + 'px';
+					
+		                // Set back to 0 then to the natural height to trigger animation
+		                content.style.height = '0px';
+		                requestAnimationFrame(() => {
+		                    content.style.height = height;
+		                });
+		            }
+		        });
+		    });
+		});
+
+
+	</script>
 </footer>
 
 {{- end -}}

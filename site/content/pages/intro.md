@@ -1,6 +1,7 @@
 ---
 title: Intro
-date: 
+author: Sara Gebran
+date: 2024-04-13T18:48:00.000Z
 ---
-You could write your story about La Chicharra here. It would be a beautiful introduction and set the tone for how people can open up and tell personal stories. After your introduction, we will have the more practical information, organised in some dropdown menues. I have just added them very basic for now but they will be styled to look nicer and have animated transitions.
+As a child I used to love to listen to the buzzing of thousands of cicadas. But after a short time - I can't say whether days or weeks - they would all fall silent, because they were stuck in the trees, desiccated. I would clutch a dry, empty transparent shell, as if they would flee and leave their skin there, or dry to death from singing? The latter seemed so powerful to me, to sing until they were stuffed into a tree, what a beautiful immolation. To make nature happy with their song and soon after to die of singing.
 

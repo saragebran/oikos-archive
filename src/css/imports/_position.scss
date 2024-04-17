@@ -3,21 +3,21 @@
 .absolute  { position: absolute; }
 .fixed  { position: fixed; }
 
-@media (--breakpoint-not-small) {
+@media screen and (min-width: 40em) {
   .static-ns { position: static; }
   .relative-ns  { position: relative; }
   .absolute-ns  { position: absolute; }
   .fixed-ns  { position: fixed; }
 }
 
-@media (--breakpoint-medium) {
+@media screen and (min-width: 50em) {
   .static-m { position: static; }
   .relative-m  { position: relative; }
   .absolute-m  { position: absolute; }
   .fixed-m  { position: fixed; }
 }
 
-@media (--breakpoint-large) {
+@media screen and (min-width: 60em) {
   .static-l { position: static; }
   .relative-l  { position: relative; }
   .absolute-l  { position: absolute; }

@@ -11,7 +11,7 @@
 .fw9    { font-weight: 900; }
 
 
-@media (--breakpoint-not-small) {
+@media screen and (min-width: 40em) {
   .normal-ns { font-weight: normal; }
   .b-ns      { font-weight: var(--bold-font-weight); }
   .fw1-ns    { font-weight: 100; }
@@ -25,7 +25,7 @@
   .fw9-ns    { font-weight: 900; }
 }
 
-@media (--breakpoint-medium) {
+@media screen and (min-width: 50em) {
   .normal-m { font-weight: normal; }
   .b-m      { font-weight: var(--bold-font-weight); }
   .fw1-m    { font-weight: 100; }
@@ -39,7 +39,7 @@
   .fw9-m    { font-weight: 900; }
 }
 
-@media (--breakpoint-large) {
+@media screen and (min-width: 60em) {
   .normal-l { font-weight: normal; }
   .b-l      { font-weight: var(--bold-font-weight); }
   .fw1-l    { font-weight: 100; }

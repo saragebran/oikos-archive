@@ -23,7 +23,7 @@
   background-position: center left;
 }
 
-@media (--breakpoint-not-small) {
+@media screen and (min-width: 40em) {
   .bg-center-ns {
     background-repeat: no-repeat;
     background-position: center center;
@@ -50,7 +50,7 @@
   }
 }
 
-@media (--breakpoint-medium) {
+@media screen and (min-width: 50em) {
   .bg-center-m {
     background-repeat: no-repeat;
     background-position: center center;
@@ -77,7 +77,7 @@
   }
 }
 
-@media (--breakpoint-large) {
+@media screen and (min-width: 60em) {
   .bg-center-l {
     background-repeat: no-repeat;
     background-position: center center;

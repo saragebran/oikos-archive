@@ -1,31 +1,10 @@
 {{- define "header" -}}
 <nav class="fixed top-0 w-100 flex justify-between h3 items-center">
-    <div class="ml3 h-100">
+    <div class="ml2 mt2 h-100">
         <a href="/" class="flex items-center h-100">
             <img class="h-75 z-999" src="/img/backBtn.svg" alt="">
          </a>
     </div>
-    <div class="mr3 h-100">
-
-            <a class="flex items-center h-100" target="_blank" href="/admin/#/collections/species/entries/new">
-
-                    <img class="h-75" src="/img/plusBtn.svg" alt="">                
-
-            </a>
-            <div class="dropdown-add">
-                <div class="flex text-dark mr3">
-                    <div class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black">
-                        <a class="no-underline" target="_blank" href="{{ if .IsHome }}/admin/#/collections/species/entries/new{{else}}/admin/#/collections/species/entries/{{- .Params.uuid -}}/_index{{ end }}">{{ if .IsHome }}New{{else}}Edit{{ end }} Species</a>
-                    </div>
-                </div>
-                <div class="flex text-dark mr3">
-                    <div class="h2 w4 pa1 bt bb bl br pl2 pr2 f6 bg-white normal b--black">
-                        <a class="no-underline" target="_blank" href="/admin/#/collections/representations/entries/new">{{ if .IsHome }}New{{else}}Add{{ end }} Artwork</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
 </nav>
 {{- end -}}
 
