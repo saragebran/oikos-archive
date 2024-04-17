@@ -4,7 +4,7 @@ scientificName: chicharra
 languages:
   - language: Spanish
     names:
-      - Chicharra
+      - Chicharra que canta
 kind: species
 color: "#ffc500"
 category: Animal
