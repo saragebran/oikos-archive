@@ -9,4 +9,4 @@ kind: species
 color: "#ffc500"
 category: Animal
 ---
-coming soon
+Me ecantaba escuchar a las chicharras los dias más calientes del año. Hace mucho tiempo que no las escucho. Ellas aparecen cantan todas a la vez hasta que se disecan, mueren así,pegadas al árbol, disecadas de tanto cantar creo?
