@@ -7,14 +7,21 @@ import SpeciesPreview from "./cms-preview-templates/species";
 import RepresentationsPreview from "./cms-preview-templates/representations";
 
 
-  // Listen for ALL preSave events
-  CMS.registerEventListener({
+CMS.registerEventListener({
     name: 'preSave',
     collection: 'species',
-    handler: ({ data, collection, field }) => {
-      console.log("hello");
-    },
+    handler: ({ entry }) => {
+      // Assume `entry` is the full entry object which includes the data object
+      const uuid = entry.data.uuid;
+      // Modify the entry directly
+      entry.data.slug = uuid;
+      entry.data.path = `site/content/species/${uuid}/_index.md`;
+  
+      // Return the modified entry
+      return entry;
+    }
   });
+  
   
   
 
