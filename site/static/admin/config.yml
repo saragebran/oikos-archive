@@ -27,13 +27,13 @@ collections:
     summary: "{{scientificName}} - {{category}}"
     fields:
       - {label: "ID", name: "uuid", widget: "uuid", allow_regenerate: false}
-      - {label: "Scientific Name (or any other way of uniquely identifying the species)", name: "scientificName", widget: "string"}
-      - label: "Language"
+      - {label: "File Name", name: "scientificName", widget: "string"}
+      - label: "Species Name"
         name: "languages"
         widget: "list"
         fields:
           - {label: "Language", name: "language", widget: "string"}
-          - {label: "Name of the species in your that language", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
+          - {label: "Name of the species in that language", name: "names", widget: "list", field: {label: "Name", name: "name", widget: "string"}}
       - {label: "Kind", name: "kind", widget: "hidden", default: "species"}
       - {label: "What color do you feel is connected to this species?", name: "color", widget: "color", default: "#00ff00", allowInput: true, enableAlpha: false}
       - {label: "Category", name: "category", widget: "select", options: ["Animal", "Plant", "Fungus", "Other"]}
