@@ -12,8 +12,8 @@ import RepresentationsPreview from "./cms-preview-templates/representations";
     name: 'preSave',
     collection: 'species',
     handler: ({ data, collection, field }) => {
-      console.log('data' + data);
-      console.log('collection' + collection);
+      console.log('data: ' + data.uuid);
+      console.log('collection: ' + collection);
     },
   });
   
