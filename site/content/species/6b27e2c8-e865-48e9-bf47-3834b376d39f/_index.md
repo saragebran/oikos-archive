@@ -5,11 +5,13 @@ languages:
   - language: español
     names:
       - El cocotero casero
-  - language: español
+  - language: English
     names:
-      - another name
+      - Coconut tree
 kind: species
 color: "#819a0a"
 category: Plant
 ---
 De 10 a 3 árboles de coco sobrevivieron estos últimos 55 años en la casa de mis padres.
+
+Cononut Trees are usually found along the beach in tropical countries.
