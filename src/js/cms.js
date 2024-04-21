@@ -14,7 +14,6 @@ import RepresentationsPreview from "./cms-preview-templates/representations";
     handler: ({ data, collection, field }) => {
       console.log('data' + data);
       console.log('collection' + collection);
-      console.log('fieldfield' + field.uuid);
     },
   });
   
