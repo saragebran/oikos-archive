@@ -11,25 +11,11 @@ import RepresentationsPreview from "./cms-preview-templates/representations";
   CMS.registerEventListener({
     name: 'preSave',
     collection: 'species',
-    handler: ({ entry }) => {
-        if (entry && entry.data) {
-            const uuid = entry.data.uuid;  // Accessing UUID from the nested data
-            // Update the slug and path within the nested entry data
-            const updatedEntryData = {
-                ...entry.data,
-                slug: uuid,
-                path: `site/content/species/${uuid}/_index.md`
-            };
-
-            // Return the updated entry object at the top level
-            return {
-                ...entry,
-                data: updatedEntryData
-            };
-        }
-        return entry;  // Return unchanged entry if conditions aren't met
-    }
-});
+    handler: ({ data, collection, field }) => {
+      console.log("hello");
+    },
+  });
+  
   
 
   
