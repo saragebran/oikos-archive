@@ -132,7 +132,7 @@ const ComplementarySquare = ({ color }) => {
             </svg>
           </div>
           <h2 className="z-1 f3 word-wrap common-name" style={{ color: complimentaryColor }}>
-            {getNames() || entry.data.scientificName || '?'}
+            {getNames() || entry.data.fileName || '?'}
           </h2>
         </div>
       </div>
@@ -147,7 +147,7 @@ const ComplementarySquare = ({ color }) => {
       <h2>Info</h2>
       <ul className="flex flex-column">
         <li>{`Species Category: ${entry.data.category || '?'}`}</li>
-        <li>{`Scientific Name: ${entry.data.scientificName || '?'}`}</li>
+        <li>{`Scientific Name: ${entry.data.fileName || '?'}`}</li>
       </ul>
       <h2>Names in different languages</h2>
       <ul>{renderLanguages(entry.data.languages)}</ul>

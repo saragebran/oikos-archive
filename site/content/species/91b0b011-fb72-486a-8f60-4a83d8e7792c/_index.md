@@ -1,6 +1,6 @@
 ---
 uuid: 91b0b011-fb72-486a-8f60-4a83d8e7792c
-scientificName: Panthera pardus orientalis
+fileName: Panthera pardus orientalis
 languages:
   - language: English
     names:

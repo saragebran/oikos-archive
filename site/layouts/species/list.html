@@ -48,7 +48,7 @@
           <h2 class="f4">Info</h2>
           <ul>
             <li class="f6">Species Category: {{ .Params.category }}</li>
-            <li class="f6">Scientific Name: {{ if .Params.scientificName -}}{{ .Params.scientificName -}}{{- else }}?{{- end -}}</li>
+            <li class="f6">Scientific Name: {{ if .Params.fileName -}}{{ .Params.fileName -}}{{- else }}?{{- end -}}</li>
           </ul>
         </div>
         <div class="mt3">

@@ -1,6 +1,6 @@
 [
   {
-    "scientificName": "Lamna nasus",
+    "fileName": "Lamna nasus",
     "commonNames": {
       "Portuguese": "Marracho",
       "Spanish; Castilian": "Tintorera",
@@ -10,7 +10,7 @@
     }
   },
   {
-    "scientificName": "Drosera rotundifolia",
+    "fileName": "Drosera rotundifolia",
     "commonNames": {
       "English": "Common Sundew",
       "Korean": "Kkeun-kkeun-i-ju-geok",
@@ -19,7 +19,7 @@
     }
   },
   {
-    "scientificName": "Zoogoneticus tequila",
+    "fileName": "Zoogoneticus tequila",
     "commonNames": {
       "Spanish; Castilian": "Picote Tequila",
       "Hungarian": "Tequila fogasponty",
@@ -28,7 +28,7 @@
     }
   },
   {
-    "scientificName": "Cymatoceps nasutus",
+    "fileName": "Cymatoceps nasutus",
     "commonNames": {
       "English": "Black Musselcracker",
       "Spanish; Castilian": "Sargo Narigón",
@@ -36,14 +36,14 @@
     }
   },
   {
-    "scientificName": "Conolophus marthae",
+    "fileName": "Conolophus marthae",
     "commonNames": {
       "English": "Galápagos Pink Land Iguana",
       "Spanish; Castilian": "Iguana Rosada"
     }
   },
   {
-    "scientificName": "Rhincodon typus",
+    "fileName": "Rhincodon typus",
     "commonNames": {
       "French": "Requin Baleine",
       "Spanish; Castilian": "Tiburón Ballena",
@@ -52,25 +52,25 @@
     }
   },
   {
-    "scientificName": "Varanus juxtindicus",
+    "fileName": "Varanus juxtindicus",
     "commonNames": {
       "English": "Rennell Island Monitor"
     }
   },
   {
-    "scientificName": "Macrobrachium rosenbergii",
+    "fileName": "Macrobrachium rosenbergii",
     "commonNames": {
       "English": "Giant River Prawn"
     }
   },
   {
-    "scientificName": "Seselphisis visenda",
+    "fileName": "Seselphisis visenda",
     "commonNames": {
       "English": "Seychelles Predatory Bush-Cricket"
     }
   },
   {
-    "scientificName": "Batagur baska",
+    "fileName": "Batagur baska",
     "commonNames": {
       "English": "Northern River Terrapin",
       "French": "Batagur  malais",
@@ -78,38 +78,38 @@
     }
   },
   {
-    "scientificName": "Medemia argun",
+    "fileName": "Medemia argun",
     "commonNames": {
       "Arabic": "Argun"
     }
   },
   {
-    "scientificName": "Breviceps macrops",
+    "fileName": "Breviceps macrops",
     "commonNames": {
       "English": "Desert Rain Frog"
     }
   },
   {
-    "scientificName": "Quercus hintonii",
+    "fileName": "Quercus hintonii",
     "commonNames": {
       "Spanish; Castilian": "Encino prieto "
     }
   },
   {
-    "scientificName": "Fitzroya cupressoides",
+    "fileName": "Fitzroya cupressoides",
     "commonNames": {
       "Spanish; Castilian": "Alerce",
       "English": "Patagonian Cypress"
     }
   },
   {
-    "scientificName": "Thuja sutchuenensis",
+    "fileName": "Thuja sutchuenensis",
     "commonNames": {
       "Chinese": "Ya Bai Shu"
     }
   },
   {
-    "scientificName": "Dalbergia cochinchinensis",
+    "fileName": "Dalbergia cochinchinensis",
     "commonNames": {
       "English": "Siamese Rosewood",
       "Lao": "Kha Nhoung",
@@ -119,45 +119,45 @@
     }
   },
   {
-    "scientificName": "Pinus rzedowskii",
+    "fileName": "Pinus rzedowskii",
     "commonNames": {
       "English": "Rzedowski's Pine"
     }
   },
   {
-    "scientificName": "Sequoiadendron giganteum",
+    "fileName": "Sequoiadendron giganteum",
     "commonNames": {
       "English": "Giant Sequoia"
     }
   },
   {
-    "scientificName": "Prumnopitys ladei",
+    "fileName": "Prumnopitys ladei",
     "commonNames": {
       "English": "Mt Spurgeon Black Pine"
     }
   },
   {
-    "scientificName": "Nothotsuga longibracteata",
+    "fileName": "Nothotsuga longibracteata",
     "commonNames": {
       "Chinese": "Changbao Tieshan",
       "English": "Bristlecone Hemlock"
     }
   },
   {
-    "scientificName": "Magnolia sinica",
+    "fileName": "Magnolia sinica",
     "commonNames": {
       "Chinese": "Huagaimu"
     }
   },
   {
-    "scientificName": "Cryptomeria japonica",
+    "fileName": "Cryptomeria japonica",
     "commonNames": {
       "Japanese": "Sugi",
       "English": "Japanese Cedar"
     }
   },
   {
-    "scientificName": "Carcharhinus longimanus",
+    "fileName": "Carcharhinus longimanus",
     "commonNames": {
       "English": "Oceanic Whitetip Shark",
       "Samoan": "Apoapo",
@@ -171,7 +171,7 @@
     }
   },
   {
-    "scientificName": "Sphyrna lewini",
+    "fileName": "Sphyrna lewini",
     "commonNames": {
       "Arabic": "القرش أبو مطرقة الصدفي",
       "Russian": "Бронзовая молот-рыба",
@@ -179,7 +179,7 @@
     }
   },
   {
-    "scientificName": "Sphyrna mokarran",
+    "fileName": "Sphyrna mokarran",
     "commonNames": {
       "French": "Grand Requin-marteau",
       "Afrikaans": "Groot Hamerkop",
@@ -189,7 +189,7 @@
     }
   },
   {
-    "scientificName": "Sphyrna zygaena",
+    "fileName": "Sphyrna zygaena",
     "commonNames": {
       "French": "Requin marteau lisse",
       "Portuguese": "Tubarão Martelo",
@@ -198,52 +198,52 @@
     }
   },
   {
-    "scientificName": "Rafetus swinhoei",
+    "fileName": "Rafetus swinhoei",
     "commonNames": {
       "English": "Yangtze Giant Softshell Turtle"
     }
   },
   {
-    "scientificName": "Mammillaria herrerae",
+    "fileName": "Mammillaria herrerae",
     "commonNames": {
       "English": "Golf ball",
       "Spanish; Castilian": "Bola de hilo"
     }
   },
   {
-    "scientificName": "Turbinicarpus alonsoi",
+    "fileName": "Turbinicarpus alonsoi",
     "commonNames": {
       "Spanish; Castilian": "Biznaguita"
     }
   },
   {
-    "scientificName": "Leptocereus quadricostatus",
+    "fileName": "Leptocereus quadricostatus",
     "commonNames": {
       "English": "Sebucan"
     }
   },
   {
-    "scientificName": "Cyclura lewisi",
+    "fileName": "Cyclura lewisi",
     "commonNames": {
       "English": "Grand Cayman Blue Iguana"
     }
   },
   {
-    "scientificName": "Barbourula kalimantanensis",
+    "fileName": "Barbourula kalimantanensis",
     "commonNames": {
       "English": "Bornean Flat-headed Frog",
       "Indonesian": "Jakai"
     }
   },
   {
-    "scientificName": "Leptophryne cruentata",
+    "fileName": "Leptophryne cruentata",
     "commonNames": {
       "English": "Bleeding Toad",
       "Indonesian": "Kodok-bercak merah"
     }
   },
   {
-    "scientificName": "Mecistops cataphractus",
+    "fileName": "Mecistops cataphractus",
     "commonNames": {
       "English": "Slender-snouted Crocodile",
       "Spanish; Castilian": "Cocodrilo Hociquifino Africano",
@@ -252,7 +252,7 @@
     }
   },
   {
-    "scientificName": "Crocodylus siamensis",
+    "fileName": "Crocodylus siamensis",
     "commonNames": {
       "Indonesian": "Buaya kodok",
       "Vietnamese": "Cá sấu Xiêm",
@@ -265,7 +265,7 @@
     }
   },
   {
-    "scientificName": "Crocodylus mindorensis",
+    "fileName": "Crocodylus mindorensis",
     "commonNames": {
       "Philippine (Other)": "Bukarot (N. Luzon)",
       "Tagalog": "Buwaya",
@@ -273,33 +273,33 @@
     }
   },
   {
-    "scientificName": "Eleutherodactylus nortoni",
+    "fileName": "Eleutherodactylus nortoni",
     "commonNames": {
       "Spanish; Castilian": "Rana Verde Espinosa",
       "English": "Spiny Giant Frog"
     }
   },
   {
-    "scientificName": "Leptodactylus fallax",
+    "fileName": "Leptodactylus fallax",
     "commonNames": {
       "English": "Mountain Chicken"
     }
   },
   {
-    "scientificName": "Cyclura pinguis",
+    "fileName": "Cyclura pinguis",
     "commonNames": {
       "English": "Anegada Rock Iguana",
       "French": "Iguane terrestre de l'Ile Anegada"
     }
   },
   {
-    "scientificName": "Epioblasma capsaeformis",
+    "fileName": "Epioblasma capsaeformis",
     "commonNames": {
       "English": "Oyster Mussel"
     }
   },
   {
-    "scientificName": "Alligator sinensis",
+    "fileName": "Alligator sinensis",
     "commonNames": {
       "English": "Chinese Alligator",
       "Spanish; Castilian": "Aligator de China",
@@ -307,37 +307,37 @@
     }
   },
   {
-    "scientificName": "Holoaden bradei",
+    "fileName": "Holoaden bradei",
     "commonNames": {
       "English": "Itatiaia Highland Frog"
     }
   },
   {
-    "scientificName": "Bokermannohyla izecksohni",
+    "fileName": "Bokermannohyla izecksohni",
     "commonNames": {
       "English": "Izecksohn's Treefrog"
     }
   },
   {
-    "scientificName": "Andrias davidianus",
+    "fileName": "Andrias davidianus",
     "commonNames": {
       "English": "Chinese Giant Salamander"
     }
   },
   {
-    "scientificName": "Heliopora coerulea",
+    "fileName": "Heliopora coerulea",
     "commonNames": {
       "English": "Blue Coral"
     }
   },
   {
-    "scientificName": "Bombus franklini",
+    "fileName": "Bombus franklini",
     "commonNames": {
       "English": "Franklin's Bumble Bee"
     }
   },
   {
-    "scientificName": "Latimeria menadoensis",
+    "fileName": "Latimeria menadoensis",
     "commonNames": {
       "Danish": "Indonesisk Blå Fisk",
       "Undetermined": "Latimérie Celebeská",
@@ -347,19 +347,19 @@
     }
   },
   {
-    "scientificName": "Salmo nigripinnis",
+    "fileName": "Salmo nigripinnis",
     "commonNames": {
       "English": "Sonaghen"
     }
   },
   {
-    "scientificName": "Nicrophorus americanus",
+    "fileName": "Nicrophorus americanus",
     "commonNames": {
       "English": "American Burying Beetle"
     }
   },
   {
-    "scientificName": "Pangasianodon gigas",
+    "fileName": "Pangasianodon gigas",
     "commonNames": {
       "English": "Mekong Giant Catfish",
       "Thai": "Pla Buk",
@@ -369,7 +369,7 @@
     }
   },
   {
-    "scientificName": "Pangasius sanitwongsei",
+    "fileName": "Pangasius sanitwongsei",
     "commonNames": {
       "English": "Giant Pangasius",
       "Vietnamese": "Cá Vồ Cờ",
@@ -380,19 +380,19 @@
     }
   },
   {
-    "scientificName": "Eryngium viviparum",
+    "fileName": "Eryngium viviparum",
     "commonNames": {
       "French": "Panicaut Nain Vivipare"
     }
   },
   {
-    "scientificName": "Stemmacantha cynaroides",
+    "fileName": "Stemmacantha cynaroides",
     "commonNames": {
       "Spanish; Castilian": "Cardo de Plata"
     }
   },
   {
-    "scientificName": "Arnica montana",
+    "fileName": "Arnica montana",
     "commonNames": {
       "English": "Wolf's Bane",
       "Italian": "Arnica",
@@ -404,13 +404,13 @@
     }
   },
   {
-    "scientificName": "Lotus maculatus",
+    "fileName": "Lotus maculatus",
     "commonNames": {
       "Spanish; Castilian": "Pico de El Sauzal"
     }
   },
   {
-    "scientificName": "Holacanthus clarionensis",
+    "fileName": "Holacanthus clarionensis",
     "commonNames": {
       "Spanish; Castilian": "Ángel de Clarión",
       "Danish": "Clarion-kejserfisk",
@@ -419,7 +419,7 @@
     }
   },
   {
-    "scientificName": "Puya raimondii",
+    "fileName": "Puya raimondii",
     "commonNames": {
       "English": "Queen of the Andes",
       "Quechua": "Titanka",
@@ -428,87 +428,87 @@
     }
   },
   {
-    "scientificName": "Brookesia superciliaris",
+    "fileName": "Brookesia superciliaris",
     "commonNames": {
       "English": "Brown Leaf Chameleon"
     }
   },
   {
-    "scientificName": "Calumma nasutum",
+    "fileName": "Calumma nasutum",
     "commonNames": {
       "English": "Nose-horned Chameleon"
     }
   },
   {
-    "scientificName": "Furcifer angeli",
+    "fileName": "Furcifer angeli",
     "commonNames": {
       "Malagasy": "Sakorikita matsoko orona ",
       "English": "Angel's Chameleon"
     }
   },
   {
-    "scientificName": "Phyllospadix japonicus",
+    "fileName": "Phyllospadix japonicus",
     "commonNames": {
       "English": "Asian Surf Grass"
     }
   },
   {
-    "scientificName": "Halophila beccarii",
+    "fileName": "Halophila beccarii",
     "commonNames": {
       "English": "Ocean Turf Grass"
     }
   },
   {
-    "scientificName": "Zostera caespitosa",
+    "fileName": "Zostera caespitosa",
     "commonNames": {
       "English": "Species code: Zs"
     }
   },
   {
-    "scientificName": "Halophila nipponica",
+    "fileName": "Halophila nipponica",
     "commonNames": {
       "English": "Species code: Hk"
     }
   },
   {
-    "scientificName": "Halophila baillonii",
+    "fileName": "Halophila baillonii",
     "commonNames": {
       "English": "Clover Grass"
     }
   },
   {
-    "scientificName": "Plagiodontia aedium",
+    "fileName": "Plagiodontia aedium",
     "commonNames": {
       "English": "Cuvier's Hutia"
     }
   },
   {
-    "scientificName": "Ophrys insectifera",
+    "fileName": "Ophrys insectifera",
     "commonNames": {
       "English": "Fly Orchid "
     }
   },
   {
-    "scientificName": "Brookesia stumpffi",
+    "fileName": "Brookesia stumpffi",
     "commonNames": {
       "English": "Plated Leaf Chameleon"
     }
   },
   {
-    "scientificName": "Emydocephalus annulatus",
+    "fileName": "Emydocephalus annulatus",
     "commonNames": {
       "English": "Turtleheaded Sea Snake",
       "French": "Emydocephale Annele"
     }
   },
   {
-    "scientificName": "Laticauda schistorhynchus",
+    "fileName": "Laticauda schistorhynchus",
     "commonNames": {
       "English": "Flat-tail Sea Snake"
     }
   },
   {
-    "scientificName": "Podarcis lilfordi",
+    "fileName": "Podarcis lilfordi",
     "commonNames": {
       "English": "Lilford's Wall Lizard",
       "German": "Balearen-eidechse",
@@ -517,25 +517,25 @@
     }
   },
   {
-    "scientificName": "Catlocarpio siamensis",
+    "fileName": "Catlocarpio siamensis",
     "commonNames": {
       "English": "Giant Carp"
     }
   },
   {
-    "scientificName": "Iberus gualtieranus",
+    "fileName": "Iberus gualtieranus",
     "commonNames": {
       "Spanish; Castilian": "Chapa"
     }
   },
   {
-    "scientificName": "Salmo salar",
+    "fileName": "Salmo salar",
     "commonNames": {
       "English": "Atlantic Salmon"
     }
   },
   {
-    "scientificName": "Speothos venaticus",
+    "fileName": "Speothos venaticus",
     "commonNames": {
       "English": "Bush Dog",
       "Portuguese": "Cachorro-pitoco",
@@ -546,45 +546,45 @@
     }
   },
   {
-    "scientificName": "Thamnophis gigas",
+    "fileName": "Thamnophis gigas",
     "commonNames": {
       "English": "Giant Garter Snake"
     }
   },
   {
-    "scientificName": "Tulotoma magnifica",
+    "fileName": "Tulotoma magnifica",
     "commonNames": {
       "English": "Tulotoma"
     }
   },
   {
-    "scientificName": "Clianthus puniceus",
+    "fileName": "Clianthus puniceus",
     "commonNames": {
       "English": "Parrot's-bill",
       "Maori": "Kowhai Ngutu-kaka"
     }
   },
   {
-    "scientificName": "Dracaena cinnabari",
+    "fileName": "Dracaena cinnabari",
     "commonNames": {
       "English": "Dragon's Blood Tree"
     }
   },
   {
-    "scientificName": "Abies koreana",
+    "fileName": "Abies koreana",
     "commonNames": {
       "Korean": "Gu-sang-na-mu",
       "English": "Korean Fir"
     }
   },
   {
-    "scientificName": "Budorcas taxicolor",
+    "fileName": "Budorcas taxicolor",
     "commonNames": {
       "English": "Takin"
     }
   },
   {
-    "scientificName": "Swietenia macrophylla",
+    "fileName": "Swietenia macrophylla",
     "commonNames": {
       "English": "Big Leaf Mahogany",
       "Portuguese": "Cedroi",
@@ -593,26 +593,26 @@
     }
   },
   {
-    "scientificName": "Malus sieversii",
+    "fileName": "Malus sieversii",
     "commonNames": {
       "Chinese": "Xinjiang Ye Pingguo"
     }
   },
   {
-    "scientificName": "Bretschneidera sinensis",
+    "fileName": "Bretschneidera sinensis",
     "commonNames": {
       "Chinese": "Boleshu",
       "No linguistic content": "Chuong Dai"
     }
   },
   {
-    "scientificName": "Entandrophragma cylindricum",
+    "fileName": "Entandrophragma cylindricum",
     "commonNames": {
       "English": "Sapele"
     }
   },
   {
-    "scientificName": "Burramys parvus",
+    "fileName": "Burramys parvus",
     "commonNames": {
       "English": "Mountain Pygmy Possum",
       "German": "Berg-Zwerggleitbeutler",
@@ -621,26 +621,26 @@
     }
   },
   {
-    "scientificName": "Ramosmania rodriguesii",
+    "fileName": "Ramosmania rodriguesii",
     "commonNames": {
       "French": "Café Marron"
     }
   },
   {
-    "scientificName": "Brachyglottis huntii",
+    "fileName": "Brachyglottis huntii",
     "commonNames": {
       "Maori": "Rautini",
       "English": "Chatham Island Christmas tree"
     }
   },
   {
-    "scientificName": "Wollemia nobilis",
+    "fileName": "Wollemia nobilis",
     "commonNames": {
       "English": "Wollemi Pine"
     }
   },
   {
-    "scientificName": "Canis simensis",
+    "fileName": "Canis simensis",
     "commonNames": {
       "English": "Ethiopian Wolf",
       "German": "Äthiopischer Wolf",
@@ -650,38 +650,38 @@
     }
   },
   {
-    "scientificName": "Justicia galapagana",
+    "fileName": "Justicia galapagana",
     "commonNames": {
       "English": "Galapagos justicia"
     }
   },
   {
-    "scientificName": "Chlamydephorus burnupi",
+    "fileName": "Chlamydephorus burnupi",
     "commonNames": {
       "English": "Burnup’s Hunter Slug"
     }
   },
   {
-    "scientificName": "Sarcophilus harrisii",
+    "fileName": "Sarcophilus harrisii",
     "commonNames": {
       "French": "Diable de Tasmanie",
       "English": "Tasmanian Devil"
     }
   },
   {
-    "scientificName": "Cerambyx cerdo",
+    "fileName": "Cerambyx cerdo",
     "commonNames": {
       "English": "Cerambyx Longicorn"
     }
   },
   {
-    "scientificName": "Encephalartos whitelockii",
+    "fileName": "Encephalartos whitelockii",
     "commonNames": {
       "Uncoded languages": "Muhure"
     }
   },
   {
-    "scientificName": "Erioderma pedicellatum",
+    "fileName": "Erioderma pedicellatum",
     "commonNames": {
       "Norwegian": "Trøndelav",
       "Swedish": "Värmlandslav",
@@ -689,14 +689,14 @@
     }
   },
   {
-    "scientificName": "Cheilinus undulatus",
+    "fileName": "Cheilinus undulatus",
     "commonNames": {
       "English": "Undulate Wrasse",
       "French": "Napoleon"
     }
   },
   {
-    "scientificName": "Chelonia mydas",
+    "fileName": "Chelonia mydas",
     "commonNames": {
       "English": "Green Turtle",
       "Portuguese": "Tartaruga Verde",
@@ -709,64 +709,64 @@
     }
   },
   {
-    "scientificName": "Gallotia bravoana",
+    "fileName": "Gallotia bravoana",
     "commonNames": {
       "Spanish; Castilian": "Lagarto Gigante de La Gomera",
       "English": "La Gomera Giant Lizard"
     }
   },
   {
-    "scientificName": "Aquilegia nuragica",
+    "fileName": "Aquilegia nuragica",
     "commonNames": {
       "English": "Nuragica Columbine"
     }
   },
   {
-    "scientificName": "Apium bermejoi",
+    "fileName": "Apium bermejoi",
     "commonNames": {
       "Spanish; Castilian": "Apid den Bermejo"
     }
   },
   {
-    "scientificName": "Calendula maritima",
+    "fileName": "Calendula maritima",
     "commonNames": {
       "English": "Sea Marigold",
       "Italian": "Fiorrancio Marittimo"
     }
   },
   {
-    "scientificName": "Biscutella rotgesii",
+    "fileName": "Biscutella rotgesii",
     "commonNames": {
       "French": "Lunetière de Rotgès"
     }
   },
   {
-    "scientificName": "Deinacrida rugosa",
+    "fileName": "Deinacrida rugosa",
     "commonNames": {
       "English": "Stephens Island Weta"
     }
   },
   {
-    "scientificName": "Clarias cavernicola",
+    "fileName": "Clarias cavernicola",
     "commonNames": {
       "English": "Cave Catfish",
       "Afrikaans": "Spelonkbaber"
     }
   },
   {
-    "scientificName": "Poecilotheria hanumavilasumica",
+    "fileName": "Poecilotheria hanumavilasumica",
     "commonNames": {
       "English": "Rameshwaram Parachute Spider"
     }
   },
   {
-    "scientificName": "Poecilotheria metallica",
+    "fileName": "Poecilotheria metallica",
     "commonNames": {
       "English": "Peacock Tarantula"
     }
   },
   {
-    "scientificName": "Camelus ferus",
+    "fileName": "Camelus ferus",
     "commonNames": {
       "English": "Wild Camel",
       "Spanish; Castilian": "Camello Bactriano",
@@ -775,31 +775,31 @@
     }
   },
   {
-    "scientificName": "Pterapogon kauderni",
+    "fileName": "Pterapogon kauderni",
     "commonNames": {
       "English": "Banggai Cardinalfish"
     }
   },
   {
-    "scientificName": "Crotalus catalinensis",
+    "fileName": "Crotalus catalinensis",
     "commonNames": {
       "English": "Santa Catalina Island Rattlesnake"
     }
   },
   {
-    "scientificName": "Crotalus horridus",
+    "fileName": "Crotalus horridus",
     "commonNames": {
       "English": "Timber Rattlesnake"
     }
   },
   {
-    "scientificName": "Potamonautes lividus",
+    "fileName": "Potamonautes lividus",
     "commonNames": {
       "English": "Blue River Crab"
     }
   },
   {
-    "scientificName": "Atelocynus microtis",
+    "fileName": "Atelocynus microtis",
     "commonNames": {
       "English": "Short-eared Dog",
       "Portuguese": "Cachorro-do-mato-de-orelhas-curtas",
@@ -809,7 +809,7 @@
     }
   },
   {
-    "scientificName": "Eretmochelys imbricata",
+    "fileName": "Eretmochelys imbricata",
     "commonNames": {
       "French": "Tortue imbriquée",
       "Spanish; Castilian": "Tortuga de Carey",
@@ -818,14 +818,14 @@
     }
   },
   {
-    "scientificName": "Gadus morhua",
+    "fileName": "Gadus morhua",
     "commonNames": {
       "English": "Atlantic Cod",
       "French": "Morue Franche"
     }
   },
   {
-    "scientificName": "Astrochelys yniphora",
+    "fileName": "Astrochelys yniphora",
     "commonNames": {
       "English": "Ploughshare Tortoise",
       "French": "Tortue de Madagascar",
@@ -833,25 +833,25 @@
     }
   },
   {
-    "scientificName": "Boulengerula niedeni",
+    "fileName": "Boulengerula niedeni",
     "commonNames": {
       "English": "Sagalla Caecilian"
     }
   },
   {
-    "scientificName": "Arabicnemis caerulea",
+    "fileName": "Arabicnemis caerulea",
     "commonNames": {
       "English": "Powder Blue Damselfly"
     }
   },
   {
-    "scientificName": "Urocyon littoralis",
+    "fileName": "Urocyon littoralis",
     "commonNames": {
       "English": "Island Fox"
     }
   },
   {
-    "scientificName": "Ursus maritimus",
+    "fileName": "Ursus maritimus",
     "commonNames": {
       "Russian": "Bely Medved",
       "Norwegian": "Isbjørn",
@@ -861,43 +861,43 @@
     }
   },
   {
-    "scientificName": "Psorodonotus ebneri",
+    "fileName": "Psorodonotus ebneri",
     "commonNames": {
       "English": "Calbali Bush-cricket"
     }
   },
   {
-    "scientificName": "Hippocampus kuda",
+    "fileName": "Hippocampus kuda",
     "commonNames": {
       "English": "Spotted Seahorse"
     }
   },
   {
-    "scientificName": "Chorthippus bozdaghi",
+    "fileName": "Chorthippus bozdaghi",
     "commonNames": {
       "English": "Bozdagh Grasshopper"
     }
   },
   {
-    "scientificName": "Nectophrynoides asperginis",
+    "fileName": "Nectophrynoides asperginis",
     "commonNames": {
       "English": "Kihansi Spray Toad"
     }
   },
   {
-    "scientificName": "Balebreviceps hillmani",
+    "fileName": "Balebreviceps hillmani",
     "commonNames": {
       "English": "Bale Mountains Treefrog"
     }
   },
   {
-    "scientificName": "Betiscoides meridionalis",
+    "fileName": "Betiscoides meridionalis",
     "commonNames": {
       "English": "Slender Restio Grasshopper"
     }
   },
   {
-    "scientificName": "Bolbometopon muricatum",
+    "fileName": "Bolbometopon muricatum",
     "commonNames": {
       "English": "Green Humphead Parrotfish",
       "French": "Perroquet Bossu Vert",
@@ -905,14 +905,14 @@
     }
   },
   {
-    "scientificName": "Rhinopithecus avunculus",
+    "fileName": "Rhinopithecus avunculus",
     "commonNames": {
       "Vietnamese": "Vooc Mui Hech",
       "English": "Tonkin Snub-nosed Monkey"
     }
   },
   {
-    "scientificName": "Macaca nigra",
+    "fileName": "Macaca nigra",
     "commonNames": {
       "English": "Celebes Crested Macaque",
       "French": "Macaque Des Célèbes",
@@ -921,7 +921,7 @@
     }
   },
   {
-    "scientificName": "Macaca silenus",
+    "fileName": "Macaca silenus",
     "commonNames": {
       "English": "Lion-tailed Macaque",
       "Spanish; Castilian": "Macaco Barbudo",
@@ -929,7 +929,7 @@
     }
   },
   {
-    "scientificName": "Mandrillus leucophaeus",
+    "fileName": "Mandrillus leucophaeus",
     "commonNames": {
       "Spanish; Castilian": "Dril",
       "French": "Drill",
@@ -937,21 +937,21 @@
     }
   },
   {
-    "scientificName": "Trachypithecus francoisi",
+    "fileName": "Trachypithecus francoisi",
     "commonNames": {
       "English": "François’s Langur",
       "Vietnamese": "Voọc má trắng"
     }
   },
   {
-    "scientificName": "Trachypithecus delacouri",
+    "fileName": "Trachypithecus delacouri",
     "commonNames": {
       "Vietnamese": "Vooc Mong Trang",
       "English": "Delacour's Langur"
     }
   },
   {
-    "scientificName": "Rungwecebus kipunji",
+    "fileName": "Rungwecebus kipunji",
     "commonNames": {
       "Spanish; Castilian": "Kipunji",
       "French": "Kipunji",
@@ -959,13 +959,13 @@
     }
   },
   {
-    "scientificName": "Nomascus hainanus",
+    "fileName": "Nomascus hainanus",
     "commonNames": {
       "English": "Hainan Gibbon"
     }
   },
   {
-    "scientificName": "Dicerorhinus sumatrensis",
+    "fileName": "Dicerorhinus sumatrensis",
     "commonNames": {
       "French": "Rhinocéros de Sumatra",
       "Spanish; Castilian": "Rinoceronte de Sumatra",
@@ -973,7 +973,7 @@
     }
   },
   {
-    "scientificName": "Rhinoceros sondaicus",
+    "fileName": "Rhinoceros sondaicus",
     "commonNames": {
       "French": "Rhinocéros de la Sonde",
       "Spanish; Castilian": "Rinoceronte de Java",
@@ -981,13 +981,13 @@
     }
   },
   {
-    "scientificName": "Lama guanicoe",
+    "fileName": "Lama guanicoe",
     "commonNames": {
       "English": "Guanaco"
     }
   },
   {
-    "scientificName": "Choeropsis liberiensis",
+    "fileName": "Choeropsis liberiensis",
     "commonNames": {
       "Spanish; Castilian": "Hipopótamo Pigmeo",
       "French": "Hippopotame Pygmée",
@@ -995,7 +995,7 @@
     }
   },
   {
-    "scientificName": "Hippocampus erectus",
+    "fileName": "Hippocampus erectus",
     "commonNames": {
       "English": "Lined Seahorse",
       "Swedish": "Amerikansk Jättesjöhäst",
@@ -1010,62 +1010,62 @@
     }
   },
   {
-    "scientificName": "Allium pskemense",
+    "fileName": "Allium pskemense",
     "commonNames": {
       "Russian": "luk pskemskij"
     }
   },
   {
-    "scientificName": "Cucurbita pepo",
+    "fileName": "Cucurbita pepo",
     "commonNames": {
       "English": "Pumpkin",
       "Spanish; Castilian": "Calabaza de Castilla"
     }
   },
   {
-    "scientificName": "Bombus bellicosus",
+    "fileName": "Bombus bellicosus",
     "commonNames": {
       "Portuguese": "Mamangava"
     }
   },
   {
-    "scientificName": "Eremitalpa granti",
+    "fileName": "Eremitalpa granti",
     "commonNames": {
       "English": "Grant's Golden Mole"
     }
   },
   {
-    "scientificName": "Neamblysomus julianae",
+    "fileName": "Neamblysomus julianae",
     "commonNames": {
       "English": "Juliana's Golden Mole"
     }
   },
   {
-    "scientificName": "Rhynchocyon chrysopygus",
+    "fileName": "Rhynchocyon chrysopygus",
     "commonNames": {
       "English": "Golden-rumped Sengi"
     }
   },
   {
-    "scientificName": "Rhynchocyon udzungwensis",
+    "fileName": "Rhynchocyon udzungwensis",
     "commonNames": {
       "English": "Grey-faced Sengi"
     }
   },
   {
-    "scientificName": "Polposipus herculeanus",
+    "fileName": "Polposipus herculeanus",
     "commonNames": {
       "English": "Frigate Island Giant Tenebrionid Beetle"
     }
   },
   {
-    "scientificName": "Dryococelus australis",
+    "fileName": "Dryococelus australis",
     "commonNames": {
       "English": "Lord Howe Island Stick-insect"
     }
   },
   {
-    "scientificName": "Lasiorhinus krefftii",
+    "fileName": "Lasiorhinus krefftii",
     "commonNames": {
       "English": "Northern Hairy-nosed Wombat",
       "Spanish; Castilian": "Oso Marsupial Del Río Moonie",
@@ -1073,70 +1073,70 @@
     }
   },
   {
-    "scientificName": "Ornithorhynchus anatinus",
+    "fileName": "Ornithorhynchus anatinus",
     "commonNames": {
       "English": "Platypus",
       "French": "Ornithorynque"
     }
   },
   {
-    "scientificName": "Kerivoula hardwickii",
+    "fileName": "Kerivoula hardwickii",
     "commonNames": {
       "English": "Common Woolly Bat"
     }
   },
   {
-    "scientificName": "Anoura fistulata",
+    "fileName": "Anoura fistulata",
     "commonNames": {
       "German": "Röhrenlippen-Langnasenfledermaus",
       "English": "Tube-lipped Tailless Bat"
     }
   },
   {
-    "scientificName": "Rousettus madagascariensis",
+    "fileName": "Rousettus madagascariensis",
     "commonNames": {
       "English": "Madagascan Rousette"
     }
   },
   {
-    "scientificName": "Centurio senex",
+    "fileName": "Centurio senex",
     "commonNames": {
       "English": "Wrinkle-faced Bat",
       "German": "Greisenhaupt"
     }
   },
   {
-    "scientificName": "Ectophylla alba",
+    "fileName": "Ectophylla alba",
     "commonNames": {
       "English": "White Bat"
     }
   },
   {
-    "scientificName": "Natalus primus",
+    "fileName": "Natalus primus",
     "commonNames": {
       "English": "Cuban Greater Funnel-eared Bat"
     }
   },
   {
-    "scientificName": "Myotis sodalis",
+    "fileName": "Myotis sodalis",
     "commonNames": {
       "English": "Indiana Bat"
     }
   },
   {
-    "scientificName": "Craseonycteris thonglongyai",
+    "fileName": "Craseonycteris thonglongyai",
     "commonNames": {
       "English": "Hog-nosed Bat"
     }
   },
   {
-    "scientificName": "Myzopoda aurita",
+    "fileName": "Myzopoda aurita",
     "commonNames": {
       "English": "Eastern Sucker-footed Bat"
     }
   },
   {
-    "scientificName": "Pteropus livingstonii",
+    "fileName": "Pteropus livingstonii",
     "commonNames": {
       "English": "Livingstone's Flying Fox",
       "Swahili": "Ntremela",
@@ -1145,26 +1145,26 @@
     }
   },
   {
-    "scientificName": "Pteropus voeltzkowi",
+    "fileName": "Pteropus voeltzkowi",
     "commonNames": {
       "Spanish; Castilian": "Zorro Volador de Voeltzkow",
       "English": "Pemba Flying Fox"
     }
   },
   {
-    "scientificName": "Coleura seychellensis",
+    "fileName": "Coleura seychellensis",
     "commonNames": {
       "English": "Seychelles Sheath-tailed Bat"
     }
   },
   {
-    "scientificName": "Musonycteris harrisoni",
+    "fileName": "Musonycteris harrisoni",
     "commonNames": {
       "English": "Banana Bat"
     }
   },
   {
-    "scientificName": "Alces alces",
+    "fileName": "Alces alces",
     "commonNames": {
       "English": "Moose",
       "Spanish; Castilian": "Alce",
@@ -1172,7 +1172,7 @@
     }
   },
   {
-    "scientificName": "Axis porcinus",
+    "fileName": "Axis porcinus",
     "commonNames": {
       "English": "Hog Deer",
       "French": "Cerf des Marais",
@@ -1181,7 +1181,7 @@
     }
   },
   {
-    "scientificName": "Hippocamelus bisulcus",
+    "fileName": "Hippocamelus bisulcus",
     "commonNames": {
       "English": "Patagonian Huemul",
       "French": "Huémul des Andes Méridionales",
@@ -1190,7 +1190,7 @@
     }
   },
   {
-    "scientificName": "Blastocerus dichotomus",
+    "fileName": "Blastocerus dichotomus",
     "commonNames": {
       "French": "Cerf des marais",
       "Portuguese": "Cervo do Pantanal",
@@ -1200,13 +1200,13 @@
     }
   },
   {
-    "scientificName": "Hydropotes inermis",
+    "fileName": "Hydropotes inermis",
     "commonNames": {
       "English": "Water Deer"
     }
   },
   {
-    "scientificName": "Rangifer tarandus",
+    "fileName": "Rangifer tarandus",
     "commonNames": {
       "English": "Reindeer",
       "Sami languages (Other)": "Boazo ",
@@ -1220,7 +1220,7 @@
     }
   },
   {
-    "scientificName": "Marmosa constantiae",
+    "fileName": "Marmosa constantiae",
     "commonNames": {
       "English": "White-bellied Wooly Mouse Opossum",
       "Spanish; Castilian": "Marmosa Grande Bayo",
@@ -1228,7 +1228,7 @@
     }
   },
   {
-    "scientificName": "Dromiciops gliroides",
+    "fileName": "Dromiciops gliroides",
     "commonNames": {
       "Spanish; Castilian": "Llacas",
       "French": "Opossum Austral",
@@ -1236,14 +1236,14 @@
     }
   },
   {
-    "scientificName": "Laonastes aenigmamus",
+    "fileName": "Laonastes aenigmamus",
     "commonNames": {
       "English": "Kha-nyou",
       "Lao": "Kha-nyou"
     }
   },
   {
-    "scientificName": "Rheithrosciurus macrotis",
+    "fileName": "Rheithrosciurus macrotis",
     "commonNames": {
       "Indonesian": "Bajing-Tanah Ekor-Tegak",
       "Mayan languages": "Tupai Besar Jambul",
@@ -1251,45 +1251,45 @@
     }
   },
   {
-    "scientificName": "Marmota vancouverensis",
+    "fileName": "Marmota vancouverensis",
     "commonNames": {
       "English": "Vancouver Island Marmot"
     }
   },
   {
-    "scientificName": "Desmana moschata",
+    "fileName": "Desmana moschata",
     "commonNames": {
       "Spanish; Castilian": "Desman Ruso",
       "English": "Russian Desman"
     }
   },
   {
-    "scientificName": "Solenodon paradoxus",
+    "fileName": "Solenodon paradoxus",
     "commonNames": {
       "English": "Hispaniolan Solenodon",
       "Spanish; Castilian": "Solenodon de la Española"
     }
   },
   {
-    "scientificName": "Reithrodontomys raviventris",
+    "fileName": "Reithrodontomys raviventris",
     "commonNames": {
       "English": "Salt-marsh Harvest Mouse"
     }
   },
   {
-    "scientificName": "Nesoryzomys swarthi",
+    "fileName": "Nesoryzomys swarthi",
     "commonNames": {
       "English": "Santiago Galapagos Mouse"
     }
   },
   {
-    "scientificName": "Uromys rex",
+    "fileName": "Uromys rex",
     "commonNames": {
       "English": "King Rat"
     }
   },
   {
-    "scientificName": "Zyzomys pedunculatus",
+    "fileName": "Zyzomys pedunculatus",
     "commonNames": {
       "English": "Central Rock-rat",
       "Spanish; Castilian": "Rata Coligorda",
@@ -1297,7 +1297,7 @@
     }
   },
   {
-    "scientificName": "Leporillus conditor",
+    "fileName": "Leporillus conditor",
     "commonNames": {
       "English": "Greater Stick-nest Rat",
       "Spanish; Castilian": "Rata Arquitecto",
@@ -1305,13 +1305,13 @@
     }
   },
   {
-    "scientificName": "Hucho taimen",
+    "fileName": "Hucho taimen",
     "commonNames": {
       "English": "Siberian Taimen"
     }
   },
   {
-    "scientificName": "Somatochlora borisi",
+    "fileName": "Somatochlora borisi",
     "commonNames": {
       "Serbian": "borisov zeleni konjic",
       "Dutch; Flemish": "Bulgaarse glanslibel",
@@ -1321,14 +1321,14 @@
     }
   },
   {
-    "scientificName": "Cypripedium himalaicum",
+    "fileName": "Cypripedium himalaicum",
     "commonNames": {
       "Chinese": "Gao Shan Shao Lan",
       "English": "Himalayan Cypripedium"
     }
   },
   {
-    "scientificName": "Dermochelys coriacea",
+    "fileName": "Dermochelys coriacea",
     "commonNames": {
       "English": "Leatherback Turtle",
       "Spanish; Castilian": "Tortuga Laud",
@@ -1339,7 +1339,7 @@
     }
   },
   {
-    "scientificName": "Tayassu pecari",
+    "fileName": "Tayassu pecari",
     "commonNames": {
       "Spanish; Castilian": "Pecari de Labios Blanco",
       "French": "Pécari à lèvres blanches",
@@ -1347,7 +1347,7 @@
     }
   },
   {
-    "scientificName": "Porcula salvania",
+    "fileName": "Porcula salvania",
     "commonNames": {
       "Spanish; Castilian": "Jabalí Pigmeo",
       "Assamese": "Takuri Borah",
@@ -1357,7 +1357,7 @@
     }
   },
   {
-    "scientificName": "Babyrousa celebensis",
+    "fileName": "Babyrousa celebensis",
     "commonNames": {
       "English": "Sulawesi Babirusa",
       "French": "Babiroussa",
@@ -1366,14 +1366,14 @@
     }
   },
   {
-    "scientificName": "Cephalorhynchus hectori",
+    "fileName": "Cephalorhynchus hectori",
     "commonNames": {
       "Maori": "tutumairekurai",
       "English": "Hector's Dolphin"
     }
   },
   {
-    "scientificName": "Bison bonasus",
+    "fileName": "Bison bonasus",
     "commonNames": {
       "English": "European Bison",
       "French": "Bison d’Europe",
@@ -1382,7 +1382,7 @@
     }
   },
   {
-    "scientificName": "Equus africanus",
+    "fileName": "Equus africanus",
     "commonNames": {
       "English": "African Wild Ass",
       "Undetermined": "Adghi Bareka",
@@ -1392,14 +1392,14 @@
     }
   },
   {
-    "scientificName": "Equus quagga",
+    "fileName": "Equus quagga",
     "commonNames": {
       "English": "Plains Zebra",
       "Swahili": "Punda Milia"
     }
   },
   {
-    "scientificName": "Tapirus indicus",
+    "fileName": "Tapirus indicus",
     "commonNames": {
       "English": "Malay Tapir",
       "German": "Asiatischer Tapir",
@@ -1409,7 +1409,7 @@
     }
   },
   {
-    "scientificName": "Tapirus pinchaque",
+    "fileName": "Tapirus pinchaque",
     "commonNames": {
       "English": "Mountain Tapir",
       "Spanish; Castilian": "Tapir Andino",
@@ -1417,7 +1417,7 @@
     }
   },
   {
-    "scientificName": "Tapirus terrestris",
+    "fileName": "Tapirus terrestris",
     "commonNames": {
       "English": "Lowland Tapir",
       "Portuguese": "Anta",
@@ -1427,7 +1427,7 @@
     }
   },
   {
-    "scientificName": "Bunolagus monticularis",
+    "fileName": "Bunolagus monticularis",
     "commonNames": {
       "English": "Riverine Rabbit",
       "Afrikaans": "Vleihaas",
@@ -1435,7 +1435,7 @@
     }
   },
   {
-    "scientificName": "Lepus flavigularis",
+    "fileName": "Lepus flavigularis",
     "commonNames": {
       "English": "Tehuantepec Jackrabbit",
       "Zapotec": "Biana",
@@ -1443,21 +1443,21 @@
     }
   },
   {
-    "scientificName": "Ochotona iliensis",
+    "fileName": "Ochotona iliensis",
     "commonNames": {
       "Chinese": "Yili Shutu",
       "English": "Ili Pika"
     }
   },
   {
-    "scientificName": "Pentalagus furnessi",
+    "fileName": "Pentalagus furnessi",
     "commonNames": {
       "English": "Amami Rabbit",
       "Japanese": "Amaminokurousagi"
     }
   },
   {
-    "scientificName": "Cryptoprocta ferox",
+    "fileName": "Cryptoprocta ferox",
     "commonNames": {
       "English": "Fossa",
       "French": "Foussa",
@@ -1467,7 +1467,7 @@
     }
   },
   {
-    "scientificName": "Cynogale bennettii",
+    "fileName": "Cynogale bennettii",
     "commonNames": {
       "English": "Otter Civet",
       "Spanish; Castilian": "Cibeta Nutria",
@@ -1475,7 +1475,7 @@
     }
   },
   {
-    "scientificName": "Mustela lutreola",
+    "fileName": "Mustela lutreola",
     "commonNames": {
       "Russian": "Evropeyskaya norka",
       "French": "Vison d'Europe",
@@ -1484,7 +1484,7 @@
     }
   },
   {
-    "scientificName": "Mustela nigripes",
+    "fileName": "Mustela nigripes",
     "commonNames": {
       "French": "Putois à pieds noirs",
       "Spanish; Castilian": "Turón Patinegro Americano",
@@ -1492,26 +1492,26 @@
     }
   },
   {
-    "scientificName": "Procyon pygmaeus",
+    "fileName": "Procyon pygmaeus",
     "commonNames": {
       "English": "Pygmy Raccoon"
     }
   },
   {
-    "scientificName": "Conepatus chinga",
+    "fileName": "Conepatus chinga",
     "commonNames": {
       "Spanish; Castilian": "Zorrino Común",
       "English": "Molina's Hog-nosed Skunk"
     }
   },
   {
-    "scientificName": "Arctictis binturong",
+    "fileName": "Arctictis binturong",
     "commonNames": {
       "English": "Binturong"
     }
   },
   {
-    "scientificName": "Arctocephalus galapagoensis",
+    "fileName": "Arctocephalus galapagoensis",
     "commonNames": {
       "English": "Galápagos Fur Seal",
       "French": "Arctocéphale des Galapagos",
@@ -1519,7 +1519,7 @@
     }
   },
   {
-    "scientificName": "Cystophora cristata",
+    "fileName": "Cystophora cristata",
     "commonNames": {
       "Spanish; Castilian": "Foca de Casco",
       "French": "Phoque à capuchon",
@@ -1527,14 +1527,14 @@
     }
   },
   {
-    "scientificName": "Neomonachus schauinslandi",
+    "fileName": "Neomonachus schauinslandi",
     "commonNames": {
       "Spanish; Castilian": "Foca Fraile de Hawaii",
       "English": "Hawaiian Monk Seal"
     }
   },
   {
-    "scientificName": "Elephas maximus",
+    "fileName": "Elephas maximus",
     "commonNames": {
       "English": "Asian Elephant",
       "Spanish; Castilian": "Elefante Asiático",
@@ -1542,14 +1542,14 @@
     }
   },
   {
-    "scientificName": "Bos javanicus",
+    "fileName": "Bos javanicus",
     "commonNames": {
       "English": "Banteng",
       "German": "Banteng"
     }
   },
   {
-    "scientificName": "Bubalus arnee",
+    "fileName": "Bubalus arnee",
     "commonNames": {
       "English": "Wild Water Buffalo",
       "Hindi": "Arni",
@@ -1561,20 +1561,20 @@
     }
   },
   {
-    "scientificName": "Epinephelus striatus",
+    "fileName": "Epinephelus striatus",
     "commonNames": {
       "Spanish; Castilian": "Mero del Caribe",
       "English": "Nassau Grouper"
     }
   },
   {
-    "scientificName": "Halichoeres socialis",
+    "fileName": "Halichoeres socialis",
     "commonNames": {
       "English": "Social Wrasse"
     }
   },
   {
-    "scientificName": "Chlamyphorus truncatus",
+    "fileName": "Chlamyphorus truncatus",
     "commonNames": {
       "English": "Pink Fairy Armadillo",
       "German": "Schildwurf",
@@ -1582,7 +1582,7 @@
     }
   },
   {
-    "scientificName": "Cyclopes didactylus",
+    "fileName": "Cyclopes didactylus",
     "commonNames": {
       "English": "Silky Anteater",
       "Spanish; Castilian": "Serafín del Platanar",
@@ -1590,7 +1590,7 @@
     }
   },
   {
-    "scientificName": "Myrmecophaga tridactyla",
+    "fileName": "Myrmecophaga tridactyla",
     "commonNames": {
       "French": "Tamanoir",
       "Spanish; Castilian": "Oso Palmero",
@@ -1601,7 +1601,7 @@
     }
   },
   {
-    "scientificName": "Priodontes maximus",
+    "fileName": "Priodontes maximus",
     "commonNames": {
       "Spanish; Castilian": "Tatú Guazú",
       "German": "Riesengürteltier",
@@ -1611,7 +1611,7 @@
     }
   },
   {
-    "scientificName": "Tamandua tetradactyla",
+    "fileName": "Tamandua tetradactyla",
     "commonNames": {
       "English": "Southern Tamandua",
       "Dutch; Flemish": "Mirafroiti",
@@ -1621,7 +1621,7 @@
     }
   },
   {
-    "scientificName": "Tolypeutes tricinctus",
+    "fileName": "Tolypeutes tricinctus",
     "commonNames": {
       "German": "Dreibinden-Kugelgürteltier",
       "Portuguese": "Tatu-Bola",
@@ -1629,7 +1629,7 @@
     }
   },
   {
-    "scientificName": "Zaedyus pichiy",
+    "fileName": "Zaedyus pichiy",
     "commonNames": {
       "Spanish; Castilian": "Piche",
       "German": "Zwerggürteltier",
@@ -1637,27 +1637,27 @@
     }
   },
   {
-    "scientificName": "Prionotropis rhodanica",
+    "fileName": "Prionotropis rhodanica",
     "commonNames": {
       "English": "Crau Plain Grasshopper"
     }
   },
   {
-    "scientificName": "Microcycas calocoma",
+    "fileName": "Microcycas calocoma",
     "commonNames": {
       "English": "Cork Palm",
       "Undetermined": "Palma Corcho"
     }
   },
   {
-    "scientificName": "Neurergus kaiseri",
+    "fileName": "Neurergus kaiseri",
     "commonNames": {
       "English": "Luristan Newt",
       "Persian": "سمندر کوهستانی لرستان"
     }
   },
   {
-    "scientificName": "Addax nasomaculatus",
+    "fileName": "Addax nasomaculatus",
     "commonNames": {
       "German": "Mendesantilope",
       "French": "Antilope blanche",
@@ -1665,7 +1665,7 @@
     }
   },
   {
-    "scientificName": "Beatragus hunteri",
+    "fileName": "Beatragus hunteri",
     "commonNames": {
       "English": "Hirola",
       "French": "Antilope Hirola",
@@ -1673,7 +1673,7 @@
     }
   },
   {
-    "scientificName": "Dorcatragus megalotis",
+    "fileName": "Dorcatragus megalotis",
     "commonNames": {
       "English": "Beira",
       "Somali": "Baira",
@@ -1682,7 +1682,7 @@
     }
   },
   {
-    "scientificName": "Oryx dammah",
+    "fileName": "Oryx dammah",
     "commonNames": {
       "Arabic": "Wach",
       "Spanish; Castilian": "Orix de Cimitarra",
@@ -1692,7 +1692,7 @@
     }
   },
   {
-    "scientificName": "Oryx leucoryx",
+    "fileName": "Oryx leucoryx",
     "commonNames": {
       "English": "Arabian Oryx",
       "Arabic": "Al Maha",
@@ -1701,7 +1701,7 @@
     }
   },
   {
-    "scientificName": "Saiga tatarica",
+    "fileName": "Saiga tatarica",
     "commonNames": {
       "English": "Saiga",
       "Kazakh": "Ak bokon",
@@ -1711,7 +1711,7 @@
     }
   },
   {
-    "scientificName": "Balaenoptera acutorostrata",
+    "fileName": "Balaenoptera acutorostrata",
     "commonNames": {
       "English": "Common Minke Whale",
       "Korean": "밍크고래",
@@ -1724,7 +1724,7 @@
     }
   },
   {
-    "scientificName": "Delphinapterus leucas",
+    "fileName": "Delphinapterus leucas",
     "commonNames": {
       "English": "Beluga Whale",
       "Spanish; Castilian": "Ballena Blanca",
@@ -1735,7 +1735,7 @@
     }
   },
   {
-    "scientificName": "Platanista gangetica",
+    "fileName": "Platanista gangetica",
     "commonNames": {
       "English": "Ganges River Dolphin",
       "Hindi": "Soos",
@@ -1748,7 +1748,7 @@
     }
   },
   {
-    "scientificName": "Sotalia fluviatilis",
+    "fileName": "Sotalia fluviatilis",
     "commonNames": {
       "Spanish; Castilian": "Delfín Gris de Rio",
       "French": "Sotalie",
@@ -1756,7 +1756,7 @@
     }
   },
   {
-    "scientificName": "Felis margarita",
+    "fileName": "Felis margarita",
     "commonNames": {
       "English": "Sand Cat",
       "French": "Chat des sables",
@@ -1766,7 +1766,7 @@
     }
   },
   {
-    "scientificName": "Leopardus jacobita",
+    "fileName": "Leopardus jacobita",
     "commonNames": {
       "English": "Andean Cat",
       "French": "Chat des Andes",
@@ -1776,7 +1776,7 @@
     }
   },
   {
-    "scientificName": "Caracal aurata",
+    "fileName": "Caracal aurata",
     "commonNames": {
       "English": "African Golden Cat",
       "German": "Afrikanische Goldkatze",
@@ -1785,7 +1785,7 @@
     }
   },
   {
-    "scientificName": "Panthera uncia",
+    "fileName": "Panthera uncia",
     "commonNames": {
       "English": "Snow Leopard",
       "Kirghiz; Kyrgyz": "Ilbirs",
@@ -1804,7 +1804,7 @@
     }
   },
   {
-    "scientificName": "Bubalus mindorensis",
+    "fileName": "Bubalus mindorensis",
     "commonNames": {
       "English": "Tamaraw",
       "Spanish; Castilian": "Búfalo de Mindoro",
@@ -1813,87 +1813,87 @@
     }
   },
   {
-    "scientificName": "Encephalartos latifrons",
+    "fileName": "Encephalartos latifrons",
     "commonNames": {
       "English": "Albany Cycad"
     }
   },
   {
-    "scientificName": "Encephalartos middelburgensis",
+    "fileName": "Encephalartos middelburgensis",
     "commonNames": {
       "English": "Middelburg Cycad"
     }
   },
   {
-    "scientificName": "Encephalartos hirsutus",
+    "fileName": "Encephalartos hirsutus",
     "commonNames": {
       "English": "Venda Cycad"
     }
   },
   {
-    "scientificName": "Okapia johnstoni",
+    "fileName": "Okapia johnstoni",
     "commonNames": {
       "English": "Okapi"
     }
   },
   {
-    "scientificName": "Ambystoma mexicanum",
+    "fileName": "Ambystoma mexicanum",
     "commonNames": {
       "Spanish; Castilian": "Ajolote",
       "English": "Axolotl"
     }
   },
   {
-    "scientificName": "Archaius tigris",
+    "fileName": "Archaius tigris",
     "commonNames": {
       "English": "Tiger Chameleon"
     }
   },
   {
-    "scientificName": "Stylophora pistillata",
+    "fileName": "Stylophora pistillata",
     "commonNames": {
       "English": "Smooth Cauliflower Coral"
     }
   },
   {
-    "scientificName": "Ecnomiohyla rabborum",
+    "fileName": "Ecnomiohyla rabborum",
     "commonNames": {
       "English": "Rabb’s Fringe-limbed Treefrog"
     }
   },
   {
-    "scientificName": "Incilius periglenes",
+    "fileName": "Incilius periglenes",
     "commonNames": {
       "English": "Golden Toad",
       "Spanish; Castilian": "Sapo Dorado"
     }
   },
   {
-    "scientificName": "Craugastor milesi",
+    "fileName": "Craugastor milesi",
     "commonNames": {
       "English": "Miles' Robber Frog"
     }
   },
   {
-    "scientificName": "Bolitoglossa salvinii",
+    "fileName": "Bolitoglossa salvinii",
     "commonNames": {
       "English": "Salvin's Mushroomtongue Salamander"
     }
   },
   {
-    "scientificName": "Syncordulia legator",
+    "fileName": "Syncordulia legator",
     "commonNames": {
       "English": "Guilded Presba"
     }
   },
   {
-    "scientificName": "Paracilacris periclitatus",
+    "fileName": "Paracilacris periclitatus",
     "commonNames": {
       "English": "Imperiled Grass False Shieldback"
     }
   },
   {
-    "scientificName": "Pristis zijsron",
+    "fileName": "Pristis zijsron",
     "commonNames": {
       "English": "Green Sawfish",
       "Urdu": "Blundo",
@@ -1903,26 +1903,26 @@
     }
   },
   {
-    "scientificName": "Paretroplus menarambo",
+    "fileName": "Paretroplus menarambo",
     "commonNames": {
       "Malagasy": "Damba Menarambo",
       "English": "Pinstripe Damba"
     }
   },
   {
-    "scientificName": "Mantella cowanii",
+    "fileName": "Mantella cowanii",
     "commonNames": {
       "English": "Cowan's Mantella"
     }
   },
   {
-    "scientificName": "Adansonia grandidieri",
+    "fileName": "Adansonia grandidieri",
     "commonNames": {
       "Malagasy": "Renala"
     }
   },
   {
-    "scientificName": "Phyllopteryx taeniolatus",
+    "fileName": "Phyllopteryx taeniolatus",
     "commonNames": {
       "English": "Weedy Seadragon",
       "Danish": "Løvpjaltefisk",
@@ -1931,20 +1931,20 @@
     }
   },
   {
-    "scientificName": "Asteropeia micraster",
+    "fileName": "Asteropeia micraster",
     "commonNames": {
       "Malagasy": "Fanola Mena"
     }
   },
   {
-    "scientificName": "Ilex aquifolium",
+    "fileName": "Ilex aquifolium",
     "commonNames": {
       "Portuguese": "Azevinho",
       "English": "Holly"
     }
   },
   {
-    "scientificName": "Cycas micronesica",
+    "fileName": "Cycas micronesica",
     "commonNames": {
       "Palauan": "faretoul",
       "Marshallese": "langok",
@@ -1953,38 +1953,38 @@
     }
   },
   {
-    "scientificName": "Dioon caputoi",
+    "fileName": "Dioon caputoi",
     "commonNames": {
       "English": "Royal Palm",
       "Spanish; Castilian": "Palma Real"
     }
   },
   {
-    "scientificName": "Zamia inermis",
+    "fileName": "Zamia inermis",
     "commonNames": {
       "Spanish; Castilian": "Palmita"
     }
   },
   {
-    "scientificName": "Chorthippus lacustris",
+    "fileName": "Chorthippus lacustris",
     "commonNames": {
       "English": "Epirus Dancing Grasshopper"
     }
   },
   {
-    "scientificName": "Podismopsis styriaca",
+    "fileName": "Podismopsis styriaca",
     "commonNames": {
       "English": "Styrian Plump Grasshopper"
     }
   },
   {
-    "scientificName": "Alsophis antiguae",
+    "fileName": "Alsophis antiguae",
     "commonNames": {
       "English": "Antiguan Racer"
     }
   },
   {
-    "scientificName": "Cuon alpinus",
+    "fileName": "Cuon alpinus",
     "commonNames": {
       "English": "Dhole",
       "French": "Cuon d'Asie",
@@ -1993,7 +1993,7 @@
     }
   },
   {
-    "scientificName": "Catagonus wagneri",
+    "fileName": "Catagonus wagneri",
     "commonNames": {
       "English": "Chacoan Peccary",
       "Spanish; Castilian": "Quimilero",
@@ -2002,74 +2002,74 @@
     }
   },
   {
-    "scientificName": "Sphingonotus picteti",
+    "fileName": "Sphingonotus picteti",
     "commonNames": {
       "English": "Tenerife Sand Grasshopper"
     }
   },
   {
-    "scientificName": "Platycypha auripes",
+    "fileName": "Platycypha auripes",
     "commonNames": {
       "English": "Tanzania Jewel"
     }
   },
   {
-    "scientificName": "Agriocnemis palaeforma",
+    "fileName": "Agriocnemis palaeforma",
     "commonNames": {
       "English": "Papyrus Wisp"
     }
   },
   {
-    "scientificName": "Azuragrion granti",
+    "fileName": "Azuragrion granti",
     "commonNames": {
       "English": "Socotra Bluet"
     }
   },
   {
-    "scientificName": "Spesbona angusta",
+    "fileName": "Spesbona angusta",
     "commonNames": {
       "English": "Spesbona"
     }
   },
   {
-    "scientificName": "Liphistius kanthan",
+    "fileName": "Liphistius kanthan",
     "commonNames": {
       "English": "Kanthan Cave Trapdoor Spider"
     }
   },
   {
-    "scientificName": "Heleophryne rosei",
+    "fileName": "Heleophryne rosei",
     "commonNames": {
       "English": "Table Mountain Ghost Frog"
     }
   },
   {
-    "scientificName": "Tympanoctomys aureus",
+    "fileName": "Tympanoctomys aureus",
     "commonNames": {
       "English": "Golden Vizcacha Rat"
     }
   },
   {
-    "scientificName": "Litoria castanea",
+    "fileName": "Litoria castanea",
     "commonNames": {
       "English": "Yellow-spotted Tree Frog"
     }
   },
   {
-    "scientificName": "Haliotis cracherodii",
+    "fileName": "Haliotis cracherodii",
     "commonNames": {
       "English": "Black Abalone"
     }
   },
   {
-    "scientificName": "Rhinoderma darwinii",
+    "fileName": "Rhinoderma darwinii",
     "commonNames": {
       "English": "Southern Darwin's Frog",
       "Spanish; Castilian": "Sapito Vaquero"
     }
   },
   {
-    "scientificName": "Heterodontus francisci",
+    "fileName": "Heterodontus francisci",
     "commonNames": {
       "English": "Horn Shark",
       "Spanish; Castilian": "Dormilón Cornudo",
@@ -2077,31 +2077,31 @@
     }
   },
   {
-    "scientificName": "Libellula jesseana",
+    "fileName": "Libellula jesseana",
     "commonNames": {
       "English": "Purple Skimmer"
     }
   },
   {
-    "scientificName": "Parahyaena brunnea",
+    "fileName": "Parahyaena brunnea",
     "commonNames": {
       "English": "Brown Hyaena"
     }
   },
   {
-    "scientificName": "Cryptobranchus alleganiensis",
+    "fileName": "Cryptobranchus alleganiensis",
     "commonNames": {
       "English": "Hellbender"
     }
   },
   {
-    "scientificName": "Aipysurus foliosquama",
+    "fileName": "Aipysurus foliosquama",
     "commonNames": {
       "English": "Leaf-scaled Sea Snake"
     }
   },
   {
-    "scientificName": "Aldrovanda vesiculosa",
+    "fileName": "Aldrovanda vesiculosa",
     "commonNames": {
       "English": "Waterwheel",
       "Hungarian": "Aldrovanda",
@@ -2117,20 +2117,20 @@
     }
   },
   {
-    "scientificName": "Notogomphus maathaiae",
+    "fileName": "Notogomphus maathaiae",
     "commonNames": {
       "English": "Maathai's Longleg"
     }
   },
   {
-    "scientificName": "Centrolene ballux",
+    "fileName": "Centrolene ballux",
     "commonNames": {
       "English": "Burrowes' Giant Glass Frog",
       "Spanish; Castilian": "Rana de Cristal de Puntos Dorados"
     }
   },
   {
-    "scientificName": "Chalcides parallelus",
+    "fileName": "Chalcides parallelus",
     "commonNames": {
       "Spanish; Castilian": "Eslizón de Chafarinas",
       "French": "Seps De Doumergue",
@@ -2138,7 +2138,7 @@
     }
   },
   {
-    "scientificName": "Chrysocyon brachyurus",
+    "fileName": "Chrysocyon brachyurus",
     "commonNames": {
       "Spanish; Castilian": "Lobo De Crin",
       "Portuguese": "Lobo Guará",
@@ -2148,13 +2148,13 @@
     }
   },
   {
-    "scientificName": "Ranitomeya summersi",
+    "fileName": "Ranitomeya summersi",
     "commonNames": {
       "English": "Summers’ Poison Frog"
     }
   },
   {
-    "scientificName": "Equus grevyi",
+    "fileName": "Equus grevyi",
     "commonNames": {
       "Spanish; Castilian": "Cebra de Grévy",
       "Afar": "Da-ama",
@@ -2166,7 +2166,7 @@
     }
   },
   {
-    "scientificName": "Alytes muletensis",
+    "fileName": "Alytes muletensis",
     "commonNames": {
       "English": "Mallorcan Midwife Toad",
       "Spanish; Castilian": "Ferreret",
@@ -2174,14 +2174,14 @@
     }
   },
   {
-    "scientificName": "Abies nebrodensis",
+    "fileName": "Abies nebrodensis",
     "commonNames": {
       "Italian": "Abete delle Madonie",
       "English": "Sicilian Fir"
     }
   },
   {
-    "scientificName": "Spermophilus citellus",
+    "fileName": "Spermophilus citellus",
     "commonNames": {
       "English": "European Souslik",
       "Spanish; Castilian": "Ardilla Terrestre",
@@ -2189,51 +2189,51 @@
     }
   },
   {
-    "scientificName": "Anser cygnoid",
+    "fileName": "Anser cygnoid",
     "commonNames": {
       "English": "Swan Goose"
     }
   },
   {
-    "scientificName": "Antrostomus noctitherus",
+    "fileName": "Antrostomus noctitherus",
     "commonNames": {
       "English": "Puerto Rican Nightjar"
     }
   },
   {
-    "scientificName": "Tringa guttifer",
+    "fileName": "Tringa guttifer",
     "commonNames": {
       "English": "Spotted Greenshank",
       "Spanish; Castilian": "Archibebe Moteado"
     }
   },
   {
-    "scientificName": "Pitta megarhyncha",
+    "fileName": "Pitta megarhyncha",
     "commonNames": {
       "English": "Mangrove Pitta"
     }
   },
   {
-    "scientificName": "Formicivora serrana",
+    "fileName": "Formicivora serrana",
     "commonNames": {
       "English": "Serra Antwren"
     }
   },
   {
-    "scientificName": "Dicrurus waldenii",
+    "fileName": "Dicrurus waldenii",
     "commonNames": {
       "French": "Drongo de Mayotte",
       "English": "Mayotte Drongo"
     }
   },
   {
-    "scientificName": "Conraua goliath",
+    "fileName": "Conraua goliath",
     "commonNames": {
       "English": "Giant Slippery Frog"
     }
   },
   {
-    "scientificName": "Pardofelis marmorata",
+    "fileName": "Pardofelis marmorata",
     "commonNames": {
       "French": "Chat marbré",
       "Spanish; Castilian": "Gato Jaspeado",
@@ -2242,7 +2242,7 @@
     }
   },
   {
-    "scientificName": "Trichechus senegalensis",
+    "fileName": "Trichechus senegalensis",
     "commonNames": {
       "English": "African Manatee",
       "French": "Lamantin d'Afrique",
@@ -2251,13 +2251,13 @@
     }
   },
   {
-    "scientificName": "Limnogale mergulus",
+    "fileName": "Limnogale mergulus",
     "commonNames": {
       "English": "Web-footed Tenrec"
     }
   },
   {
-    "scientificName": "Leopardus colocolo",
+    "fileName": "Leopardus colocolo",
     "commonNames": {
       "English": "Pampas Cat",
       "French": "Chat des Pampas",
@@ -2267,7 +2267,7 @@
     }
   },
   {
-    "scientificName": "Equus ferus ssp. przewalskii",
+    "fileName": "Equus ferus ssp. przewalskii",
     "commonNames": {
       "English": "Przewalski's Horse",
       "Spanish; Castilian": "Caballo de Przewalski",
@@ -2277,7 +2277,7 @@
     }
   },
   {
-    "scientificName": "Pseudemydura umbrina",
+    "fileName": "Pseudemydura umbrina",
     "commonNames": {
       "English": "Western Swamp Turtle",
       "French": "Tortue à col court",
@@ -2285,20 +2285,20 @@
     }
   },
   {
-    "scientificName": "Cuora yunnanensis",
+    "fileName": "Cuora yunnanensis",
     "commonNames": {
       "English": "Yunnan Box Turtle"
     }
   },
   {
-    "scientificName": "Podocnemis expansa",
+    "fileName": "Podocnemis expansa",
     "commonNames": {
       "English": "South American River Turtle",
       "French": "Podocnémide élargie"
     }
   },
   {
-    "scientificName": "Dermatemys mawii",
+    "fileName": "Dermatemys mawii",
     "commonNames": {
       "English": "Central American River Turtle",
       "French": "Tortue De Tabasco",
@@ -2306,19 +2306,19 @@
     }
   },
   {
-    "scientificName": "Glyptemys muhlenbergii",
+    "fileName": "Glyptemys muhlenbergii",
     "commonNames": {
       "English": "Bog Turtle"
     }
   },
   {
-    "scientificName": "Serianthes nelsonii",
+    "fileName": "Serianthes nelsonii",
     "commonNames": {
       "Chamorro": "Tronkon Guati"
     }
   },
   {
-    "scientificName": "Phacochoerus aethiopicus",
+    "fileName": "Phacochoerus aethiopicus",
     "commonNames": {
       "English": "Desert Warthog",
       "French": "Phacochère du désert",
@@ -2326,25 +2326,25 @@
     }
   },
   {
-    "scientificName": "Bombus dahlbomii",
+    "fileName": "Bombus dahlbomii",
     "commonNames": {
       "Spanish; Castilian": "Moscardón"
     }
   },
   {
-    "scientificName": "Eulamprus leuraensis",
+    "fileName": "Eulamprus leuraensis",
     "commonNames": {
       "English": "Blue Mountain Water Skink"
     }
   },
   {
-    "scientificName": "Gorilla gorilla ssp. diehli",
+    "fileName": "Gorilla gorilla ssp. diehli",
     "commonNames": {
       "English": "Cross River Gorilla"
     }
   },
   {
-    "scientificName": "Chrysomallon squamiferum",
+    "fileName": "Chrysomallon squamiferum",
     "commonNames": {
       "English": "Scaly-foot Snail",
       "German": "Seezapfentier",
@@ -2352,7 +2352,7 @@
     }
   },
   {
-    "scientificName": "Hypanus americanus",
+    "fileName": "Hypanus americanus",
     "commonNames": {
       "French": "Pastenague Américaine",
       "Portuguese": "Raia-prego",
@@ -2361,13 +2361,13 @@
     }
   },
   {
-    "scientificName": "Urogymnus polylepis",
+    "fileName": "Urogymnus polylepis",
     "commonNames": {
       "English": "Giant Freshwater Whipray"
     }
   },
   {
-    "scientificName": "Lycalopex fulvipes",
+    "fileName": "Lycalopex fulvipes",
     "commonNames": {
       "Mapudungun; Mapuche": "Payne Guru",
       "Spanish; Castilian": "Zorro de Darwin",
@@ -2375,13 +2375,13 @@
     }
   },
   {
-    "scientificName": "Pithecopus ayeaye",
+    "fileName": "Pithecopus ayeaye",
     "commonNames": {
       "English": "Reticulate Leaf Frog"
     }
   },
   {
-    "scientificName": "Ailurus fulgens",
+    "fileName": "Ailurus fulgens",
     "commonNames": {
       "English": "Red Panda",
       "German": "Kleiner Panda",
@@ -2390,7 +2390,7 @@
     }
   },
   {
-    "scientificName": "Catopuma badia",
+    "fileName": "Catopuma badia",
     "commonNames": {
       "English": "Borneo Bay Cat",
       "German": "Borneo-katze",
@@ -2400,19 +2400,19 @@
     }
   },
   {
-    "scientificName": "Rhacophorus bifasciatus",
+    "fileName": "Rhacophorus bifasciatus",
     "commonNames": {
       "Indonesian": "Katak-parasut Kerinci"
     }
   },
   {
-    "scientificName": "Diploglossus montisserrati",
+    "fileName": "Diploglossus montisserrati",
     "commonNames": {
       "English": "Montserrat Galliwasp"
     }
   },
   {
-    "scientificName": "Panthera leo",
+    "fileName": "Panthera leo",
     "commonNames": {
       "English": "Lion",
       "Portuguese": "Leao",
@@ -2423,46 +2423,46 @@
     }
   },
   {
-    "scientificName": "Erinaceus amurensis",
+    "fileName": "Erinaceus amurensis",
     "commonNames": {
       "English": "Manchurian Hedgehog",
       "Russian": "Amurskii Yozh"
     }
   },
   {
-    "scientificName": "Vandeleuria nilagirica",
+    "fileName": "Vandeleuria nilagirica",
     "commonNames": {
       "English": "Nilgiri Long-tailed Tree Mouse"
     }
   },
   {
-    "scientificName": "Daubentonia madagascariensis",
+    "fileName": "Daubentonia madagascariensis",
     "commonNames": {
       "English": "Aye-aye"
     }
   },
   {
-    "scientificName": "Lepilemur septentrionalis",
+    "fileName": "Lepilemur septentrionalis",
     "commonNames": {
       "English": "Sahafary Sportive Lemur",
       "Spanish; Castilian": "Lemur Comadreja Septentrional"
     }
   },
   {
-    "scientificName": "Propithecus verreauxi",
+    "fileName": "Propithecus verreauxi",
     "commonNames": {
       "French": "Propithèque de Verreaux",
       "English": "Verreaux's Sifaka"
     }
   },
   {
-    "scientificName": "Rhinoptilus bitorquatus",
+    "fileName": "Rhinoptilus bitorquatus",
     "commonNames": {
       "English": "Jerdon's Courser"
     }
   },
   {
-    "scientificName": "Squatina squatina",
+    "fileName": "Squatina squatina",
     "commonNames": {
       "English": "Angelshark",
       "Corsican": "Squatronu",
@@ -2479,31 +2479,31 @@
     }
   },
   {
-    "scientificName": "Amorphophallus titanum",
+    "fileName": "Amorphophallus titanum",
     "commonNames": {
       "English": "Titan Arum"
     }
   },
   {
-    "scientificName": "Phaeognathus hubrichti",
+    "fileName": "Phaeognathus hubrichti",
     "commonNames": {
       "English": "Red Hills Salamander"
     }
   },
   {
-    "scientificName": "Anaxyrus baxteri",
+    "fileName": "Anaxyrus baxteri",
     "commonNames": {
       "English": "Wyoming Toad"
     }
   },
   {
-    "scientificName": "Apteryx mantelli",
+    "fileName": "Apteryx mantelli",
     "commonNames": {
       "English": "North Island Brown Kiwi"
     }
   },
   {
-    "scientificName": "Caretta caretta",
+    "fileName": "Caretta caretta",
     "commonNames": {
       "Spanish; Castilian": "Tortuga Comun",
       "Portuguese": "Tartaruga Vermelha",
@@ -2513,13 +2513,13 @@
     }
   },
   {
-    "scientificName": "Platalea minor",
+    "fileName": "Platalea minor",
     "commonNames": {
       "English": "Black-faced Spoonbill"
     }
   },
   {
-    "scientificName": "Dracaena draco",
+    "fileName": "Dracaena draco",
     "commonNames": {
       "English": "Dragon Tree",
       "Spanish; Castilian": "Sangre De Drago",
@@ -2527,14 +2527,14 @@
     }
   },
   {
-    "scientificName": "Bitis peringueyi",
+    "fileName": "Bitis peringueyi",
     "commonNames": {
       "English": "Peringuey's Adder",
       "German": "Zwergpuffotter"
     }
   },
   {
-    "scientificName": "Rhynchobatus djiddensis",
+    "fileName": "Rhynchobatus djiddensis",
     "commonNames": {
       "Afrikaans": "Reuse Sandkruiper",
       "Arabic": "سمكة الوتد المنقط الفاتحة",
@@ -2542,7 +2542,7 @@
     }
   },
   {
-    "scientificName": "Ursus arctos",
+    "fileName": "Ursus arctos",
     "commonNames": {
       "English": "Brown Bear",
       "Spanish; Castilian": "Oso Pardo",
@@ -2550,14 +2550,14 @@
     }
   },
   {
-    "scientificName": "Carnegiea gigantea",
+    "fileName": "Carnegiea gigantea",
     "commonNames": {
       "Spanish; Castilian": "Saguaro",
       "English": "Saguaro"
     }
   },
   {
-    "scientificName": "Ailuropoda melanoleuca",
+    "fileName": "Ailuropoda melanoleuca",
     "commonNames": {
       "German": "Riesenpanda",
       "Chinese": "Da xióngmāo",
@@ -2567,21 +2567,21 @@
     }
   },
   {
-    "scientificName": "Ctenosaura oedirhina",
+    "fileName": "Ctenosaura oedirhina",
     "commonNames": {
       "English": "Roatán Spiny-tailed Iguana",
       "Spanish; Castilian": "Garrobo"
     }
   },
   {
-    "scientificName": "Pelecanus crispus",
+    "fileName": "Pelecanus crispus",
     "commonNames": {
       "Spanish; Castilian": "Pelícano Rizado",
       "English": "Dalmatian Pelican"
     }
   },
   {
-    "scientificName": "Iguana delicatissima",
+    "fileName": "Iguana delicatissima",
     "commonNames": {
       "English": "Lesser Antillean Iguana",
       "Dutch; Flemish": "Antilliaanse leguaan",
@@ -2590,7 +2590,7 @@
     }
   },
   {
-    "scientificName": "Manis crassicaudata",
+    "fileName": "Manis crassicaudata",
     "commonNames": {
       "English": "Indian Pangolin",
       "French": "Pangolin à grosse queue",
@@ -2598,7 +2598,7 @@
     }
   },
   {
-    "scientificName": "Manis javanica",
+    "fileName": "Manis javanica",
     "commonNames": {
       "English": "Sunda Pangolin",
       "French": "Pangolin Malais",
@@ -2606,7 +2606,7 @@
     }
   },
   {
-    "scientificName": "Smutsia temminckii",
+    "fileName": "Smutsia temminckii",
     "commonNames": {
       "English": "Temminck's Pangolin",
       "Chichewa; Chewa; Nyanja": "Ngaka",
@@ -2615,7 +2615,7 @@
     }
   },
   {
-    "scientificName": "Phataginus tetradactyla",
+    "fileName": "Phataginus tetradactyla",
     "commonNames": {
       "English": "Black-bellied Pangolin",
       "French": "Pangolin tétradactyle",
@@ -2623,14 +2623,14 @@
     }
   },
   {
-    "scientificName": "Phataginus tricuspis",
+    "fileName": "Phataginus tricuspis",
     "commonNames": {
       "English": "White-bellied Pangolin",
       "French": "Tricuspide"
     }
   },
   {
-    "scientificName": "Varanus komodoensis",
+    "fileName": "Varanus komodoensis",
     "commonNames": {
       "English": "Komodo Dragon",
       "French": "Varan de Komodo",
@@ -2638,13 +2638,13 @@
     }
   },
   {
-    "scientificName": "Cuora trifasciata",
+    "fileName": "Cuora trifasciata",
     "commonNames": {
       "English": "Chinese Three-striped Box Turtle"
     }
   },
   {
-    "scientificName": "Orcaella brevirostris",
+    "fileName": "Orcaella brevirostris",
     "commonNames": {
       "Spanish; Castilian": "Delfín Del Irrawaddy",
       "Bengali": "Iraboti",
@@ -2659,7 +2659,7 @@
     }
   },
   {
-    "scientificName": "Tremarctos ornatus",
+    "fileName": "Tremarctos ornatus",
     "commonNames": {
       "English": "Andean Bear",
       "Spanish; Castilian": "Oso Real",
@@ -2667,7 +2667,7 @@
     }
   },
   {
-    "scientificName": "Pongo abelii",
+    "fileName": "Pongo abelii",
     "commonNames": {
       "French": "Orang-outan de Sumatra",
       "Spanish; Castilian": "Orangután de Sumatra",
@@ -2676,7 +2676,7 @@
     }
   },
   {
-    "scientificName": "Helarctos malayanus",
+    "fileName": "Helarctos malayanus",
     "commonNames": {
       "English": "Sun Bear",
       "Spanish; Castilian": "Oso Malayo",
@@ -2684,7 +2684,7 @@
     }
   },
   {
-    "scientificName": "Pongo pygmaeus",
+    "fileName": "Pongo pygmaeus",
     "commonNames": {
       "French": "Orang-outan de Bornéo",
       "Spanish; Castilian": "Orang-után",
@@ -2692,7 +2692,7 @@
     }
   },
   {
-    "scientificName": "Acinonyx jubatus",
+    "fileName": "Acinonyx jubatus",
     "commonNames": {
       "Amharic": "Abo Shemane",
       "Hindi": "Cheeta",
@@ -2707,13 +2707,13 @@
     }
   },
   {
-    "scientificName": "Dipturus laevis",
+    "fileName": "Dipturus laevis",
     "commonNames": {
       "English": "Barndoor Skate"
     }
   },
   {
-    "scientificName": "Rhinoptera javanica",
+    "fileName": "Rhinoptera javanica",
     "commonNames": {
       "English": "Javanese Cownose Ray",
       "Somali": "Mayla-cadde",
@@ -2722,7 +2722,7 @@
     }
   },
   {
-    "scientificName": "Squalus acanthias",
+    "fileName": "Squalus acanthias",
     "commonNames": {
       "English": "Spiny Dogfish",
       "French": "Aiguillat commun",
@@ -2730,7 +2730,7 @@
     }
   },
   {
-    "scientificName": "Ctenosaura bakeri",
+    "fileName": "Ctenosaura bakeri",
     "commonNames": {
       "English": "Utila Spiny-tailed Iguana",
       "Spanish; Castilian": "Iguana de Cola Espinosa de Útila",
@@ -2738,38 +2738,38 @@
     }
   },
   {
-    "scientificName": "Gallicolumba platenae",
+    "fileName": "Gallicolumba platenae",
     "commonNames": {
       "English": "Mindoro Bleeding-heart"
     }
   },
   {
-    "scientificName": "Widdringtonia whytei",
+    "fileName": "Widdringtonia whytei",
     "commonNames": {
       "English": "Mulanje Cedar"
     }
   },
   {
-    "scientificName": "Margaritifera margaritifera",
+    "fileName": "Margaritifera margaritifera",
     "commonNames": {
       "English": "Freshwater Pearl Mussel"
     }
   },
   {
-    "scientificName": "Aythya innotata",
+    "fileName": "Aythya innotata",
     "commonNames": {
       "French": "Fuligule de Madagascar",
       "English": "Madagascar Pochard"
     }
   },
   {
-    "scientificName": "Cinclodes aricomae",
+    "fileName": "Cinclodes aricomae",
     "commonNames": {
       "English": "Royal Cinclodes"
     }
   },
   {
-    "scientificName": "Hippocampus comes",
+    "fileName": "Hippocampus comes",
     "commonNames": {
       "Vietnamese": "Ca ngua Den",
       "Malay": "Undok-undok",
@@ -2780,27 +2780,27 @@
     }
   },
   {
-    "scientificName": "Artisornis moreaui",
+    "fileName": "Artisornis moreaui",
     "commonNames": {
       "English": "Long-billed Forest-warbler"
     }
   },
   {
-    "scientificName": "Pithecophaga jefferyi",
+    "fileName": "Pithecophaga jefferyi",
     "commonNames": {
       "English": "Philippine Eagle",
       "Spanish; Castilian": "Aguila Monera"
     }
   },
   {
-    "scientificName": "Strigops habroptila",
+    "fileName": "Strigops habroptila",
     "commonNames": {
       "English": "Kakapo",
       "Spanish; Castilian": "Cacapo"
     }
   },
   {
-    "scientificName": "Houbaropsis bengalensis",
+    "fileName": "Houbaropsis bengalensis",
     "commonNames": {
       "English": "Bengal Florican",
       "Spanish; Castilian": "Sisón Bengali",
@@ -2808,7 +2808,7 @@
     }
   },
   {
-    "scientificName": "Balaenoptera borealis",
+    "fileName": "Balaenoptera borealis",
     "commonNames": {
       "Korean": "보리고래",
       "Portuguese": "Baleia Sei",
@@ -2820,7 +2820,7 @@
     }
   },
   {
-    "scientificName": "Pternistis ochropectus",
+    "fileName": "Pternistis ochropectus",
     "commonNames": {
       "English": "Djibouti Francolin",
       "French": "Francolin somali",
@@ -2828,88 +2828,88 @@
     }
   },
   {
-    "scientificName": "Nemosia rourei",
+    "fileName": "Nemosia rourei",
     "commonNames": {
       "English": "Cherry-throated Tanager"
     }
   },
   {
-    "scientificName": "Antilophia bokermanni",
+    "fileName": "Antilophia bokermanni",
     "commonNames": {
       "English": "Araripe Manakin"
     }
   },
   {
-    "scientificName": "Thalasseus bernsteini",
+    "fileName": "Thalasseus bernsteini",
     "commonNames": {
       "English": "Chinese Crested Tern",
       "Spanish; Castilian": "Charrán chino"
     }
   },
   {
-    "scientificName": "Celeus obrieni",
+    "fileName": "Celeus obrieni",
     "commonNames": {
       "English": "Kaempfer's Woodpecker"
     }
   },
   {
-    "scientificName": "Ara ararauna",
+    "fileName": "Ara ararauna",
     "commonNames": {
       "English": "Blue-and-yellow Macaw"
     }
   },
   {
-    "scientificName": "Mimus trifasciatus",
+    "fileName": "Mimus trifasciatus",
     "commonNames": {
       "English": "Floreana Mockingbird"
     }
   },
   {
-    "scientificName": "Tachyeres leucocephalus",
+    "fileName": "Tachyeres leucocephalus",
     "commonNames": {
       "English": "White-headed Steamerduck",
       "Spanish; Castilian": "Pato vapor cabeza blanca"
     }
   },
   {
-    "scientificName": "Clangula hyemalis",
+    "fileName": "Clangula hyemalis",
     "commonNames": {
       "Spanish; Castilian": "Pato havelda",
       "English": "Long-tailed Duck"
     }
   },
   {
-    "scientificName": "Diomedea exulans",
+    "fileName": "Diomedea exulans",
     "commonNames": {
       "English": "Wandering Albatross"
     }
   },
   {
-    "scientificName": "Pseudibis davisoni",
+    "fileName": "Pseudibis davisoni",
     "commonNames": {
       "English": "White-shouldered Ibis"
     }
   },
   {
-    "scientificName": "Ardea insignis",
+    "fileName": "Ardea insignis",
     "commonNames": {
       "English": "White-bellied Heron"
     }
   },
   {
-    "scientificName": "Afrithelphusa monodosa",
+    "fileName": "Afrithelphusa monodosa",
     "commonNames": {
       "English": "Purple Marsh Crab"
     }
   },
   {
-    "scientificName": "Globonautes macropus",
+    "fileName": "Globonautes macropus",
     "commonNames": {
       "English": "Tree Hole Crab"
     }
   },
   {
-    "scientificName": "Huso huso",
+    "fileName": "Huso huso",
     "commonNames": {
       "English": "Beluga",
       "Azerbaijani": "Gyuzgi-Burun",
@@ -2919,7 +2919,7 @@
     }
   },
   {
-    "scientificName": "Giraffa camelopardalis",
+    "fileName": "Giraffa camelopardalis",
     "commonNames": {
       "French": "Girafe",
       "German": "Giraffe",
@@ -2930,7 +2930,7 @@
     }
   },
   {
-    "scientificName": "Acipenser sturio",
+    "fileName": "Acipenser sturio",
     "commonNames": {
       "English": "European Sturgeon",
       "French": "Esturgeon commun",
@@ -2938,7 +2938,7 @@
     }
   },
   {
-    "scientificName": "Protium attenuatum",
+    "fileName": "Protium attenuatum",
     "commonNames": {
       "English": "Lansan",
       "Creoles and pidgins, French-based (Other)": "Bois Lansan",
@@ -2947,20 +2947,20 @@
     }
   },
   {
-    "scientificName": "Cryosophila williamsii",
+    "fileName": "Cryosophila williamsii",
     "commonNames": {
       "English": "Root-spine Palm",
       "Spanish; Castilian": "Palmiche"
     }
   },
   {
-    "scientificName": "Mergus octosetaceus",
+    "fileName": "Mergus octosetaceus",
     "commonNames": {
       "English": "Brazilian Merganser"
     }
   },
   {
-    "scientificName": "Epinephelus itajara",
+    "fileName": "Epinephelus itajara",
     "commonNames": {
       "English": "Atlantic Goliath Grouper",
       "Spanish; Castilian": "Mero Sapo",
@@ -2968,31 +2968,31 @@
     }
   },
   {
-    "scientificName": "Podiceps gallardoi",
+    "fileName": "Podiceps gallardoi",
     "commonNames": {
       "English": "Hooded Grebe"
     }
   },
   {
-    "scientificName": "Huso dauricus",
+    "fileName": "Huso dauricus",
     "commonNames": {
       "English": "Kaluga"
     }
   },
   {
-    "scientificName": "Oreochromis karongae",
+    "fileName": "Oreochromis karongae",
     "commonNames": {
       "English": "Chambo"
     }
   },
   {
-    "scientificName": "Hyperolius thomensis",
+    "fileName": "Hyperolius thomensis",
     "commonNames": {
       "English": "São Tomé Giant Reed Frog"
     }
   },
   {
-    "scientificName": "Tachypleus tridentatus",
+    "fileName": "Tachypleus tridentatus",
     "commonNames": {
       "English": "Tri-spine Horseshoe Crab",
       "Malay": "Raja Ketam",
@@ -3003,26 +3003,26 @@
     }
   },
   {
-    "scientificName": "Hibiscadelphus woodii",
+    "fileName": "Hibiscadelphus woodii",
     "commonNames": {
       "English": "Wood's Hibiscadelphus",
       "Hawaiian": "Hau kuahiwi"
     }
   },
   {
-    "scientificName": "Batagur kachuga",
+    "fileName": "Batagur kachuga",
     "commonNames": {
       "English": "Red-crowned Roofed Turtle"
     }
   },
   {
-    "scientificName": "Batagur trivittata",
+    "fileName": "Batagur trivittata",
     "commonNames": {
       "English": "Burmese Roofed Turtle"
     }
   },
   {
-    "scientificName": "Casarea dussumieri",
+    "fileName": "Casarea dussumieri",
     "commonNames": {
       "English": "Keel-scaled Boa",
       "French": "Boa de L'Ile Ronde de Dussumier",
@@ -3031,20 +3031,20 @@
     }
   },
   {
-    "scientificName": "Leiolopisma telfairii",
+    "fileName": "Leiolopisma telfairii",
     "commonNames": {
       "English": "Telfair's Skink",
       "French": "Scinque de Telfair"
     }
   },
   {
-    "scientificName": "Centrocercus minimus",
+    "fileName": "Centrocercus minimus",
     "commonNames": {
       "English": "Gunnison Grouse"
     }
   },
   {
-    "scientificName": "Diceros bicornis",
+    "fileName": "Diceros bicornis",
     "commonNames": {
       "English": "Black Rhino",
       "French": "Rhinocéros noir",
@@ -3052,19 +3052,19 @@
     }
   },
   {
-    "scientificName": "Anguilla anguilla",
+    "fileName": "Anguilla anguilla",
     "commonNames": {
       "English": "European Eel"
     }
   },
   {
-    "scientificName": "Calidris pygmaea",
+    "fileName": "Calidris pygmaea",
     "commonNames": {
       "English": "Spoon-billed Sandpiper"
     }
   },
   {
-    "scientificName": "Vanellus gregarius",
+    "fileName": "Vanellus gregarius",
     "commonNames": {
       "English": "Sociable Lapwing",
       "French": "Vanneau sociable",
@@ -3072,13 +3072,13 @@
     }
   },
   {
-    "scientificName": "Pseudophilautus steineri",
+    "fileName": "Pseudophilautus steineri",
     "commonNames": {
       "English": "Steiner's Shrub Frog"
     }
   },
   {
-    "scientificName": "Balaenoptera musculus",
+    "fileName": "Balaenoptera musculus",
     "commonNames": {
       "French": "Baleine bleue",
       "Spanish; Castilian": "Ballena Azul",
@@ -3087,14 +3087,14 @@
     }
   },
   {
-    "scientificName": "Arabitragus jayakari",
+    "fileName": "Arabitragus jayakari",
     "commonNames": {
       "Arabic": "Wa’al Al ‘arabi",
       "English": "Arabian Tahr"
     }
   },
   {
-    "scientificName": "Spheniscus demersus",
+    "fileName": "Spheniscus demersus",
     "commonNames": {
       "English": "African Penguin",
       "French": "Manchot du Cap",
@@ -3102,21 +3102,21 @@
     }
   },
   {
-    "scientificName": "Aptenodytes forsteri",
+    "fileName": "Aptenodytes forsteri",
     "commonNames": {
       "Spanish; Castilian": "Pingüino emperador",
       "English": "Emperor Penguin"
     }
   },
   {
-    "scientificName": "Terpsiphone corvina",
+    "fileName": "Terpsiphone corvina",
     "commonNames": {
       "English": "Seychelles Paradise-flycatcher",
       "French": "Gobemouche paradis noir"
     }
   },
   {
-    "scientificName": "Pinna nobilis",
+    "fileName": "Pinna nobilis",
     "commonNames": {
       "English": "Fan Mussel",
       "French": "Jambonneau de Mer",
@@ -3127,14 +3127,14 @@
     }
   },
   {
-    "scientificName": "Ochotona curzoniae",
+    "fileName": "Ochotona curzoniae",
     "commonNames": {
       "English": "Plateau Pika",
       "Chinese": "Gaoyuan Shutu"
     }
   },
   {
-    "scientificName": "Dugong dugon",
+    "fileName": "Dugong dugon",
     "commonNames": {
       "English": "Dugong",
       "Malay": "Lembu Laut",
@@ -3146,34 +3146,34 @@
     }
   },
   {
-    "scientificName": "Canis rufus",
+    "fileName": "Canis rufus",
     "commonNames": {
       "German": "Rotwolf",
       "English": "Red Wolf"
     }
   },
   {
-    "scientificName": "Acropora cervicornis",
+    "fileName": "Acropora cervicornis",
     "commonNames": {
       "Spanish; Castilian": "Coral Cuerno de Venado",
       "English": "Staghorn Coral"
     }
   },
   {
-    "scientificName": "Nasikabatrachus sahyadrensis",
+    "fileName": "Nasikabatrachus sahyadrensis",
     "commonNames": {
       "English": "Purple Frog"
     }
   },
   {
-    "scientificName": "Pseudoryx nghetinhensis",
+    "fileName": "Pseudoryx nghetinhensis",
     "commonNames": {
       "French": "Saola",
       "English": "Saola"
     }
   },
   {
-    "scientificName": "Lycaon pictus",
+    "fileName": "Lycaon pictus",
     "commonNames": {
       "English": "African Wild Dog",
       "French": "Lycaon",
@@ -3184,7 +3184,7 @@
     }
   },
   {
-    "scientificName": "Ursus thibetanus",
+    "fileName": "Ursus thibetanus",
     "commonNames": {
       "English": "Asiatic Black Bear",
       "Spanish; Castilian": "Oso Negro de Asia",
@@ -3192,20 +3192,20 @@
     }
   },
   {
-    "scientificName": "Photuris mysticalampas",
+    "fileName": "Photuris mysticalampas",
     "commonNames": {
       "English": "Mysterious Lantern Firefly"
     }
   },
   {
-    "scientificName": "Orachrysops ariadne",
+    "fileName": "Orachrysops ariadne",
     "commonNames": {
       "Afrikaans": "Karkloof-Bloutjie",
       "English": "Karkloof Blue"
     }
   },
   {
-    "scientificName": "Manis pentadactyla",
+    "fileName": "Manis pentadactyla",
     "commonNames": {
       "French": "Pangolin de Chine",
       "Spanish; Castilian": "Pangolín Chino",
@@ -3213,21 +3213,21 @@
     }
   },
   {
-    "scientificName": "Eriocnemis nigrivestis",
+    "fileName": "Eriocnemis nigrivestis",
     "commonNames": {
       "Spanish; Castilian": "Zamarrito Pechinegro",
       "English": "Black-breasted Puffleg"
     }
   },
   {
-    "scientificName": "Pomarea nigra",
+    "fileName": "Pomarea nigra",
     "commonNames": {
       "English": "Tahiti Monarch",
       "Tahitian": "'Ōmāma'o"
     }
   },
   {
-    "scientificName": "Lynx pardinus",
+    "fileName": "Lynx pardinus",
     "commonNames": {
       "English": "Iberian Lynx",
       "Spanish; Castilian": "Lince Ibérico",
@@ -3235,91 +3235,91 @@
     }
   },
   {
-    "scientificName": "Horabagrus brachysoma",
+    "fileName": "Horabagrus brachysoma",
     "commonNames": {
       "English": "Günther's Catfish",
       "Malayalam": "Manjakoori"
     }
   },
   {
-    "scientificName": "Acrostira euphorbiae",
+    "fileName": "Acrostira euphorbiae",
     "commonNames": {
       "English": "Palma Stick Grasshopper"
     }
   },
   {
-    "scientificName": "Ameerega cainarachi",
+    "fileName": "Ameerega cainarachi",
     "commonNames": {
       "Spanish; Castilian": "Rana Venenosa",
       "English": "Cainarachi Poison Frog"
     }
   },
   {
-    "scientificName": "Brookesia perarmata",
+    "fileName": "Brookesia perarmata",
     "commonNames": {
       "English": "Antsingy Leaf Chameleon"
     }
   },
   {
-    "scientificName": "Gorilla beringei ssp. beringei",
+    "fileName": "Gorilla beringei ssp. beringei",
     "commonNames": {
       "English": "Mountain Gorilla"
     }
   },
   {
-    "scientificName": "Lanius newtoni",
+    "fileName": "Lanius newtoni",
     "commonNames": {
       "English": "Newton's Fiscal",
       "French": "Pie-grièche de São Tomé"
     }
   },
   {
-    "scientificName": "Ixalidium transiens",
+    "fileName": "Ixalidium transiens",
     "commonNames": {
       "English": "Usambara Drumming Grasshopper"
     }
   },
   {
-    "scientificName": "Crithagra concolor",
+    "fileName": "Crithagra concolor",
     "commonNames": {
       "English": "Sao Tome Grosbeak",
       "French": "Grosbec de São Tomé"
     }
   },
   {
-    "scientificName": "Bostrychia bocagei",
+    "fileName": "Bostrychia bocagei",
     "commonNames": {
       "English": "Dwarf Ibis"
     }
   },
   {
-    "scientificName": "Rhacophorus vampyrus",
+    "fileName": "Rhacophorus vampyrus",
     "commonNames": {
       "English": "Vampire Flying Frog"
     }
   },
   {
-    "scientificName": "Andrias japonicus",
+    "fileName": "Andrias japonicus",
     "commonNames": {
       "Japanese": "O sanshouo",
       "English": "Japanese Giant Salamander"
     }
   },
   {
-    "scientificName": "Alauda razae",
+    "fileName": "Alauda razae",
     "commonNames": {
       "English": "Raso Lark",
       "French": "Alouette des Iles du Cap-Vert"
     }
   },
   {
-    "scientificName": "Heteromirafra archeri",
+    "fileName": "Heteromirafra archeri",
     "commonNames": {
       "English": "Liben Lark"
     }
   },
   {
-    "scientificName": "Eubalaena glacialis",
+    "fileName": "Eubalaena glacialis",
     "commonNames": {
       "English": "North Atlantic Right Whale",
       "Kalaallisut; Greenlandic": "Arfiviit Arlaat",
@@ -3333,7 +3333,7 @@
     }
   },
   {
-    "scientificName": "Telmatobius culeus",
+    "fileName": "Telmatobius culeus",
     "commonNames": {
       "English": "Titicaca Water Frog",
       "Aymara": "keles",
@@ -3341,7 +3341,7 @@
     }
   },
   {
-    "scientificName": "Ophiocordyceps sinensis",
+    "fileName": "Ophiocordyceps sinensis",
     "commonNames": {
       "English": "Chinese Caterpillar Fungus",
       "Chinese": "Dōng chóng xià cǎo",
@@ -3349,19 +3349,19 @@
     }
   },
   {
-    "scientificName": "Turdus helleri",
+    "fileName": "Turdus helleri",
     "commonNames": {
       "English": "Taita Thrush"
     }
   },
   {
-    "scientificName": "Ailuronyx trachygaster",
+    "fileName": "Ailuronyx trachygaster",
     "commonNames": {
       "English": "Giant Bronze Gecko"
     }
   },
   {
-    "scientificName": "Otocolobus manul",
+    "fileName": "Otocolobus manul",
     "commonNames": {
       "English": "Pallas's Cat",
       "French": "Chat manul",
@@ -3374,13 +3374,13 @@
     }
   },
   {
-    "scientificName": "Hydrosaurus pustulatus",
+    "fileName": "Hydrosaurus pustulatus",
     "commonNames": {
       "English": "Sailfin Water Lizard"
     }
   },
   {
-    "scientificName": "Crocodylus intermedius",
+    "fileName": "Crocodylus intermedius",
     "commonNames": {
       "Spanish; Castilian": "Cocodrilo del Orinoco",
       "French": "Crocodile de l'Orénoque",
@@ -3388,27 +3388,27 @@
     }
   },
   {
-    "scientificName": "Gymnogyps californianus",
+    "fileName": "Gymnogyps californianus",
     "commonNames": {
       "Spanish; Castilian": "Cóndor de California",
       "English": "California Condor"
     }
   },
   {
-    "scientificName": "Ognorhynchus icterotis",
+    "fileName": "Ognorhynchus icterotis",
     "commonNames": {
       "English": "Yellow-eared Parrot",
       "Spanish; Castilian": "Periquito Orejiamarillo"
     }
   },
   {
-    "scientificName": "Atlapetes pallidiceps",
+    "fileName": "Atlapetes pallidiceps",
     "commonNames": {
       "English": "Pale-headed Brush-finch"
     }
   },
   {
-    "scientificName": "Hapalemur alaotrensis",
+    "fileName": "Hapalemur alaotrensis",
     "commonNames": {
       "English": "Alaotra Reed Lemur",
       "Malagasy": "Bandro",
@@ -3417,44 +3417,44 @@
     }
   },
   {
-    "scientificName": "Phoenicoparrus andinus",
+    "fileName": "Phoenicoparrus andinus",
     "commonNames": {
       "Spanish; Castilian": "Parina Grande",
       "English": "Andean Flamingo"
     }
   },
   {
-    "scientificName": "Geospiza heliobates",
+    "fileName": "Geospiza heliobates",
     "commonNames": {
       "English": "Mangrove Finch"
     }
   },
   {
-    "scientificName": "Palmeria dolei",
+    "fileName": "Palmeria dolei",
     "commonNames": {
       "English": "Akohekohe"
     }
   },
   {
-    "scientificName": "Geothlypis beldingi",
+    "fileName": "Geothlypis beldingi",
     "commonNames": {
       "English": "Belding's Yellowthroat"
     }
   },
   {
-    "scientificName": "Serruria furcellata",
+    "fileName": "Serruria furcellata",
     "commonNames": {
       "English": "Kraaifontein Spiderhead"
     }
   },
   {
-    "scientificName": "Mimetes stokoei",
+    "fileName": "Mimetes stokoei",
     "commonNames": {
       "English": "Mace Pagoda"
     }
   },
   {
-    "scientificName": "Poronia punctata",
+    "fileName": "Poronia punctata",
     "commonNames": {
       "German": "Rossapfelkernpilz",
       "Dutch; Flemish": "Grote Speldenprikzwam",
@@ -3466,7 +3466,7 @@
     }
   },
   {
-    "scientificName": "Brachyteles hypoxanthus",
+    "fileName": "Brachyteles hypoxanthus",
     "commonNames": {
       "German": "Nord-Muriki",
       "Spanish; Castilian": "Muriqui",
@@ -3475,13 +3475,13 @@
     }
   },
   {
-    "scientificName": "Cinclodes palliatus",
+    "fileName": "Cinclodes palliatus",
     "commonNames": {
       "English": "White-bellied Cinclodes"
     }
   },
   {
-    "scientificName": "Saguinus bicolor",
+    "fileName": "Saguinus bicolor",
     "commonNames": {
       "English": "Pied Tamarin",
       "Portuguese": "Sauim-de Manaus",
@@ -3489,7 +3489,7 @@
     }
   },
   {
-    "scientificName": "Cetorhinus maximus",
+    "fileName": "Cetorhinus maximus",
     "commonNames": {
       "French": "Pelerin",
       "Spanish; Castilian": "Peregrino",
@@ -3497,13 +3497,13 @@
     }
   },
   {
-    "scientificName": "Varanus mabitang",
+    "fileName": "Varanus mabitang",
     "commonNames": {
       "English": "Panay Monitor Lizard"
     }
   },
   {
-    "scientificName": "Nasalis larvatus",
+    "fileName": "Nasalis larvatus",
     "commonNames": {
       "English": "Proboscis Monkey",
       "Spanish; Castilian": "Mono Narigudo",
@@ -3511,14 +3511,14 @@
     }
   },
   {
-    "scientificName": "Ara glaucogularis",
+    "fileName": "Ara glaucogularis",
     "commonNames": {
       "Spanish; Castilian": "Guacamayo Caninde",
       "English": "Blue-throated Macaw"
     }
   },
   {
-    "scientificName": "Lestodelphys halli",
+    "fileName": "Lestodelphys halli",
     "commonNames": {
       "Spanish; Castilian": "Comadrejita Patagónica",
       "French": "Opossum de Patagonie",
@@ -3526,7 +3526,7 @@
     }
   },
   {
-    "scientificName": "Muscardinus avellanarius",
+    "fileName": "Muscardinus avellanarius",
     "commonNames": {
       "English": "Hazel Dormouse",
       "French": "Muscardin",
@@ -3534,13 +3534,13 @@
     }
   },
   {
-    "scientificName": "Pycnopodia helianthoides",
+    "fileName": "Pycnopodia helianthoides",
     "commonNames": {
       "English": "Sunflower Sea Star"
     }
   },
   {
-    "scientificName": "Nycticebus pygmaeus",
+    "fileName": "Nycticebus pygmaeus",
     "commonNames": {
       "English": "Pygmy Slow Loris",
       "Vietnamese": "cu li, anee",
@@ -3548,40 +3548,40 @@
     }
   },
   {
-    "scientificName": "Minyobates steyermarki",
+    "fileName": "Minyobates steyermarki",
     "commonNames": {
       "English": "Yapacana’s Little Red Frog",
       "Spanish; Castilian": "Sapito Rojo Del Yapacana"
     }
   },
   {
-    "scientificName": "Pelophylax cerigensis",
+    "fileName": "Pelophylax cerigensis",
     "commonNames": {
       "English": "Karpathos Frog"
     }
   },
   {
-    "scientificName": "Xixuthrus heros",
+    "fileName": "Xixuthrus heros",
     "commonNames": {
       "English": "Giant Fijian Longhorn Beetle",
       "Fijian": "Yavato (larvae)"
     }
   },
   {
-    "scientificName": "Dipturus batis",
+    "fileName": "Dipturus batis",
     "commonNames": {
       "English": "Common Blue Skate"
     }
   },
   {
-    "scientificName": "Falco cherrug",
+    "fileName": "Falco cherrug",
     "commonNames": {
       "English": "Saker Falcon",
       "French": "Faucon sacre"
     }
   },
   {
-    "scientificName": "Loxodonta africana",
+    "fileName": "Loxodonta africana",
     "commonNames": {
       "English": "African Savanna Elephant",
       "Spanish; Castilian": "Elefante de Sabana",
@@ -3590,66 +3590,66 @@
     }
   },
   {
-    "scientificName": "Gyps africanus",
+    "fileName": "Gyps africanus",
     "commonNames": {
       "French": "Vautour africain",
       "English": "White-backed Vulture"
     }
   },
   {
-    "scientificName": "Gyps bengalensis",
+    "fileName": "Gyps bengalensis",
     "commonNames": {
       "English": "White-rumped Vulture",
       "Spanish; Castilian": "Buitre Leonado Bengalés"
     }
   },
   {
-    "scientificName": "Gyps indicus",
+    "fileName": "Gyps indicus",
     "commonNames": {
       "English": "Indian Vulture"
     }
   },
   {
-    "scientificName": "Gyps tenuirostris",
+    "fileName": "Gyps tenuirostris",
     "commonNames": {
       "English": "Slender-billed Vulture"
     }
   },
   {
-    "scientificName": "Necrosyrtes monachus",
+    "fileName": "Necrosyrtes monachus",
     "commonNames": {
       "French": "Vautour charognard",
       "English": "Hooded Vulture"
     }
   },
   {
-    "scientificName": "Sarcogyps calvus",
+    "fileName": "Sarcogyps calvus",
     "commonNames": {
       "English": "Red-headed Vulture",
       "Spanish; Castilian": "Buitre Cabecirrojo"
     }
   },
   {
-    "scientificName": "Bubo scandiacus",
+    "fileName": "Bubo scandiacus",
     "commonNames": {
       "English": "Snowy Owl"
     }
   },
   {
-    "scientificName": "Pyrrhula murina",
+    "fileName": "Pyrrhula murina",
     "commonNames": {
       "English": "Azores Bullfinch"
     }
   },
   {
-    "scientificName": "Cyclura collei",
+    "fileName": "Cyclura collei",
     "commonNames": {
       "English": "Jamaican Rock Iguana",
       "French": "Iguane terrestre de la Jamaïque"
     }
   },
   {
-    "scientificName": "Bradypus torquatus",
+    "fileName": "Bradypus torquatus",
     "commonNames": {
       "English": "Maned Three-toed Sloth",
       "Portuguese": "Preguiça-de-Coleira",
@@ -3657,7 +3657,7 @@
     }
   },
   {
-    "scientificName": "Bradypus pygmaeus",
+    "fileName": "Bradypus pygmaeus",
     "commonNames": {
       "English": "Pygmy Three-toed Sloth",
       "Spanish; Castilian": "Perezoso Pigmeo de Tres Dedos",
@@ -3666,20 +3666,20 @@
     }
   },
   {
-    "scientificName": "Carcharodon carcharias",
+    "fileName": "Carcharodon carcharias",
     "commonNames": {
       "English": "White Shark"
     }
   },
   {
-    "scientificName": "Notiomystis cincta",
+    "fileName": "Notiomystis cincta",
     "commonNames": {
       "Maori": "Hihi",
       "English": "Stitchbird"
     }
   },
   {
-    "scientificName": "Mobula mobular",
+    "fileName": "Mobula mobular",
     "commonNames": {
       "English": "Spinetail Devil Ray",
       "Maltese": "Baqra",
@@ -3694,14 +3694,14 @@
     }
   },
   {
-    "scientificName": "Capricornis rubidus",
+    "fileName": "Capricornis rubidus",
     "commonNames": {
       "English": "Burmese Red Serow",
       "German": "Roter Serau"
     }
   },
   {
-    "scientificName": "Phocoena sinus",
+    "fileName": "Phocoena sinus",
     "commonNames": {
       "English": "Vaquita",
       "French": "Marsouin du golfe de Californie",
@@ -3709,7 +3709,7 @@
     }
   },
   {
-    "scientificName": "Panthera tigris",
+    "fileName": "Panthera tigris",
     "commonNames": {
       "Bengali": "Baagh",
       "Hindi": "Baagh",
@@ -3736,13 +3736,13 @@
     }
   },
   {
-    "scientificName": "Microcebus berthae",
+    "fileName": "Microcebus berthae",
     "commonNames": {
       "English": "Madame Berthe's Mouse Lemur"
     }
   },
   {
-    "scientificName": "Lontra felina",
+    "fileName": "Lontra felina",
     "commonNames": {
       "English": "Marine Otter",
       "Spanish; Castilian": "Nutria de Mar",
@@ -3750,7 +3750,7 @@
     }
   },
   {
-    "scientificName": "Hypogeomys antimena",
+    "fileName": "Hypogeomys antimena",
     "commonNames": {
       "English": "Malagasy Giant Jumping Rat",
       "Malagasy": "Vositse",
@@ -3758,14 +3758,14 @@
     }
   },
   {
-    "scientificName": "Chelonoidis abingdonii",
+    "fileName": "Chelonoidis abingdonii",
     "commonNames": {
       "English": "Pinta Giant Tortoise",
       "Spanish; Castilian": "Tortuga Gigante de Pinta"
     }
   },
   {
-    "scientificName": "Testudo kleinmanni",
+    "fileName": "Testudo kleinmanni",
     "commonNames": {
       "English": "Leith's Tortoise",
       "French": "Tortue de Kleinmann",
@@ -3773,20 +3773,20 @@
     }
   },
   {
-    "scientificName": "Pelargonium sidoides",
+    "fileName": "Pelargonium sidoides",
     "commonNames": {
       "Afrikaans": "Rabassam",
       "English": "Black Pelargonium"
     }
   },
   {
-    "scientificName": "Dipodomys ingens",
+    "fileName": "Dipodomys ingens",
     "commonNames": {
       "English": "Giant Kangaroo Rat"
     }
   },
   {
-    "scientificName": "Prionailurus viverrinus",
+    "fileName": "Prionailurus viverrinus",
     "commonNames": {
       "French": "Chat Pêcheur",
       "Spanish; Castilian": "Gato Pescador",
@@ -3794,7 +3794,7 @@
     }
   },
   {
-    "scientificName": "Pteronura brasiliensis",
+    "fileName": "Pteronura brasiliensis",
     "commonNames": {
       "English": "Giant Otter",
       "Spanish; Castilian": "Perro de Agua",

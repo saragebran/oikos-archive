@@ -28,7 +28,7 @@
             "kind": {{ $page.Params.kind | jsonify }},
             "date": {{ $page.Params.date | jsonify }},
             "lastmod": {{ $page.Params.lastmod | jsonify }},
-            "scientificName": {{ $page.Params.scientificName | jsonify }},
+            "fileName": {{ $page.Params.fileName | jsonify }},
             "category": {{ $page.Params.category | jsonify }},
             "languages": [
               {{- range $i, $lang := $page.Params.languages -}}

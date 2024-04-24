@@ -12,7 +12,7 @@ public_folder: "/img"
 local_backend: true
 
 sortable_fields:
-  fields: ['commit_date', 'title', 'commit_author', 'language.en']
+  fields: ['commit_date', 'title', 'commit_author']
 
 collections:
   - name: "species"
@@ -24,10 +24,10 @@ collections:
     media_folder: ''
     public_folder: ''
     create: true
-    summary: "{{scientificName}} - {{category}}"
+    summary: "{{fileName}} - {{category}}"
     fields:
       - {label: "ID", name: "uuid", widget: "uuid", allow_regenerate: false}
-      - {label: "File Name", name: "scientificName", widget: "string"}
+      - {label: "File Name", name: "fileName", widget: "string"}
       - label: "Species Name"
         name: "languages"
         widget: "list"
@@ -53,9 +53,9 @@ collections:
         widget: "relation"
         collection: "species"
         options_length: 10
-        search_fields: ["languages.*.names.*"]
+        search_fields: ["fileName"]
         value_field: "uuid"
-        display_fields: ["languages.*.names.*"]
+        display_fields: ["fileName"]
       - label: "Upload an image from your computer"
         name: "image"
         widget: "image"
