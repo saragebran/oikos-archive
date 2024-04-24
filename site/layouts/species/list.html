@@ -7,23 +7,93 @@
       {{- .Render "hasRep" -}}
       {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
       
+      <div id="gallery" class="flex items-center">
         {{- if $hasRepresentation -}}
           {{- $representations := .Site.GetPage "section" "representations" -}}
           {{- $uuid := .Params.uuid -}}
           {{- range $representations.Pages -}}
             {{- if eq $uuid .Params.speciesid -}}
-              <div class="mr2 ml2">
-                <div>
-                  <img class="mht6" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="" onclick="toggleFullScreen(this)">
-                </div>
+              <div class="gallery-item mr4 ml4" onclick="moveToCenter(this)">
+                <img class="h-auto mht6" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="">
                 <div class="flex flex-column f6">
-                  <div><i class="i">{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "?" }})</div>
+                  <div><i>{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "unknown year" }})</div>
                   <div>{{ .Params.author | default "Unknown Artist" }}</div>
-                  <div>{{ .Params.contact | default "?" }}</div>
+                  <div>{{ .Params.contact | default "-" }}</div>
                 </div>
               </div>
             {{- end -}}
-          {{- end }}
+          {{- end -}}
+<script>
+function moveToCenter(selectedItem) {
+  const gallery = document.getElementById('gallery');
+  let items = document.querySelectorAll('.gallery-item');
+
+  // Get the center of the gallery viewport
+  let galleryCenter = gallery.clientWidth / 2;
+
+  // Reset all items' transformations before calculating new centering
+  items.forEach(item => {
+    item.style.transform = 'translateX(0px)';
+  });
+
+  // After reset, calculate the centering transformation
+  setTimeout(() => {
+    // Recalculate the selected item's center based on its current position within the gallery
+    let itemOffset = selectedItem.offsetLeft; // Left offset of the item within the gallery
+    let itemWidth = selectedItem.clientWidth; // Width of the item
+    let itemInitialCenter = itemOffset + (itemWidth / 2); // Center position of the item
+
+    // Calculate the shift needed to center the item
+    let shiftX = galleryCenter - itemInitialCenter;
+
+    // Apply a transform to each item to create the effect of centering the selected item
+    items.forEach(item => {
+      item.style.transform = `translateX(${shiftX}px)`;
+    });
+
+    // Update classes for centered and non-centered items
+    items.forEach(item => {
+      item.classList.remove('centered');
+      item.style.filter = 'grayscale(1)';
+      let innerDiv = item.querySelector('div.flex'); // Adjust the selector as needed
+      innerDiv.classList.remove('imghighlight');
+      innerDiv.style.filter = 'opacity(0.4)';
+    });
+
+    selectedItem.classList.add('centered');
+    selectedItem.style.filter = 'grayscale(0)';
+    let selectedInnerDiv = selectedItem.querySelector('div.flex'); // Adjust the selector as needed
+    selectedInnerDiv.classList.add('imghighlight');
+    selectedInnerDiv.style.filter = 'opacity(1)';
+  }, 10); // Short delay to ensure styles reset
+}
+
+window.addEventListener('resize', function() {
+  if (document.querySelector('.centered')) {
+    moveToCenter(document.querySelector('.centered')); // Re-center the currently centered item when window is resized
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const gallery = document.getElementById('gallery');
+  let items = document.querySelectorAll('.gallery-item');
+
+  if (items.length > 0) {
+    // Generate a random index
+    let randomIndex = Math.floor(Math.random() * items.length);
+
+    // Call moveToCenter with the randomly selected item
+    moveToCenter(items[randomIndex]);
+  }
+});
+
+
+
+
+</script>
+      </div>
+      
         {{- else -}}
           {{- .Render "englishName" -}}
           {{- $englishName := .Scratch.Get "englishName" | title -}} 
@@ -47,8 +117,8 @@
         <div>
           <h2 class="f4">Info</h2>
           <ul>
+            <li class="f6">File Name: {{ if .Params.fileName -}}{{ .Params.fileName -}}{{- else }}?{{- end -}}</li>
             <li class="f6">Species Category: {{ .Params.category }}</li>
-            <li class="f6">Scientific Name: {{ if .Params.fileName -}}{{ .Params.fileName -}}{{- else }}?{{- end -}}</li>
           </ul>
         </div>
         <div class="mt3">
@@ -58,7 +128,7 @@
               {{- $currentLanguage := .language }} 
               {{- with .names -}} 
                 <li>
-                  <strong>{{ $currentLanguage }}:</strong> 
+                  <strong>{{ $currentLanguage }}: </strong> 
                   {{- range . -}} 
                     <span>{{ . | title }}</span>
                     {{- if not (eq (index . (sub (len .) 1)) .) }}{{ end }} 
@@ -72,7 +142,7 @@
           {{- .Render "englishName" -}}
           {{- $englishName := .Scratch.Get "englishName" | title -}} 
           {{- $otherName := .Scratch.Get "otherName" | title -}}
-          <h2 class="f4">Collective stories and knowledge about The {{ if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}</h2>
+          <h2 class="f4">Collective knowledge and stories about The {{ if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}</h2>
           {{- if .Content -}}
             <p>{{ .Content }}</p>
           {{- else -}}
@@ -84,19 +154,7 @@
   </div>
 </div>
 
-<script>
-  function toggleFullScreen(imgElement) {
-  if (!document.fullscreenElement) {
-    imgElement.requestFullscreen().catch(err => {
-      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-}
-</script>
+
 
 {{- end -}}
 

@@ -162,3 +162,52 @@ $fade-duration: 5s; /* align the with the fade interval in the javascript at src
 a:focus {
   border: none;
 }
+
+#gallery {
+  width: 100%;
+  position: relative; /* Needed to position the pseudo-elements */
+  overflow: hidden; /* Ensures the overlay does not extend outside the gallery */
+}
+
+#gallery::before, #gallery::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%; /* Overlay width set to 25% of the gallery container */
+  z-index: 2; /* Make sure it overlays the images */
+  pointer-events: none; /* Allows clicks to pass through the overlay */
+}
+
+#gallery::before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+
+#gallery::after {
+  right: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+
+.gallery-item {
+  position: relative;
+  z-index: 1; /* Below the overlay, above the container */
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  filter: grayscale(1);
+}
+
+.gallery-item > div {
+  filter: opacity(0.4);
+}
+
+
+.centered {
+  z-index: 10; /* Ensure it's above others if they overlap */
+  transition: transform 0.5s ease-in-out; /* Smooth transition for scaling */
+}
+
+
+
+

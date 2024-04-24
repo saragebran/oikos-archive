@@ -41,7 +41,7 @@
                 <div>This species has been given a name in {{ if $englishName -}} English,{{- end }}{{- $page.Render "otherLanguages" -}}</div>
               </div>
               <div class="giveLanguageName absolute h-100 w-25 dib">
-                <a class="no-underline" href="/admin/#/collections/species/entries/{{ $uuid }}/_index">
+                <a class="no-underline" target="_blank" href="/admin/#/collections/species/entries/{{ $uuid }}/_index">
                   <div class="flex w-100 h-100 justify-center items-center edit-button ttu bold">
                     <div>edit</div>
                   </div>
@@ -53,7 +53,7 @@
                 <div class="black">Share your vision of The {{ if $englishName -}}{{- $englishName -}}{{- else -}}{{ $otherName -}}{{- end -}}</div>
               </div>
               <div class="absolute h-100 w-25 dib">
-                <a class="no-underline" href='/admin/#/collections/representations/new?speciesid={{ $page.Params.uuid }}'>
+                <a class="no-underline" target="_blank" href='/admin/#/collections/representations/new?fileName={{ $page.Params.fileName }}&speciesId={{ $page.Params.uuid }}'>
                   <div class="flex w-100 h-100 justify-center items-center edit-button ttu bold">
                    <div>add</div>
                   </div>
