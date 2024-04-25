@@ -204,8 +204,7 @@ a:focus {
 
 
 .centered {
-  z-index: 10; /* Ensure it's above others if they overlap */
-  transition: transform 0.5s ease-in-out; /* Smooth transition for scaling */
+  transition: transform 1s ease-in-out; /* Smooth transition for scaling */
 }
 
 

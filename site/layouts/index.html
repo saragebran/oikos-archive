@@ -3,4 +3,26 @@
 {{ partial "species/main.html" . }}
 {{ partial "species/welcome.html" . }}
 
+<script>
+ // Cookie to make sure the welcome message is only displayed on the users first visit to the site.
+ document.addEventListener('DOMContentLoaded', function () {
+  const welcomeDiv = document.getElementById('welcomeMessage');
+
+  // Check if the 'visited' cookie is set
+  if (document.cookie.split('; ').find(row => row.startsWith('visited='))) {
+    // Hide the welcome message if the cookie exists
+    welcomeDiv.style.display = 'none';
+  } else {
+    // If the cookie doesn't exist, display the message and set the cookie
+    welcomeDiv.style.display = 'block';
+
+    // Set the 'visited' cookie to expire in 365 days
+    const expiration = new Date();
+    expiration.setTime(expiration.getTime() + (365 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + expiration.toUTCString();
+    document.cookie = "visited=true; " + expires + "; path=/";
+  }
+});
+</script>
+
 {{- end -}}

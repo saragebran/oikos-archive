@@ -121,6 +121,52 @@ function applyMistAnimation(targetElement) {
   return () => intervals.forEach(clearInterval);
 }
 
+// Move the clicked gallery image to center of screen.
+function moveToCenter(selectedItem) {
+  const gallery = document.getElementById('gallery');
+  let items = document.querySelectorAll('.gallery-item');
+
+  // Get the center of the gallery viewport
+  let galleryCenter = gallery.clientWidth / 2;
+
+  // Reset all items' transformations before calculating new centering
+  items.forEach(item => {
+    item.style.transform = 'translateX(0px)';
+  });
+
+  // After reset, calculate the centering transformation
+  setTimeout(() => {
+    // Recalculate the selected item's center based on its current position within the gallery
+    let itemOffset = selectedItem.offsetLeft; // Left offset of the item within the gallery
+    let itemWidth = selectedItem.clientWidth; // Width of the item
+    let itemInitialCenter = itemOffset + (itemWidth / 2); // Center position of the item
+
+    // Calculate the shift needed to center the item
+    let shiftX = galleryCenter - itemInitialCenter;
+
+    // Apply a transform to each item to create the effect of centering the selected item
+    items.forEach(item => {
+      item.style.transform = `translateX(${shiftX}px)`;
+    });
+
+    // Update classes for centered and non-centered items
+    items.forEach(item => {
+      item.classList.remove('centered');
+      item.style.filter = 'grayscale(1)';
+      let innerDiv = item.querySelector('div.flex'); // Adjust the selector as needed
+      innerDiv.classList.remove('imghighlight');
+      innerDiv.style.filter = 'opacity(0.4)';
+    });
+
+    selectedItem.classList.add('centered');
+    selectedItem.style.filter = 'grayscale(0)';
+    let selectedInnerDiv = selectedItem.querySelector('div.flex'); // Adjust the selector as needed
+    selectedInnerDiv.classList.add('imghighlight');
+    selectedInnerDiv.style.filter = 'opacity(1)';
+  }, 10); // Short delay to ensure styles reset
+}
+
+
 // Animate the welcome message
 document.addEventListener('DOMContentLoaded', function () {
   let currentIndex = 0;
@@ -332,23 +378,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Cookie to make sure the welcome message is only displayed on the users first visit to the site.
- document.addEventListener('DOMContentLoaded', function () {
-  const welcomeDiv = document.getElementById('welcomeMessage');
 
-  // Check if the 'visited' cookie is set
-  if (document.cookie.split('; ').find(row => row.startsWith('visited='))) {
-    // Hide the welcome message if the cookie exists
-    welcomeDiv.style.display = 'none';
-  } else {
-    // If the cookie doesn't exist, display the message and set the cookie
-    welcomeDiv.style.display = 'block';
+window.addEventListener('resize', function() {
+  if (document.querySelector('.centered')) {
+    moveToCenter(document.querySelector('.centered')); // Re-center the currently centered item when window is resized
+  }
+});
 
-    // Set the 'visited' cookie to expire in 365 days
-    const expiration = new Date();
-    expiration.setTime(expiration.getTime() + (365 * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + expiration.toUTCString();
-    document.cookie = "visited=true; " + expires + "; path=/";
+// On load of image gallery, move a random gallery image to the center.
+document.addEventListener('DOMContentLoaded', function() {
+  const gallery = document.getElementById('gallery');
+  let items = document.querySelectorAll('.gallery-item');
+
+  if (items.length > 0) {
+    // Generate a random index
+    let randomIndex = Math.floor(Math.random() * items.length);
+
+    // Call moveToCenter with the randomly selected item
+    moveToCenter(items[randomIndex]);
   }
 });
 
