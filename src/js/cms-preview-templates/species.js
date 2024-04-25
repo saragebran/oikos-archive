@@ -96,7 +96,7 @@ const ComplementarySquare = ({ color }) => {
   const rComp = (255 - rInt).toString(16).padStart(2, '0');
   const gComp = (255 - gInt).toString(16).padStart(2, '0');
   const bComp = (255 - bInt).toString(16).padStart(2, '0');
-  const complimentaryColor = `#${rComp}${gComp}${bComp}`;
+  const complimentaryColor = `#fff`; // Change #fff to #${rComp}${gComp}${bComp} to fill font with complimentaryColor.
 
   // Define the constants and randomness for the SVG path
   const width = 250.0;

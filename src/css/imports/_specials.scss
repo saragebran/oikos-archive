@@ -207,6 +207,25 @@ a:focus {
   transition: transform 1s ease-in-out; /* Smooth transition for scaling */
 }
 
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Blurs the content behind the overlay */
+}
+
+.fullscreen-overlay img {
+  width: 90%;
+  max-height: 90%;
+  object-fit: contain; /* This will ensure the image is scaled correctly within the overlay */
+}
 
 
 

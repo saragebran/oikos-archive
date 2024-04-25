@@ -1,7 +1,5 @@
 import "./css/main.scss";
 
-
-
 function loopThroughLanguages(speciesElement) {
   let names = Array.from(speciesElement.querySelectorAll(`#namesContainer-${speciesElement.id} span`)).map(el => el.textContent);
   let currentNameIndex = 0;
@@ -70,6 +68,7 @@ function applyScrollingAnimation(targetElement) {
 }
 
 function applyMistAnimation(targetElement) {
+  // console.log(targetElement);
   const paths = targetElement.querySelectorAll('.morphing-path');
   const bgstroke = targetElement.querySelector('.bgstroke');
   const bounds = bgstroke.getBoundingClientRect();
@@ -164,6 +163,44 @@ function moveToCenter(selectedItem) {
     selectedInnerDiv.classList.add('imghighlight');
     selectedInnerDiv.style.filter = 'opacity(1)';
   }, 10); // Short delay to ensure styles reset
+}
+
+// Currently not in use, but could be improved and implemented.
+function animatePathToCursor(pathElement, delayIncrement) {
+  let mousePos = { x: 0, y: 0 };
+  document.addEventListener('mousemove', (event) => {
+    mousePos.x = event.clientX - (window.innerWidth / 3 );
+    mousePos.y = event.clientY - (window.innerHeight / 10 );
+  });
+
+  let commands = pathElement.getAttribute('d').match(/[a-zA-Z][^a-zA-Z]*/g);
+  let commandDelays = commands.map((_, index) => index * delayIncrement);
+
+  function updatePath() {
+    let newD = commands.map((cmd, index) => {
+      let type = cmd.charAt(0);
+      let points = cmd.slice(1).trim().split(/[\s,]+/).map(Number);
+
+      if (type === 'M' || type === 'Q' || type === 'T') {
+        let delayTime = commandDelays[index];
+        setTimeout(() => {
+          let updatedPoints = points.map((point, i) => {
+            if (i % 2 === 0) {  // x coordinate
+              return point + (mousePos.x - point) * 0.01;  // Smooth transition toward the mouse
+            } else {  // y coordinate
+              return point + (mousePos.y - point) * 0.01;  // Smooth transition toward the mouse
+            }
+          });
+          commands[index] = `${type} ${updatedPoints.join(' ')}`;
+          pathElement.setAttribute('d', commands.join(' '));
+        }, delayTime);
+      }
+
+      return cmd;  // Return unchanged if not applicable
+    }).join(' ');
+  }
+
+  setInterval(updatePath, 100);  // Update path every 100 ms for smoother animation
 }
 
 
@@ -285,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-// Observer
+// Homepage Observer
 document.addEventListener('DOMContentLoaded', () => {
   const options = {
       root: null,
@@ -378,13 +415,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
-// On load of image gallery, move a random gallery image to the center.
+// On load of image gallery, move a random gallery image to the center and apply eventlisteners to gallery-items
 document.addEventListener('DOMContentLoaded', function() {
   const gallery = document.getElementById('gallery');
   let items = document.querySelectorAll('.gallery-item');
+  const titleContainer = document.querySelector('.svg-container');
+  const bgstroke = document.querySelector('.bgstroke');
+
+  if (titleContainer) {
+    // animatePathToCursor(bgstroke, 1000);  // 1000 ms delay increment between points
+    applyMistAnimation(document.getElementById('image-container'));
+  }
+  
 
   if (items.length > 0) {
     // Generate a random index
@@ -392,11 +434,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call moveToCenter with the randomly selected item
     moveToCenter(items[randomIndex]);
+    
+    // Full screen the centered image
     for (let i = 0; i < items.length; i++) {
       items[i].addEventListener('click', function() {
-        moveToCenter(this);
+        // check if the item is already centered
+        if (this.classList.contains('centered')) {
+          // create overlay
+          const overlay = document.createElement('div');
+          overlay.className = 'fullscreen-overlay';
+          document.body.appendChild(overlay);
+    
+          // clone and append image to overlay
+          const img = this.querySelector('img');
+          if (img) {
+            const clone = img.cloneNode(true);
+            overlay.appendChild(clone);
+    
+            // add click event to hide overlay on image click
+            clone.addEventListener('click', function() {
+              overlay.style.display = 'none';
+            });
+          }
+        } else {
+          moveToCenter(this);
+        }
       });
     }
+    
   }
 
   window.addEventListener('resize', function() {

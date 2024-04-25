@@ -7,8 +7,8 @@
       {{- .Render "hasRep" -}}
       {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
       
-      <div id="gallery" class="flex items-center">
-        {{- if $hasRepresentation -}}
+      {{- if $hasRepresentation -}}
+        <div id="gallery" class="flex items-center">
           {{- $representations := .Site.GetPage "section" "representations" -}}
           {{- $uuid := .Params.uuid -}}
           {{- range $representations.Pages -}}
@@ -31,14 +31,19 @@
           {{- $otherName := .Scratch.Get "otherName" | title -}}
           {{- .Render "pathCalc" -}}
           <!-- SVG and Title -->
-          <div class="svg-container tc w-100 mb3 mt3">
-            <svg width="350px" height="150px" xmlns="http://www.w3.org/2000/svg" style="filter:blur(20px)">
-                <path fill="transparent" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- .Scratch.Get "svgPath" -}}"></path>
-              </svg>     
-            <h2 class="f2 title comp-color" style="color: {{- .Params.color -}}; margin-bottom: -1rem; transform: translateY(-5rem);">
+          <div class="svg-container tc w-100 h4 mb3 mt3" style="position: relative;">
+            <div class="bgstroke w-100 h4" id="svgContainer">
+              <svg width="350px" height="150px" xmlns="http://www.w3.org/2000/svg" style="filter:blur(20px); overflow: visible;">
+                <path  fill="{{- .Page.Params.color -}}" stroke="{{- .Page.Params.color -}}" stroke-width="100" class="morphing-path" d="{{- .Scratch.Get "svgPath" -}}"></path>
+              </svg>   
+            </div>
+            <h2 class="absolute f2 title comp-color top-50 left-50" style="transform: translate(-50%, -50%); color: {{- .Params.color -}};">
               {{- if $englishName -}} {{- $englishName -}}{{- else -}}{{- $otherName -}}{{- end -}}
             </h2>   
           </div>
+          
+
+
         {{- end }}
       
     </div>
@@ -48,8 +53,8 @@
         <div>
           <h2 class="f4">Info</h2>
           <ul>
-            <li class="f6">File Name: {{ if .Params.fileName -}}{{ .Params.fileName -}}{{- else }}?{{- end -}}</li>
-            <li class="f6">Species Category: {{ .Params.category }}</li>
+            <li class="f6"><strong>File Name: </strong>{{ if .Params.fileName -}}{{ .Params.fileName -}}{{- else }}?{{- end -}}</li>
+            <li class="f6"><strong>Species Category: </strong>{{ .Params.category }}</li>
           </ul>
         </div>
         <div class="mt3">
