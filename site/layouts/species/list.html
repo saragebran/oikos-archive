@@ -13,7 +13,7 @@
           {{- $uuid := .Params.uuid -}}
           {{- range $representations.Pages -}}
             {{- if eq $uuid .Params.speciesid -}}
-              <div class="gallery-item mr4 ml4" onclick="moveToCenter(this)">
+              <div class="gallery-item mr4 ml4">
                 <img class="h-auto mht6" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="">
                 <div class="flex flex-column f6">
                   <div><i>{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "unknown year" }})</div>

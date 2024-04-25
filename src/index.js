@@ -379,11 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-window.addEventListener('resize', function() {
-  if (document.querySelector('.centered')) {
-    moveToCenter(document.querySelector('.centered')); // Re-center the currently centered item when window is resized
-  }
-});
+
 
 // On load of image gallery, move a random gallery image to the center.
 document.addEventListener('DOMContentLoaded', function() {
@@ -396,6 +392,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call moveToCenter with the randomly selected item
     moveToCenter(items[randomIndex]);
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener('click', function() {
+        moveToCenter(this);
+      });
+    }
   }
+
+  window.addEventListener('resize', function() {
+    if (document.querySelector('.centered')) {
+      moveToCenter(document.querySelector('.centered')); // Re-center the currently centered item when window is resized
+    }
+  });
 });
 
