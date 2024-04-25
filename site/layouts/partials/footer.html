@@ -2,19 +2,19 @@
 <footer class="fixed h3 bottom-0 w-100 bt b--black bg-white z-999 closed" id="footer">
 	<div class="absolute top-0 h3 w-100 z-3 bg-white" id="chicharra-container">
 		<div class="flex top-0 items-center h-100 w-100 justify-between">
-			<div class="db h-75 ml2">
-				<a class="no-underline" target="_blank" href="/admin/#/collections/representations/new">
-					<img class="h-100" src="/img/plusBtn.svg" alt=""><span class="f6 dn di-ns">add new artwork</span>
-				</a>
-			</div>
+			<a class="flex edit-button justify-center items-center no-underline h-50 w3 ml2 bb bt bl br pa2" target="_blank" href="{{- if .IsHome -}}/admin/#/collections/representations/new{{- else -}}/admin/#/collections/representations/new?fileName={{ .Page.Params.fileName }}&speciesId={{ .Page.Params.uuid }}{{- end -}}">
+				<div class="ttu tc">
+					<div style="font-size: 12px; line-height: 1rem;">{{- if .IsHome -}}new{{- else -}}add{{- end }} artwork</div>
+				</div>
+			</a>
 			<div class="db h-75">
 				<img src="/img/lachicarra.svg" alt="page logo representing the Chicharra" class="h-100" id="chicharra" style="cursor: pointer;">
 			</div>
-			<div class="db h-75 mr2">
-				<a class="no-underline" target="_blank" href="/admin/#/collections/species/new">
-					<span class="f6 dn di-ns">add new species</span><img class="h-100" src="/img/plusBtn.svg" alt="">
-				</a>
-			</div>
+			<a class="flex edit-button justify-center items-center no-underline h-50 w3 mr2 bb bt bl br pa2" target="_blank" href="{{- if .IsHome -}}/admin/#/collections/species/new{{- else -}}/admin/#/collections/species/entries/{{ .Page.Params.uuid }}/_index{{- end -}}">
+				<div class="ttu tc">
+					<div style="font-size: 12px; line-height: 1rem;">{{- if .IsHome -}}new{{- else -}}edit{{- end }} species</div>
+				</div>
+			</a>
 		</div>
 	</div>
 	<div class="welcome-wrapper flex justify-center relative" style="height: 100vh;">

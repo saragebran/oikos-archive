@@ -1,10 +1,10 @@
 {{- define "header" -}}
 <nav class="fixed top-0 w-100 flex justify-between h3 items-center z-999">
-    <div class="ml2 mt2 h-100">
-        <a href="/" class="flex items-center h-100">
-            <img class="h-75 z-999" src="/img/backBtn.svg" alt="">
-         </a>
-    </div>
+    <a href="{{- .Site.BaseURL -}}" class="flex edit-button justify-center items-center no-underline h-50 w3 ml2 bb bt bl br pa2">
+    <div class="ttu tc no-underline">
+            <div style="font-size: 12px; line-height: 1rem;">back</div>
+        </div>
+    </a>
 </nav>
 {{- end -}}
 

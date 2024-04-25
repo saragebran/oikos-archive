@@ -1,29 +1,29 @@
 {{- define "main" -}}
 
-<div class="mw9 center mt2 mb5 min-vh-100">
-  <div class="flex flex-wrap mhn1 pa3 justify-center">
+<div class="center mt5 mb5 min-vh-100">
+  <div class="flex flex-wrap mhn1 justify-center h-100">
     <!-- Image container -->
-    <div id="image-container" class="w-100 flex inline-flex justify-center pa3">
+    <div id="image-container" class="flex flex-wrap justify-center w-100">
       {{- .Render "hasRep" -}}
       {{- $hasRepresentation := .Scratch.Get "hasRepresentation" -}}
       
       {{- if $hasRepresentation -}}
-        <div id="gallery" class="flex items-center">
-          {{- $representations := .Site.GetPage "section" "representations" -}}
-          {{- $uuid := .Params.uuid -}}
-          {{- range $representations.Pages -}}
-            {{- if eq $uuid .Params.speciesid -}}
-              <div class="gallery-item mr4 ml4">
-                <img class="h-auto mht6" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="">
-                <div class="flex flex-column f6">
-                  <div><i>{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "unknown year" }})</div>
-                  <div>{{ .Params.author | default "Unknown Artist" }}</div>
-                  <div>{{ .Params.contact | default "-" }}</div>
-                </div>
+      <div id="gallery" class="flex items-center w-100">
+        {{- $representations := .Site.GetPage "section" "representations" -}}
+        {{- $uuid := .Params.uuid -}}
+        {{- range $representations.Pages -}}
+          {{- if eq $uuid .Params.speciesid -}}
+            <div class="gallery-item tc mr2 mr4-m w-100 w-75-m w-50-l mw5">
+              <img class="w-100 h-auto" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="{{ .Params.title | default "Image" }}">
+              <div class="flex flex-column f6 tl">
+                <div><i>{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "unknown year" }})</div>
+                <div>{{ .Params.author | default "Unknown Artist" }}</div>
+                <div>{{ .Params.contact | default "-" }}</div>
               </div>
-            {{- end -}}
+            </div>
           {{- end -}}
-      </div>
+        {{- end -}}
+    </div>
       
         {{- else -}}
           {{- .Render "englishName" -}}
