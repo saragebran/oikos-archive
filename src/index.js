@@ -166,7 +166,7 @@ function moveToCenter(selectedItem) {
 }
 
 // Currently not in use, but could be improved and implemented.
-function animatePathToCursor(pathElement, delayIncrement) {
+ function animatePathToCursor(pathElement, delayIncrement) {
   let mousePos = { x: 0, y: 0 };
   document.addEventListener('mousemove', (event) => {
     mousePos.x = event.clientX - (window.innerWidth / 3 );
@@ -201,8 +201,7 @@ function animatePathToCursor(pathElement, delayIncrement) {
   }
 
   setInterval(updatePath, 100);  // Update path every 100 ms for smoother animation
-}
-
+} 
 
 // Animate the welcome message
 document.addEventListener('DOMContentLoaded', function () {
@@ -267,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function () {
     startTyping();
   }
 });
-
 
 // Open and close footer
 document.addEventListener("DOMContentLoaded", function() {
