@@ -1,5 +1,5 @@
 <head>
-  <title>{{- .Title -}} | {{- $.Site.Title -}}</title>
+  <title>{{- $.Site.Title -}}{{- if .IsHome -}}{{- else }} | {{ .Page.Params.fileName -}}{{- end -}}</title>
   {{- $stylesheet := .Site.Data.webpack.main -}}
   {{- with $stylesheet.css -}}
     <link href="{{ relURL . }}" rel="stylesheet">
@@ -21,21 +21,4 @@
   {{- if .IsHome -}}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {{- end }}
-  <style>
-	html {
-	  font-size: var(--font-size);
-	}
-  
-	@media (min-width: 768px) {
-	  html {
-		font-size: var(--font-size-m);
-	  }
-	}
-  
-	@media (min-width: 1024px) {
-	  html {
-		font-size: var(--font-size-l);
-	  }
-	}
-  </style>
 </head>

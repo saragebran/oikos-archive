@@ -1,5 +1,21 @@
 $fade-duration: 5s; /* align the with the fade interval in the javascript at src/js/index.js */
 
+html {
+  font-size: var(--font-size);
+}
+
+@media (min-width: 768px) {
+  html {
+  font-size: var(--font-size-m);
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+  font-size: var(--font-size-l);
+  }
+}
+
 .dropdown-add:hover {
   filter: opacity(1);
   display: block;
@@ -38,11 +54,8 @@ $fade-duration: 5s; /* align the with the fade interval in the javascript at src
 }
 
 .title {
-  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0 0.05em black;
-}
-
-.title-white {
-  text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0 0.05em white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
  .speciesli .has-rep {

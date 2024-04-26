@@ -10,6 +10,7 @@ CMS.registerEventListener({
   name: 'login',
   handler: () => {
     setTimeout(() => {
+      if (!document.querySelector('.CMS_Autocomplete_input')) return;
       const speciesInput = document.querySelector('.CMS_Autocomplete_input');
       speciesInput.focus();
       // Clear existing value and trigger update
