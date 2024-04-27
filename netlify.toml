@@ -17,5 +17,10 @@
 [[plugins]]
   package = "@netlify/plugin-emails"
 
+# Schedule for deploy.js
 [functions."deploy"]
-  schedule = "@hourly"
+  schedule = "45 * * * *"
+
+# Schedule for disableAutoBuild.js
+[functions."disableAutoBuild"]
+  schedule = "50 * * * *"
