@@ -19,8 +19,9 @@
 
 # Schedule for deploy.js
 [functions."deploy"]
-  schedule = "14 * * * *"
+  schedule = "0 0 * * *"
 
 # Schedule for disableAutoBuild.js
-[functions."disableAutoBuild"]
-  schedule = "18 * * * *"
+[functions."disableAutobuild"]
+  schedule = "5 0 * * *"
+
