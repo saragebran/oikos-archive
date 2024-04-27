@@ -14,11 +14,33 @@
         {{- range $representations.Pages -}}
           {{- if eq $uuid .Params.speciesid -}}
             <div class="gallery-item tc mr2 mr4-m w-100 w-75-m w-50-l mw5">
-              <img class="w-100 h-auto" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="{{ .Params.title | default "Image" }}">
+              <img class="w-100 h-auto" style="min-width: 16rem;" src="representations/{{- .Params.speciesid -}}{{- .Params.image -}}" alt="{{ .Params.title | default "Image" }}">
               <div class="flex flex-column f6 tl">
                 <div><i>{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "unknown year" }})</div>
                 <div>{{ .Params.author | default "Unknown Artist" }}</div>
-                <div><a href="{{- .Params.link -}}" target="_blank" rel="noopener noreferrer">{{- .Params.link | default "-" | truncate 50 "..." -}}</a></div>
+                <div>
+                  {{ with .Params.link }}
+                  {{ $prefix := "" }}
+                  {{ if not (strings.HasPrefix . "http://") }}
+                      {{ if not (strings.HasPrefix . "https://") }}
+                          {{ $prefix = "https://" }}
+                      {{ end }}
+                  {{ end }}
+                  {{ $safeURL := printf "%s%s" $prefix . | safeURL }}
+                  {{ $cleanLink := . | replaceRE "^https?://w?w?w?.?" "" | replaceRE "^www." "" }}
+                  {{ $displayText := $cleanLink | truncate 35 "..." }}
+                    <a href="{{ $safeURL }}" target="_blank" rel="noopener noreferrer">
+                        {{- $displayText | default "-" }}
+                    </a>
+                  {{ else }}
+                  -
+                  {{ end }}
+              </div>
+              
+              
+              
+              
+                          
               </div>
             </div>
           {{- end -}}
