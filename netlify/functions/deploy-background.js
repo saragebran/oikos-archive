@@ -10,10 +10,13 @@ const fetchWithAuth = async (url, options) => {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${ACCESS_TOKEN}`
   };
-  console.log("Fetching with options:", { ...options, headers });
   const response = await fetch(url, { ...options, headers });
-  console.log(`Response from ${url}:`, response.status);
-  return response;
+  const responseData = await response.json(); // Assuming JSON response for better handling
+  console.log(`Response from ${url}: ${response.status}, Body:`, responseData);
+  if (!response.ok) {
+    throw new Error(`API call failed with status ${response.status}: ${JSON.stringify(responseData)}`);
+  }
+  return responseData;
 };
 
 const updateAutoBuild = async (enable) => {
@@ -33,21 +36,21 @@ const triggerBuild = async () => {
 exports.handler = async (event, context) => {
   try {
     console.log("Handler started");
-    
+
     // Step 1: Enable autobuild
     console.log("Enabling autobuild...");
-    const enableResponse = await updateAutoBuild(true);
-    if (!enableResponse.ok) throw new Error(`Failed to enable autobuild: ${await enableResponse.text()}`);
+    await updateAutoBuild(true);
+    console.log("Autobuild enabled.");
 
     // Step 2: Trigger the build
     console.log("Triggering the build...");
-    const triggerResponse = await triggerBuild();
-    if (!triggerResponse.ok) throw new Error(`Failed to trigger build: ${await triggerResponse.text()}`);
+    await triggerBuild();
+    console.log("Build triggered.");
 
     // Step 3: Disable autobuild
     console.log("Disabling autobuild...");
-    const disableResponse = await updateAutoBuild(false);
-    if (!disableResponse.ok) throw new Error(`Failed to disable autobuild: ${await disableResponse.text()}`);
+    await updateAutoBuild(false);
+    console.log("Autobuild disabled.");
 
     return {
       statusCode: 200,
