@@ -14,5 +14,8 @@
   framework = "hugo"
   targetPort = 3000
 
+[[plugins]]
+  package = "@netlify/plugin-emails"
+
 [functions."deploy"]
   schedule = "@daily"
