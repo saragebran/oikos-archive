@@ -146,8 +146,8 @@ const ComplementarySquare = ({ color }) => {
       <div className="cms">
       <h2>Info</h2>
       <ul className="flex flex-column">
+        <li>{`File Name: ${entry.data.fileName || '?'}`}</li>
         <li>{`Species Category: ${entry.data.category || '?'}`}</li>
-        <li>{`Scientific Name: ${entry.data.fileName || '?'}`}</li>
       </ul>
       <h2>Names in different languages</h2>
       <ul>{renderLanguages(entry.data.languages)}</ul>
