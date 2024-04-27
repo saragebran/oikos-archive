@@ -18,7 +18,7 @@
               <div class="flex flex-column f6 tl">
                 <div><i>{{ .Params.title | default "Untitled" }}</i> ({{ .Params.year | default "unknown year" }})</div>
                 <div>{{ .Params.author | default "Unknown Artist" }}</div>
-                <div>{{ .Params.contact | default "-" }}</div>
+                <div><a href="{{- .Params.link -}}" target="_blank" rel="noopener noreferrer">{{- .Params.link | default "-" | truncate 50 "..." -}}</a></div>
               </div>
             </div>
           {{- end -}}

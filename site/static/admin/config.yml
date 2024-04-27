@@ -72,10 +72,10 @@ collections:
         name: "author"
         widget: "string"
         hint: "Your name will be displayed on the site."
-      - label: "Contact Link"
-        name: "contact"
+      - label: "Link"
+        name: "link"
         widget: "string"
-        hint: "Link to your website or preferred social media handle."
+        hint: "Link to your website, social media handle or information about the work."
         required: false
       - label: "Year"
         name: "year"

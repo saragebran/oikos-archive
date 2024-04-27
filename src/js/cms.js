@@ -6,11 +6,33 @@ import styles from "!to-string-loader!css-loader!postcss-loader!sass-loader!../c
 import SpeciesPreview from "./cms-preview-templates/species";
 import RepresentationsPreview from "./cms-preview-templates/representations";
 
+let chosenSpecies = false;
+let hash = ""
+let queryIndex = ""
+let queryParams = ""
+let urlParams = ""
+let speciesName = ""
+
 CMS.registerEventListener({
   name: 'login',
   handler: () => {
     setTimeout(() => {
       if (!document.querySelector('.CMS_Autocomplete_input')) return;
+      hash = window.location.hash;
+      queryIndex = hash.indexOf('?');
+      queryParams = queryIndex !== -1 ? hash.substring(queryIndex + 1) : '';
+      urlParams = new URLSearchParams(queryParams);
+      speciesName = urlParams.get('speciesId');
+      console.log('species name: ' + speciesName);
+      if (speciesName) {
+        chosenSpecies = true;
+        console.log(chosenSpecies);
+      } else {
+        chosenSpecies = false;
+        console.log(chosenSpecies);
+        return;
+      }
+
       const speciesInput = document.querySelector('.CMS_Autocomplete_input');
       speciesInput.focus();
       // Clear existing value and trigger update
@@ -34,19 +56,18 @@ CMS.registerEventListener({
   collection: 'representations',
   field: 'speciesid',
   handler: ({ data, collection, field }) => {
-    const hash = window.location.hash;
-    const queryIndex = hash.indexOf('?');
-    const queryParams = queryIndex !== -1 ? hash.substring(queryIndex + 1) : '';
-    const urlParams = new URLSearchParams(queryParams);
-    const speciesName = urlParams.get('speciesId');
-    const currentValue = speciesName;
-    console.log("Species ID changed to:", currentValue);
-    
-    // You can modify data if needed, or just log as above
-    return {
-      ...data
-      , speciesid: currentValue
-    };
+    if (chosenSpecies) {
+      const currentValue = speciesName;
+      console.log("Species ID changed to:", currentValue);
+      
+      // You can modify data if needed, or just log as above
+      return {
+        ...data
+        , speciesid: currentValue
+      };
+    } else {
+      return data;
+    }
   },
 });
 
