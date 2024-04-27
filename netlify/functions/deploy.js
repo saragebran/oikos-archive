@@ -12,9 +12,12 @@ async function fetchWithAuth(url, options) {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${NETLIFY_ACCESS_TOKEN}`
   };
+  console.log("Request URL:", url);  // Log the full URL being requested
+  console.log("Request Options:", JSON.stringify(options));  // Log the full request options including headers and body
   const response = await fetch(url, { ...options, headers });
   if (!response.ok) {
-    const errorBody = await response.text();
+    const errorBody = await response.text();  // Retrieve the full error message from the response
+    console.log("Error Response Body:", errorBody);  // Log the error body for more context
     throw new Error(`API call failed with status ${response.status}: ${errorBody}`);
   }
   return response;
@@ -23,11 +26,11 @@ async function fetchWithAuth(url, options) {
 exports.handler = async (event, context) => {
   try {
     // Enable autobuild
-    const enableUrl = `https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/build_settings`;
+    const enableUrl = `https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}`;
     console.log("Enabling autobuild...");
     await fetchWithAuth(enableUrl, {
       method: 'PATCH',
-      body: JSON.stringify({ auto_build: true })
+      body: JSON.stringify({ build_settings: { stop_builds: false } })
     });
     console.log("Autobuild enabled.");
 
