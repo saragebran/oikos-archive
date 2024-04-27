@@ -18,4 +18,4 @@
   package = "@netlify/plugin-emails"
 
 [functions."deploy"]
-  schedule = "@daily"
+  schedule = "@hourly"
