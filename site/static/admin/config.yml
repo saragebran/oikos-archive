@@ -4,12 +4,12 @@ backend:
   repo: saragebran/oikos-archive # Path to your GitHub repository
   open_authoring: true
   commit_messages:
-    create: Create {{collection}} “{{slug}}”
-    update: Update {{collection}} “{{slug}}”
-    delete: Delete {{collection}} “{{slug}}”
-    uploadMedia: Upload “{{path}}”
-    deleteMedia: Delete “{{path}}”
-    openAuthoring: '{{message}} [skip netlify]'
+    create: Create {{collection}} “{{slug}}” [skip netlify]
+    update: Update {{collection}} “{{slug}}” [skip netlify]
+    delete: Delete {{collection}} “{{slug}}” [skip netlify]
+    uploadMedia: Upload “{{path}}” [skip netlify]
+    deleteMedia: Delete “{{path}}” [skip netlify]
+    openAuthoring: Open Auth - "{{message}}" [skip netlify]
 
 publish_mode: editorial_workflow
 
