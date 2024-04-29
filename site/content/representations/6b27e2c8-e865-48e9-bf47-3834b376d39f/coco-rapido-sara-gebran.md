@@ -5,6 +5,6 @@ image: /coconut-tree.jpg
 title: La casa de las cucarachas
 description: Instant painting
 author: Sara Gebran
-link: www.saragebran.com/oil/meinginug/hellooo/Imhere
+link: www.saragebran.com/
 year: "2024"
 ---
