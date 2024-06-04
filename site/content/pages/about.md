@@ -2,7 +2,7 @@
 title: "About"
 date: "2024-04-15T14:09:00.000Z"
 ---
-LaChicharra.com is a place where anyone can take part in naming and representing the endangered species of our world. You can add the name of a species that you care about. You can tell a story about it. You can draw or paint it. Use words, images, or both to express your personal relationship with a species that holds significance to you, whether still present in your environment or remembered from the past.
+la-chicharra.org is a place where anyone can take part in naming and representing the endangered species of our world. You can add the name of a species that you care about. You can tell a story about it. You can draw or paint it. Use words, images, or both to express your personal relationship with a species that holds significance to you, whether still present in your environment or remembered from the past.
 
 **Name it**: You might use a name that's locally recognized, one you feel is more appropriate, or the official name from your country's Red List.
 
@@ -12,5 +12,5 @@ LaChicharra.com is a place where anyone can take part in naming and representing
 
 We review submissions as often as possible, but please be patient as the project is run by volunteers. Please ensure your contributions are original and avoid using copyrighted images. 
 
-_If you sell an artwork through LaChicharra.com we kindly ask for a donation towards running the site of 10% of the sale price._
+_If you sell an artwork through la-chicharra.org we kindly ask for a donation towards running the site of 10% of the sale price._
 
