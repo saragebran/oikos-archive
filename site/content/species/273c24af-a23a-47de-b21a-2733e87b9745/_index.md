@@ -9,4 +9,4 @@ kind: species
 color: "#ff00e0"
 category: Animal
 ---
-i love their singing. son misteriosos
+i love their singing. son misteriosos. extraño sus cantos que te taponan los oidos
