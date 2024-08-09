@@ -1,5 +1,5 @@
-baseurl = "/"
-# baseurl = "https://endearing-maamoul-70d6fa.netlify.app/"
+# baseurl = "/"
+baseurl = "https://la-chicharra.org/"
 languageCode = "en-us"
 languageLang = "en"
 title = "La Chicharra"
