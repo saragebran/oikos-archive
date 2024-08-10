@@ -9,4 +9,4 @@ kind: species
 color: "#ff00e0"
 category: Animal
 ---
-i love their singing. son misteriosos. extraño sus cantos que te taponan los oidos
+son misteriosos. extraño sus cantos que te taponan los oidos o te despiertan en las tardes del calor infernal y sopor, alli ellas nos cantan como una canción de siesta…
