@@ -8,17 +8,15 @@ languages:
   - language: Spanish
     names:
       - murciélago
-  - language: Albanian
+  - language: Español
     names:
-      - shkop
-  - language: Portuguese
-    names:
-      - Vampiro
-  - language: English
-    names:
-      - Common Woolly Bat
+      - murciélago
 kind: species
 color: "#5906b1"
 category: Animal
 ---
-With a highschool friend we cought 10 vats from a tropical park. they lived at home with us for 1.5 month, locked in a bedroom where we also some times slept. watching them all day long to undersatnd how the guide them selves through the space, using a vabrational sound, which bounced back to them announcing them what is in front of them to avoice crashing on things. We put different thikness of streads around the room to experiement with them… WE fed them with fruits. They survived this captive room longer than any previous scientist experiements done before, with a record of 2 weeks, while we record 1.5 month before they died.
+Con una amiga del colegio cogimos 10 murcélago de un parque tropical. vivieron en casa con nosotros durante un mes y medio, encerradas en una habitación donde a veces también nosotras dormiamos. las observabamos todo el dia para entender como se guiaban por el espacio, usando la vibracion de sonidos  que rebotaba cuando hay obstáculos en el camino,  anunciandoles lo que tenian delante para evitar que choquen contra ellas. Colocamos grosor de de hilos de nailon por la habitación para experimentar con ellos, confirmando este principio natural... Los alomnetamos con fruta. Sobrevivieron en este cuarto cautivas por más tiempo que cualquier otro experimento científico realizado anteriormente, el mayor tiempo récord fuém de 2 semanas, mientras que nosotras las mantivimos 1,5 meses antes de morir.
+
+
+
+
