@@ -96,6 +96,12 @@ html {
   transform: translateY(0); /* Move into view on hover */
 }
 
+.speciesli > a > img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
 
 .fade-in {
   animation: fadeIn ease $fade-duration;
