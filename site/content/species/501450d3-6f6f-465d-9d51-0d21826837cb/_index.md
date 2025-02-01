@@ -9,7 +9,7 @@ languages:
     names:
       - Mango
 kind: species
-color: "#ff6b00"
+color: "#ff6e07"
 category: Plant
 ---
 Mango caramelo. No los veo por ninguna parte. 
