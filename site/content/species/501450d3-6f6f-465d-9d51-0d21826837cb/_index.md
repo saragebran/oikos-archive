@@ -5,8 +5,13 @@ languages:
   - names:
       - Mango Manjar
     language: Español
+  - language: Dutch
+    names:
+      - Mango
 kind: species
 color: "#ff6b00"
 category: Plant
 ---
 Mango caramelo. No los veo por ninguna parte. 
+
+Ik ken de mango alleen uit de winkel tot ik in Colombia was en ze met zout at!
